@@ -15,11 +15,28 @@ transformações foram ajustados para um grupo pequeno de amigos.
 
 ## Instalação
 
-1. Faça cópia de segurança do mundo e da pasta `config/dragonminez`.
-2. Copie o conteúdo de `config/dragonminez/` para a pasta equivalente do
-   modpack, substituindo os arquivos.
-3. Instale o JAR do DragonMineZ compilado com o patch em **servidor e clientes**.
-   Não deixe dois JARs do DragonMineZ na pasta `mods`.
+1. Feche o Minecraft.
+2. No CurseForge, abra **Opções do perfil** e ative **Permitir gerenciamento de
+   conteúdo para este perfil** (`Allow Content Management for this profile`).
+   Sem essa opção, o CurseForge pode restaurar o JAR original ao iniciar o jogo.
+3. Faça uma cópia de segurança do mundo, da pasta `config/dragonminez` e do JAR
+   original encontrado na pasta `mods` do perfil.
+4. Copie o JAR compilado `dragonminez-2.1.3.jar` para a pasta `mods`, substituindo
+   o arquivo original. Para a instância usada neste projeto, o destino é:
+
+   ```text
+   D:\CurseForge\Instances\Dragon Mine Z\mods\dragonminez-2.1.3.jar
+   ```
+
+5. Confira se existe apenas um JAR do DragonMineZ dentro de `mods`. O arquivo
+   `.patch` deste repositório não deve ser colocado nessa pasta; ele serve para
+   gerar o JAR durante a compilação.
+6. Copie o conteúdo de `config/dragonminez/` para `config/dragonminez/` dentro do
+   perfil, substituindo os arquivos existentes.
+7. Inicie o modpack pelo CurseForge.
+
+Em jogo multiplayer, instale o mesmo JAR e as mesmas configurações no
+**servidor e em todos os clientes**.
 
 O patch é para a versão **2.1.3**. Configurações e patch foram pensados como um
 conjunto; somente copiar os JSONs não habilita a Maestria Global Saiyajin.
