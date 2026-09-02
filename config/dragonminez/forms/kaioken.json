@@ -44,7 +44,7 @@
       "eneMultiplier": 1.0,
       "speedMultiplier": 1.1,
       "staminaDrainMultiplier": 1.0,
-      "energyDrain": 0.01,
+      "energyDrain": 0.008,
       "staminaDrain": 0.0,
       "healthDrain": 0.0,
       "attackSpeed": 1.1,
@@ -52,7 +52,7 @@
       "masteryPerHitDealt": 0.50,
       "masteryPerHitReceived": 0.50,
       "passiveMasteryEveryFiveSeconds": 1,
-      "maxCostMultiplier": 0.55,
+      "maxCostMultiplier": 0.75,
       "maxStatsMultiplier": 1.5,
       "formRequisite": "",
       "formRequisiteType": "all",
@@ -66,7 +66,7 @@
         "ultimate.ultimate"
       ],
       "shareMasteryWith": [
-        "kaioken.x3"
+        "kaioken, x3"
       ],
       "shareMasteryMultiplier": 0.25,
       "outlineShader": {
@@ -120,19 +120,19 @@
       "eneMultiplier": 1.0,
       "speedMultiplier": 1.2,
       "staminaDrainMultiplier": 1.0,
-      "energyDrain": 0.018,
+      "energyDrain": 0.012,
       "staminaDrain": 0.0,
       "healthDrain": 0.0,
       "attackSpeed": 1.2,
       "maxMastery": 100.0,
       "masteryPerHitDealt": 0.25,
       "masteryPerHitReceived": 0.25,
-      "passiveMasteryEveryFiveSeconds": 0.5,
-      "maxCostMultiplier": 0.58,
+      "passiveMasteryEveryFiveSeconds": 0.90,
+      "maxCostMultiplier": 0.75,
       "maxStatsMultiplier": 1.5,
       "formRequisite": "kaioken.x2",
       "formRequisiteType": "all",
-      "unlockOnMastery": 100.0,
+      "unlockOnMastery": 100,
       "stackOnMastery": 0.0,
       "instantTransformOnMastery": 40.0,
       "allowFreeTransformOnMastery": 50.0,
@@ -142,7 +142,7 @@
         "ultimate.ultimate"
       ],
       "shareMasteryWith": [
-        "kaioken.x4"
+        "kaioken, x4"
       ],
       "shareMasteryMultiplier": 0.25,
       "outlineShader": {
@@ -196,19 +196,19 @@
       "eneMultiplier": 1.0,
       "speedMultiplier": 1.35,
       "staminaDrainMultiplier": 1.0,
-      "energyDrain": 0.03,
+      "energyDrain": 0.016,
       "staminaDrain": 0.0,
       "healthDrain": 0.0,
       "attackSpeed": 1.35,
       "maxMastery": 100.0,
       "masteryPerHitDealt": 0.16,
       "masteryPerHitReceived": 0.16,
-      "passiveMasteryEveryFiveSeconds": 0.25,
-      "maxCostMultiplier": 0.6,
+      "passiveMasteryEveryFiveSeconds": 0.80,
+      "maxCostMultiplier": 0.75,
       "maxStatsMultiplier": 1.5,
-      "formRequisite": "kaioken.x2,kaioken.x3",
+      "formRequisite": "kaioken, x3",
       "formRequisiteType": "all",
-      "unlockOnMastery": 100.0,
+      "unlockOnMastery": 100,
       "stackOnMastery": 0.0,
       "instantTransformOnMastery": 40.0,
       "allowFreeTransformOnMastery": 50.0,
@@ -218,7 +218,7 @@
         "ultimate.ultimate"
       ],
       "shareMasteryWith": [
-        "kaioken.x10"
+        "kaioken, x10"
       ],
       "shareMasteryMultiplier": 0.25,
       "outlineShader": {
@@ -272,19 +272,19 @@
       "eneMultiplier": 1.0,
       "speedMultiplier": 1.5,
       "staminaDrainMultiplier": 1.0,
-      "energyDrain": 0.05,
+      "energyDrain": 0.020,
       "staminaDrain": 0.0,
       "healthDrain": 0.0,
       "attackSpeed": 1.5,
       "maxMastery": 100.0,
       "masteryPerHitDealt": 0.16,
       "masteryPerHitReceived": 0.16,
-      "passiveMasteryEveryFiveSeconds": 0.12,
-      "maxCostMultiplier": 0.63,
+      "passiveMasteryEveryFiveSeconds": 0.70,
+      "maxCostMultiplier": 0.75,
       "maxStatsMultiplier": 1.5,
-      "formRequisite": "kaioken.x2,kaioken.x3,kaioken.x4",
+      "formRequisite": "kaioken, x4",
       "formRequisiteType": "all",
-      "unlockOnMastery": 100.0,
+      "unlockOnMastery": 100,
       "stackOnMastery": 0.0,
       "instantTransformOnMastery": 40.0,
       "allowFreeTransformOnMastery": 50.0,
@@ -294,7 +294,7 @@
         "ultimate.ultimate"
       ],
       "shareMasteryWith": [
-        "kaioken.x20"
+        "kaioken, x20"
       ],
       "shareMasteryMultiplier": 0.25,
       "outlineShader": {
@@ -348,19 +348,19 @@
       "eneMultiplier": 1.0,
       "speedMultiplier": 1.65,
       "staminaDrainMultiplier": 1.0,
-      "energyDrain": 0.08,
+      "energyDrain": 0.024,
       "staminaDrain": 0.0,
       "healthDrain": 0.0,
       "attackSpeed": 1.65,
       "maxMastery": 100.0,
       "masteryPerHitDealt": 0.16,
       "masteryPerHitReceived": 0.16,
-      "passiveMasteryEveryFiveSeconds": 0.10,
-      "maxCostMultiplier": 0.66,
+      "passiveMasteryEveryFiveSeconds": 0.60,
+      "maxCostMultiplier": 0.75,
       "maxStatsMultiplier": 1.5,
-      "formRequisite": "kaioken.x2,kaioken.x3,kaioken.x4,kaioken.x10",
+      "formRequisite": "kaioken, x10",
       "formRequisiteType": "all",
-      "unlockOnMastery": 100.0,
+      "unlockOnMastery": 100,
       "stackOnMastery": 0.0,
       "instantTransformOnMastery": 40.0,
       "allowFreeTransformOnMastery": 50.0,

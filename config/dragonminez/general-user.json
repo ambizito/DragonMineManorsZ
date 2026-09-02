@@ -11,7 +11,7 @@
   "advancedDescription": true,
   "advancedDescriptionPercentage": true,
   "alternativeHud": false,
-  "hexagonStatsDisplay": false,
+  "hexagonStatsDisplay": true,
   "menuScaleMultiplier": 1.0,
   "utilityMenuScaleMultiplier": 1.0,
   "healthBarPosX": 10,
