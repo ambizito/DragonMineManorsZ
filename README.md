@@ -11,7 +11,25 @@ transformações foram ajustados para um grupo pequeno de amigos.
 - `config/dragonminez/`: configuração final para instalar em `config/dragonminez`.
 - `patches/DragonMineZ-2.1.3-global-mastery.patch`: código-fonte da Maestria
   Global Saiyajin. A alteração deve ser compilada no JAR do DragonMineZ 2.1.3.
+- `patches/DragonMineZ-2.1.3-kaioken-prerequisites.patch`: código-fonte completo
+  dos pré-requisitos sequenciais do Kaioken e do aviso que informa qual forma
+  anterior ainda precisa ser dominada.
 - `docs/`: especificação dos campos, justificativas e comparação com o original.
+
+Todos os arquivos modificados do DragonMineZ estão representados integralmente
+nesses dois patches. Eles incluem `Character.java`, `SaiyanGlobalMastery.java`,
+`MasteryCommand.java`, `DefaultFormsFactory.java`, `TransformationsHelper.java`,
+`ClientStatsEvents.java` e os recursos de idioma alterados/adicionados. As
+configurações finais do modpack ficam versionadas separadamente em `config/`.
+
+Os patches devem ser aplicados ao repositório oficial
+`https://github.com/DragonMineZ/dragonminez.git`, no commit da versão 2.1.3
+`3c58ae869788a37fb42d0ed47a5494724a07735a`, nesta ordem:
+
+```powershell
+git apply DragonMineZ-2.1.3-global-mastery.patch
+git apply DragonMineZ-2.1.3-kaioken-prerequisites.patch
+```
 
 ## Instalação
 
