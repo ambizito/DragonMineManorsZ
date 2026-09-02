@@ -4,6 +4,8 @@
 
 - `combat.json`: `baselineFormDrain` foi reduzido de `80` para `55`.
 - `forms/kaioken.json`: consumo de vida foi removido; o Kaioken usa energia.
+  Multiplicadores avançados exigem 100 de maestria em todos os multiplicadores
+  anteriores (`x2 → x3 → x4 → x10 → x20`).
 - Formas Saiyajin receberam menor drain, melhor ganho de maestria e requisitos
   de 100 na progressão entre formas.
 - A Maestria Global Saiyajin foi adicionada por patch de código. O tempo passivo

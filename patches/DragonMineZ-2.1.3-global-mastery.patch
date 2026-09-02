@@ -18,13 +18,6 @@ index fae7647..1874505 100644
  		if (shared == 0.0) return;
  
  		for (String entry : formData.getShareMasteryWith()) {
-@@ -739,4 +740,4 @@ public class Character {
- 		this.knownMinigames.addAll(other.knownMinigames);
- 		updateOozaruCache();
- 	}
--}
-\ No newline at end of file
-+}
 diff --git a/src/main/java/com/dragonminez/server/commands/MasteryCommand.java b/src/main/java/com/dragonminez/server/commands/MasteryCommand.java
 index c5b69fb..81d79a1 100644
 --- a/src/main/java/com/dragonminez/server/commands/MasteryCommand.java
