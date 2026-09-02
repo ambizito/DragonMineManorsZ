@@ -66,7 +66,7 @@
         "ultimate.ultimate"
       ],
       "shareMasteryWith": [
-        "kaioken, x3"
+        "kaioken.x3"
       ],
       "shareMasteryMultiplier": 0.25,
       "outlineShader": {
@@ -142,7 +142,7 @@
         "ultimate.ultimate"
       ],
       "shareMasteryWith": [
-        "kaioken, x4"
+        "kaioken.x4"
       ],
       "shareMasteryMultiplier": 0.25,
       "outlineShader": {
@@ -218,7 +218,7 @@
         "ultimate.ultimate"
       ],
       "shareMasteryWith": [
-        "kaioken, x10"
+        "kaioken.x10"
       ],
       "shareMasteryMultiplier": 0.25,
       "outlineShader": {
@@ -282,7 +282,7 @@
       "passiveMasteryEveryFiveSeconds": 0.70,
       "maxCostMultiplier": 0.75,
       "maxStatsMultiplier": 1.5,
-      "formRequisite": "kaioken, x4",
+      "formRequisite": "kaioken.x4",
       "formRequisiteType": "all",
       "unlockOnMastery": 100,
       "stackOnMastery": 0.0,
@@ -294,7 +294,7 @@
         "ultimate.ultimate"
       ],
       "shareMasteryWith": [
-        "kaioken, x20"
+        "kaioken.x20"
       ],
       "shareMasteryMultiplier": 0.25,
       "outlineShader": {
@@ -358,7 +358,7 @@
       "passiveMasteryEveryFiveSeconds": 0.60,
       "maxCostMultiplier": 0.75,
       "maxStatsMultiplier": 1.5,
-      "formRequisite": "kaioken, x10",
+      "formRequisite": "kaioken.x10",
       "formRequisiteType": "all",
       "unlockOnMastery": 100,
       "stackOnMastery": 0.0,

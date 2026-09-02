@@ -54,7 +54,7 @@
       "passiveMasteryEveryFiveSeconds": 0.25,
       "maxCostMultiplier": 0.5,
       "maxStatsMultiplier": 1.5,
-      "formRequisite": "ssgrades, supersaiyangrade3",
+      "formRequisite": "ssgrades.supersaiyangrade3",
       "formRequisiteType": "all",
       "unlockOnMastery": 100,
       "stackOnMastery": 25.0,
@@ -65,7 +65,7 @@
       "incompatibleWith": [
         ""
       ],
-      "shareMasteryWith": [],
+      "shareMasteryWith": ["ssgrades.supersaiyangrade3"],
       "shareMasteryMultiplier": 1.0,
       "outlineShader": {
         "enabled": false,
