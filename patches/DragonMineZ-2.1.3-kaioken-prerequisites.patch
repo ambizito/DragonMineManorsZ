@@ -1,5 +1,25 @@
+diff --git a/src/main/java/com/dragonminez/client/events/ClientStatsEvents.java b/src/main/java/com/dragonminez/client/events/ClientStatsEvents.java
+index 0f266ae5..a6355469 100644
+--- a/src/main/java/com/dragonminez/client/events/ClientStatsEvents.java
++++ b/src/main/java/com/dragonminez/client/events/ClientStatsEvents.java
+@@ -445,6 +445,15 @@ public class ClientStatsEvents {
+ 				Component formName = Component.translatable("race.dragonminez." + character.getRaceName() + ".form." + group + "." + blocked.getName());
+ 				localPlayer.displayClientMessage(Component.translatable("message.dragonminez.form.no_mastery", blocked.getUnlockOnMastery().intValue(), formName), true);
+ 			}
++		} else if (data.getStatus().getSelectedAction() == ActionMode.STACK && TransformationsHelper.isNextStackFormMasteryBlocked(data)) {
++			FormConfig.FormData blocked = TransformationsHelper.getNextStackFormCandidate(data);
++			TransformationsHelper.MasteryRequirement requirement = TransformationsHelper.getUnmetMasteryRequirement(data, blocked);
++			if (requirement != null) {
++				Component groupName = Component.translatable("race.dragonminez.stack.group." + requirement.getGroupName());
++				Component formName = Component.translatable("race.dragonminez.stack.form." + requirement.getGroupName() + "." + requirement.getFormName());
++				Component requiredFormName = Component.empty().append(groupName).append(Component.literal(" ")).append(formName);
++				localPlayer.displayClientMessage(Component.translatable("message.dragonminez.form.mastery_requisite", requiredFormName), true);
++			}
+ 		}
+ 	}
+ 
 diff --git a/src/main/java/com/dragonminez/common/config/DefaultFormsFactory.java b/src/main/java/com/dragonminez/common/config/DefaultFormsFactory.java
-index 4401e9ee..86d77f74 100644
+index 4401e9ee..f9047972 100644
 --- a/src/main/java/com/dragonminez/common/config/DefaultFormsFactory.java
 +++ b/src/main/java/com/dragonminez/common/config/DefaultFormsFactory.java
 @@ -102,6 +102,9 @@ public class DefaultFormsFactory {
@@ -51,3 +71,162 @@ index 4401e9ee..86d77f74 100644
  		x20.setShareMasteryWith(List.of(StackForms.GROUP_KAIOKEN + "." + StackForms.X100));
  		x20.setShareMasteryMultiplier(0.25);
  		x20.setStackDrainMultiplier(1.0);
+diff --git a/src/main/java/com/dragonminez/common/util/TransformationsHelper.java b/src/main/java/com/dragonminez/common/util/TransformationsHelper.java
+index b02ebd74..340ebb7f 100644
+--- a/src/main/java/com/dragonminez/common/util/TransformationsHelper.java
++++ b/src/main/java/com/dragonminez/common/util/TransformationsHelper.java
+@@ -42,6 +42,36 @@ public class TransformationsHelper {
+ 		}
+ 	}
+ 
++	public static class MasteryRequirement {
++		private final String groupName;
++		private final String formName;
++		private final double currentMastery;
++		private final double requiredMastery;
++
++		public MasteryRequirement(String groupName, String formName, double currentMastery, double requiredMastery) {
++			this.groupName = groupName;
++			this.formName = formName;
++			this.currentMastery = currentMastery;
++			this.requiredMastery = requiredMastery;
++		}
++
++		public String getGroupName() {
++			return groupName;
++		}
++
++		public String getFormName() {
++			return formName;
++		}
++
++		public double getCurrentMastery() {
++			return currentMastery;
++		}
++
++		public double getRequiredMastery() {
++			return requiredMastery;
++		}
++	}
++
+ 	public static List<OrderedFormEntry> getOrderedFormsForRace(String raceName, List<String> formTypeOrder) {
+ 		List<OrderedFormEntry> result = new ArrayList<>();
+ 		Map<String, FormConfig> allGroups = ConfigManager.getAllFormsForRace(raceName);
+@@ -161,13 +191,17 @@ public class TransformationsHelper {
+ 	private static boolean meetsMasteryRequisite(StatsData statsData, FormConfig.FormData formData) {
+ 		if (formData == null) return false;
+ 		if (statsData.getPlayer() != null && statsData.getPlayer().isCreative()) return true;
++		return getUnmetMasteryRequirement(statsData, formData) == null;
++	}
++
++	public static MasteryRequirement getUnmetMasteryRequirement(StatsData statsData, FormConfig.FormData formData) {
++		if (formData == null || (statsData.getPlayer() != null && statsData.getPlayer().isCreative())) return null;
+ 		String req = formData.getFormRequisite();
+ 		double need = formData.getUnlockOnMastery();
+-		if (req == null || req.isEmpty() || need <= 0.0) return true;
++		if (req == null || req.isEmpty() || need <= 0.0) return null;
+ 
+ 		boolean any = "any".equalsIgnoreCase(formData.getFormRequisiteType());
+-		boolean sawValid = false;
+-		boolean allMet = true;
++		MasteryRequirement firstUnmet = null;
+ 		for (String token : req.split(",")) {
+ 			String entry = token.trim();
+ 			if (entry.isEmpty()) continue;
+@@ -179,15 +213,14 @@ public class TransformationsHelper {
+ 					statsData.getCharacter().getFormMasteries().getMastery(reqGroup, reqForm),
+ 					statsData.getCharacter().getStackFormMasteries().getMastery(reqGroup, reqForm));
+ 			boolean met = have >= need;
+-			sawValid = true;
+ 			if (any) {
+-				if (met) return true;
+-			} else if (!met) {
+-				allMet = false;
++				if (met) return null;
++				if (firstUnmet == null) firstUnmet = new MasteryRequirement(reqGroup, reqForm, have, need);
++			} else if (!met && firstUnmet == null) {
++				firstUnmet = new MasteryRequirement(reqGroup, reqForm, have, need);
+ 			}
+ 		}
+-		if (!sawValid) return true;
+-		return !any && allMet;
++		return firstUnmet;
+ 	}
+ 
+ 	public static boolean areFormsCompatible(FormConfig.FormData baseForm, String baseGroup, FormConfig.FormData stackForm, String stackGroup) {
+@@ -570,18 +603,27 @@ public class TransformationsHelper {
+ 	}
+ 
+ 	public static FormConfig.FormData getNextAvailableStackForm(StatsData statsData) {
++		FormConfig.FormData nextFormConfig = getNextStackFormCandidate(statsData);
++		if (nextFormConfig == null) return null;
++
+ 		String group = statsData.getCharacter().hasActiveStackForm() ? statsData.getCharacter().getActiveStackFormGroup() : statsData.getCharacter().getSelectedStackFormGroup();
++		if (group == null || group.isEmpty()) return null;
++		FormConfig config = ConfigManager.getStackFormGroup(group);
++		if (config == null) return null;
+ 
++		return (isStackFormUnlocked(statsData, config.getFormType(), nextFormConfig.getUnlockOnSkillLevel()) && meetsMasteryRequisite(statsData, nextFormConfig)) ? nextFormConfig : null;
++	}
++
++	public static FormConfig.FormData getNextStackFormCandidate(StatsData statsData) {
++		String group = statsData.getCharacter().hasActiveStackForm() ? statsData.getCharacter().getActiveStackFormGroup() : statsData.getCharacter().getSelectedStackFormGroup();
+ 		if (group == null || group.isEmpty()) return null;
+ 		FormConfig config = ConfigManager.getStackFormGroup(group);
+ 		if (config == null) return null;
+ 
+ 		String currentFormName = statsData.getCharacter().getActiveStackForm();
+-		String nextFormName;
+ 		FormConfig.FormData nextFormConfig = null;
+ 		if (currentFormName == null || currentFormName.isEmpty()) {
+-			nextFormName = statsData.getCharacter().getSelectedStackForm();
+-			nextFormConfig = config.getForm(nextFormName);
++			nextFormConfig = config.getForm(statsData.getCharacter().getSelectedStackForm());
+ 		} else {
+ 			boolean foundCurrent = false;
+ 			for (Map.Entry<String, FormConfig.FormData> entry : config.getForms().entrySet()) {
+@@ -594,12 +636,20 @@ public class TransformationsHelper {
+ 				break;
+ 			}
+ 		}
+-		if (nextFormConfig != null) {
+-			return (isStackFormUnlocked(statsData, config.getFormType(), nextFormConfig.getUnlockOnSkillLevel()) && meetsMasteryRequisite(statsData, nextFormConfig)) ? nextFormConfig : null;
+-		}
+ 		return nextFormConfig;
+ 	}
+ 
++	public static boolean isNextStackFormMasteryBlocked(StatsData statsData) {
++		FormConfig.FormData candidate = getNextStackFormCandidate(statsData);
++		if (candidate == null) return false;
++
++		String group = statsData.getCharacter().hasActiveStackForm() ? statsData.getCharacter().getActiveStackFormGroup() : statsData.getCharacter().getSelectedStackFormGroup();
++		FormConfig config = ConfigManager.getStackFormGroup(group);
++		if (config == null) return false;
++
++		return isStackFormUnlocked(statsData, config.getFormType(), candidate.getUnlockOnSkillLevel()) && !meetsMasteryRequisite(statsData, candidate);
++	}
++
+ 	public static boolean canDescend(StatsData statsData) {
+ 		if (!statsData.getCharacter().hasActiveForm()) return false;
+ 
+diff --git a/src/main/resources/assets/dragonminez/lang/en_us.json b/src/main/resources/assets/dragonminez/lang/en_us.json
+index 0108a6e1..dca95af8 100644
+--- a/src/main/resources/assets/dragonminez/lang/en_us.json
++++ b/src/main/resources/assets/dragonminez/lang/en_us.json
+@@ -882,6 +882,7 @@
+   "message.dragonminez.form.no_health_instant": "§cYou need at least %s §cHP to transform instantly.",
+   "message.dragonminez.form.no_health": "§cYou need at least %s §cHP to transform.",
+   "message.dragonminez.form.no_mastery": "§cYou need at least %1$s mastery to transform into %2$s§c.",
++  "message.dragonminez.form.mastery_requisite": "§cYou must finish mastering §e%1$s§c before advancing.",
+   "message.dragonminez.form.no_trigger_item": "§cYou do not have a valid item required to trigger this transformation.",
+   "message.dragonminez.form.no_duration_item": "§cYou do not have a valid item required to maintain this transformation.",
+   "message.dragonminez.form.drained_ki": "§cYou ran out of Ki and reverted to your base form.",
+diff --git a/src/main/resources/assets/dragonminez/lang/pt_br.json b/src/main/resources/assets/dragonminez/lang/pt_br.json
+new file mode 100644
+index 00000000..5db7b8f8
+--- /dev/null
++++ b/src/main/resources/assets/dragonminez/lang/pt_br.json
+@@ -0,0 +1,3 @@
++{
++  "message.dragonminez.form.mastery_requisite": "§cVocê precisa terminar de dominar §e%1$s§c antes de avançar."
++}
