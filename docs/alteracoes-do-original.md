@@ -14,6 +14,9 @@
 - A Maestria Global Saiyajin foi adicionada por patch de código. O tempo passivo
   estimado para todas as formas Saiyajin caiu de cerca de `552,1 h` para
   `19,7 h`, antes de contar luta e outras fontes de ganho.
+- O manipulador de movimento agora aguarda a inicialização do input do jogador
+  durante a entrada em servidores, evitando o crash de login por
+  `NullPointerException`.
 
 ## Outras raças
 

@@ -2,7 +2,7 @@
 
 Repositório de configuração e balanceamento para **DragonMineZ 2.1.3**.
 
-Versão atual do modpack: **0.1.26.9.3**. As versões próprias deste projeto
+Versão atual do modpack: **0.2.26.9.3**. As versões próprias deste projeto
 seguem o formato `0.<revisão>.<AA>.<M>.<D>`.
 
 O objetivo é reduzir grind excessivo sem remover progressão: formas continuam
@@ -20,6 +20,9 @@ transformações foram ajustados para um grupo pequeno de amigos.
 - `patches/DragonMineZ-2.1.3-dragonball-spawn-control.patch`: adiciona suporte
   aos campos `spawn_enabled` e `natural_spawn` das definições externas de
   Esferas do Dragão, permitindo desativar a geração natural de um conjunto.
+- `patches/DragonMineZ-2.1.3-client-login-movement-crash.patch`: impede o crash
+  do cliente ao entrar em servidores enquanto o controle de movimento ainda
+  está sendo inicializado.
 - `servedata/`: pacote completo de servidor para Minecraft 1.20.1 e Forge
   47.4.10, pronto para envio à raiz do servidor na EnxadaHost.
 - `README-CLIENTE.md`: instalação e atualização do modpack dos jogadores.
@@ -28,7 +31,7 @@ transformações foram ajustados para um grupo pequeno de amigos.
 - `docs/`: especificação dos campos, justificativas e comparação com o original.
 
 Todos os arquivos modificados do DragonMineZ estão representados integralmente
-nesses três patches. Eles incluem `Character.java`, `SaiyanGlobalMastery.java`,
+nesses quatro patches. Eles incluem `Character.java`, `SaiyanGlobalMastery.java`,
 `MasteryCommand.java`, `DefaultFormsFactory.java`, `TransformationsHelper.java`,
 `ClientStatsEvents.java`, as classes de Esferas do Dragão e os recursos de idioma alterados/adicionados. As
 configurações finais do modpack ficam versionadas separadamente em `config/`.
@@ -41,6 +44,7 @@ Os patches devem ser aplicados ao repositório oficial
 git apply DragonMineZ-2.1.3-global-mastery.patch
 git apply DragonMineZ-2.1.3-kaioken-prerequisites.patch
 git apply DragonMineZ-2.1.3-dragonball-spawn-control.patch
+git apply DragonMineZ-2.1.3-client-login-movement-crash.patch
 ```
 
 ## Instalação
