@@ -2,6 +2,9 @@
 
 Repositório de configuração e balanceamento para **DragonMineZ 2.1.3**.
 
+Versão atual do modpack: **0.1.26.9.3**. As versões próprias deste projeto
+seguem o formato `0.<revisão>.<AA>.<M>.<D>`.
+
 O objetivo é reduzir grind excessivo sem remover progressão: formas continuam
 exigindo domínio da etapa anterior, mas o ganho de maestria e a duração das
 transformações foram ajustados para um grupo pequeno de amigos.
@@ -19,6 +22,7 @@ transformações foram ajustados para um grupo pequeno de amigos.
   Esferas do Dragão, permitindo desativar a geração natural de um conjunto.
 - `servedata/`: pacote completo de servidor para Minecraft 1.20.1 e Forge
   47.4.10, pronto para envio à raiz do servidor na EnxadaHost.
+- `README-CLIENTE.md`: instalação e atualização do modpack dos jogadores.
 - `DragonMineManorsZ-server-1.20.1-forge-47.4.10.zip`: o mesmo pacote já
   compactado, com as pastas posicionadas diretamente na raiz do arquivo.
 - `docs/`: especificação dos campos, justificativas e comparação com o original.
@@ -40,6 +44,10 @@ git apply DragonMineZ-2.1.3-dragonball-spawn-control.patch
 ```
 
 ## Instalação
+
+Para instalar o pacote pronto da release, siga o
+[`README-CLIENTE.md`](README-CLIENTE.md). A instalação manual abaixo continua
+válida para quem baixar os arquivos diretamente do repositório.
 
 1. Feche o Minecraft.
 2. No CurseForge, abra **Opções do perfil** e ative **Permitir gerenciamento de

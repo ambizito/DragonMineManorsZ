@@ -1,5 +1,7 @@
 # DragonMineManorsZ — pacote de servidor
 
+Versão do modpack: **0.1.26.9.3**.
+
 Pacote para **Minecraft 1.20.1**, **Forge 47.4.10** e **Java 17**.
 
 Validado com um servidor dedicado real contendo 89 mods. O servidor chegou ao
