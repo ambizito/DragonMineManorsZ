@@ -1,0 +1,17 @@
+diff --git a/src/main/java/com/dragonminez/client/events/MovementSkillsHandler.java b/src/main/java/com/dragonminez/client/events/MovementSkillsHandler.java
+--- a/src/main/java/com/dragonminez/client/events/MovementSkillsHandler.java
++++ b/src/main/java/com/dragonminez/client/events/MovementSkillsHandler.java
+@@ -30,7 +30,12 @@ public class MovementSkillsHandler {
+ 
+ 		Minecraft mc = Minecraft.getInstance();
+ 		LocalPlayer player = mc.player;
+-		if (player == null) return;
++		if (player == null || player.input == null) {
++			airTicks = 0;
++			wasJumping = false;
++			hasAppliedBaseBoost = false;
++			return;
++		}
+ 
+ 		final int[] jumpLevel = {0};
+ 		final int[] sprintLevel = {0};
