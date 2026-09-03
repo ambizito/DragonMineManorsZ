@@ -1,0 +1,43 @@
+# DragonMineManorsZ - protecao de terrenos com FTB Chunks
+# Este arquivo e copiado para world/serverconfig na criacao do mundo.
+
+{
+	# Mantem a protecao de terrenos reivindicados ativa.
+	disable_protection: false
+
+	# Limites equilibrados para um servidor pequeno.
+	max_claimed_chunks: 100
+	max_force_loaded_chunks: 10
+	hard_team_claim_limit: 500
+	hard_team_force_limit: 25
+
+	# Permite construir fora de terrenos reivindicados.
+	no_wilderness: false
+
+	# Protege divisas de pistoes e explosoes sem dono identificavel.
+	piston_protection: true
+	protect_unknown_explosions: true
+
+	# Cada equipe escolhe seu PvP; equipes novas comecam com PvP desativado.
+	pvp_mode: "per_team"
+
+	# Automacoes de mods precisam ser liberadas pela equipe proprietaria.
+	fake_players: "check"
+	force_load_mode: "default"
+
+	team_prop_defaults: {
+		def_allow_explosions: false
+		def_block_edit: "allies"
+		def_block_edit_interact: "allies"
+		def_block_interact: "allies"
+		def_claim_visibility: "public"
+		def_entity_attack: "allies"
+		def_entity_interact: "allies"
+		def_fake_player_ids: true
+		def_fake_players: false
+		def_mob_griefing: false
+		def_named_fake_players: [ ]
+		def_player_visibility: "allies"
+		def_pvp: false
+	}
+}

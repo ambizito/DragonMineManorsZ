@@ -1,0 +1,4 @@
+{"id":"player_revival_shenron_assets","renderer_type":"default",
+ "model":"dragonminez:geo/entity/dragon/shenron.geo.json",
+ "texture":"dragonminez:textures/entity/dragon/shenron.png",
+ "animation":"dragonminez:animations/entity/dragon/shenron.animation.json"}

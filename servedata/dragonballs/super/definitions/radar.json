@@ -1,0 +1,16 @@
+{
+  "asset_definition": "super_radar",
+  "ball_set": "super",
+  "dimensions": [
+    "dmzplus:universe_7_deep_space"
+  ],
+  "display_name": "Super",
+  "id": "super_radar",
+  "item_registry_name": "super_dball_radar",
+  "ranges": [
+    10000,
+    50000,
+    600
+  ],
+  "tooltip_key": "item.dragonminez.super_dball_radar.tooltip"
+}

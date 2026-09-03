@@ -1,0 +1,86 @@
+{
+  "configVersion": 3,
+  "referenceMultiplier": 1200.0,
+  "totalStatsDivisor": 100.0,
+  "exponent": 1.2,
+  "playerStats": {
+    "meleeDamage": {
+      "enabled": true,
+      "weight": 1.0
+    },
+    "strikeDamage": {
+      "enabled": true,
+      "weight": 1.0
+    },
+    "maxStamina": {
+      "enabled": false,
+      "weight": 0.5
+    },
+    "defense": {
+      "enabled": true,
+      "weight": 1.0
+    },
+    "maxHealth": {
+      "enabled": true,
+      "weight": 0.5
+    },
+    "kiDamage": {
+      "enabled": true,
+      "weight": 1.0
+    },
+    "maxKi": {
+      "enabled": true,
+      "weight": 0.5
+    }
+  },
+  "mobStats": {
+    "maxHealth": {
+      "enabled": true,
+      "weight": 0.5
+    },
+    "attackDamage": {
+      "enabled": true,
+      "weight": 1.0
+    },
+    "armor": {
+      "enabled": true,
+      "weight": 4.0
+    },
+    "armorToughness": {
+      "enabled": true,
+      "weight": 4.0
+    },
+    "protection": {
+      "enabled": true,
+      "weight": 4.0
+    },
+    "resistance": {
+      "enabled": true,
+      "weight": 20.0
+    },
+    "movementOrFlyingSpeed": {
+      "enabled": true,
+      "weight": 15.0
+    },
+    "kiDamage": {
+      "enabled": true,
+      "weight": 1.0
+    },
+    "arrowDamage": {
+      "enabled": true,
+      "weight": 0.5
+    },
+    "autoLevelingProjectileDamage": {
+      "enabled": true,
+      "weight": 0.5
+    },
+    "autoLevelingExplosionDamage": {
+      "enabled": true,
+      "weight": 1.0
+    },
+    "ironsSpellPower": {
+      "enabled": true,
+      "weight": 5.0
+    }
+  }
+}

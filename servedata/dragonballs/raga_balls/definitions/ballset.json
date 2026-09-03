@@ -1,0 +1,16 @@
+{
+  "id": "raga",
+  "display_name": "Raga Ball",
+  "dimensions": ["minecraft:overworld"],
+  "copies": 0,
+  "spawn_range": 0,
+  "natural_spawn": false,
+  "spawn_enabled": false,
+  "summon_radius": 5,
+  "asset_definition": "raga_ballset",
+  "blocks": {
+    "1": "raga_ball_1",
+    "2": "raga_ball_2",
+    "3": "raga_ball_3"
+  }
+}

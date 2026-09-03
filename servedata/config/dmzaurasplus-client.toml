@@ -1,0 +1,6 @@
+
+[kaioken]
+	#If true, enables extra Kaioken aura.
+	#If false, reverts to the original DragonMineZ Kaioken behavior.
+	enableKaiokenExtraAura = true
+

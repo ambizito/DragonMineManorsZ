@@ -1,0 +1,125 @@
+{
+  "configVersion": "1.2.0",
+  "StrikeAttacks": {
+    "basic": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 240
+    },
+    "air": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 240
+    },
+    "charge": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 240
+    },
+    "meteor_combination": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 240
+    },
+    "fast_punch": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 240
+    },
+    "strong_punch": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 240
+    },
+    "evasive": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 400
+    },
+    "android_absorption": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 1200
+    },
+    "sleep_recovery": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 1800
+    },
+    "namekian_regeneration": {
+      "minXPCost": 100,
+      "maxXPCost": -1,
+      "xpCostMultiplier": 1.0,
+      "xpGainMultiplier": 5.0,
+      "xpGainPerHit": 1,
+      "xpGainPerKill": 3,
+      "kiCostMultiplier": 1.0,
+      "damageMultiplier": 1.0,
+      "castTimeTicks": 0,
+      "cooldownTicks": 1200
+    }
+  }
+}

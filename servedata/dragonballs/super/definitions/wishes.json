@@ -1,0 +1,18 @@
+{
+  "dragon": "super_shenron",
+  "wishes": [
+    {
+      "type": "tps",
+      "amount": 100000,
+      "description": "wish.dmzplus.super_shenron.power.desc",
+      "name": "wish.dmzplus.super_shenron.power.name"
+    },
+    {
+      "type": "item",
+      "count": 32,
+      "itemId": "dragonminez:senzu_bean",
+      "description": "wish.dmzplus.super_shenron.senzu.desc",
+      "name": "wish.dmzplus.super_shenron.senzu.name"
+    }
+  ]
+}

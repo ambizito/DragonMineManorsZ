@@ -1,0 +1,11 @@
+{
+  "id": "white_shenron",
+  "entity_registry_name": "white_shenron",
+  "entity_width": 1.2,
+  "entity_height": 2.2,
+  "dimensions": ["minecraft:overworld", "minecraft:the_nether", "minecraft:the_end", "dmzsuper:planet_surface"],
+  "ball_set": "raga",
+  "wish_screen_id": "shenron",
+  "wish_count": 4,
+  "asset_definition": "stable_white_shenron"
+}

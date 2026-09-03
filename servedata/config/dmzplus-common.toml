@@ -1,0 +1,335 @@
+
+[hbtc]
+	#Master toggle for the HBTC time-limit module.
+	enabled = true
+	#Require an HBTC Key to enter. Whether the key is then spent is a separate setting,
+	#consumeKey. Off, the door itself acts as the key.
+	requireKey = true
+	#Whether entering consumes the HBTC Key. Off, the key is still required in hand but is
+	#never spent, so it acts as a reusable pass. Ignored when requireKey is false.
+	consumeKey = true
+	#Whether DMZ Plus offers the HBTC Key on Shenron's wish list.
+	#Takes effect on the next /reload or restart, not immediately.
+	addKeyWish = true
+	#How many HBTC Keys this world will ever grant by wish. 0 is unlimited.
+	#Counted per world, not per player. See /dmzplus wishes for the current count.
+	#Range: 0 ~ 10000
+	maxKeyWishes = 0
+	#Per-player HBTC time budget cap, in minutes. Using a key resets the timer to this.
+	#Range: 1 ~ 10080
+	maxBudgetMinutes = 20
+	#Cooldown between HBTC sessions, in seconds. 0 is no cooldown.
+	#Starts when a player leaves the chamber and blocks re-entry until it elapses.
+	#Range: 0 ~ 86400
+	keyCooldownSeconds = 300
+	#Allow entering the HBTC via the Bulma space pod. A key is still required.
+	#Off, the portal door is the only way in.
+	allowSpacePodEntry = false
+	#Radius in blocks around a key user within which online party members are attuned too
+	#and pulled through the door alongside them. Sneaking members opt out. 0 turns it off.
+	#Range: 0 ~ 64
+	partyRadius = 8
+
+[it]
+	#Extra flat Ki charged when Instant Transmission crosses a dimension boundary.
+	#The same-dimension tap teleport is never affected.
+	#Range: 0 ~ 1000000
+	crossDimensionKiCost = 500
+	#Dimensions that Instant Transmission cannot cross into or out of, as full dimension ids.
+	#Same-dimension travel is never affected.
+	restrictedDimensions = ["dragonminez:time_chamber"]
+	#Replace DragonMineZ's Instant Transmission Ki cost with costFlatBase plus
+	#costKiPerBlock times distance. Never applies to the crosshair tap.
+	costOverrideEnabled = false
+	#Flat Ki charged per Travel use when costOverrideEnabled is true.
+	#Range: 0 ~ 1000000
+	costFlatBase = 50
+	#Ki per block of same-dimension distance when costOverrideEnabled is true.
+	#Cross-dimension hops have no distance and pay the flat costs instead.
+	#Range: 0.0 ~ 1000.0
+	costKiPerBlock = 1.0
+	#Radius in blocks around an Instant Transmission user within which other players are
+	#teleported along. Party mode only; sneaking players opt out. 0 turns it off.
+	#Range: 0 ~ 64
+	partyRadius = 5
+	#Ki surcharge per passenger on a party Travel, as a percentage of the initiator's own
+	#final cost. 0 means passengers ride free.
+	#Range: 0 ~ 10000
+	partyCostPerPassengerPercent = 50
+
+[spacepod]
+	#Dimensions the space pod cannot travel into or out of, as full dimension ids.
+	#The Hyperbolic Time Chamber is governed by hbtc.allowSpacePodEntry instead.
+	restrictedDimensions = []
+	#What the space pod does when a player picks a planet.
+	#AUTOPILOT flies there through real space, DISABLED refuses the trip, and INSTANT is
+	#DragonMineZ's original straight-to-the-surface teleport.
+	#Ignored entirely unless the space module is on, which is a separate per-world config.
+	#Allowed Values: DISABLED, AUTOPILOT, INSTANT
+	travelMode = "AUTOPILOT"
+	#Dimensions the pod always teleports to, exempt from travelMode, for places that are
+	#nowhere in physical space and so have no route to fly.
+	#The exemption applies to BOTH ends of the trip, so a listed dimension also becomes a
+	#staging post someone can pod onward from. Keep the list short.
+	alwaysInstantDimensions = ["dragonminez:sacredkaiplanet"]
+
+[worldgen]
+	#Let DragonMineZ's structure fallback search start at the minimum distance from spawn
+	#instead of just outside the maximum, so unique structures stop pinning to the outer edge.
+	#Only affects structures planned after the change.
+	structureTailFromMinDistance = true
+
+[dballs]
+	#Master toggle for the dragon ball wish cooldown module.
+	#Off, balls are usable as soon as they scatter, as in stock DragonMineZ.
+	#Also gates the Super Dragon Ball cooldown, so off means Super Shenron can
+	#be summoned on every gather.
+	enabled = true
+	#Ticks a dragon ball set stays dormant after a wish. Ticks only advance while the server
+	#is running, so this is uptime rather than wall clock. 20 ticks is one second.
+	#This is the default for every set; override individual sets with cooldownTicksBySet.
+	#Range: 0 ~ 8760000
+	cooldownTicks = 168000
+	#Per-set overrides for cooldownTicks, as setId=ticks entries.
+	#Example: ["earth=168000", "namek=72000", "cereal=24000"].
+	#Set ids come from that set's definitions/ballset.json, lowercase, NOT the different id
+	#in assets/ballset.json, which will silently match nothing.
+	#An id naming no loaded set is warned about in the log.
+	cooldownTicksBySet = []
+	#Broadcast a server-wide message when a dragon ball set wakes and becomes findable again.
+	announceOnWake = true
+	#The broadcast text. '%s' is replaced with the ball set name, and '&' starts a colour code.
+	#Ignored when announceOnWake is false.
+	wakeMessage = "&6The %s Dragon Balls have awakened somewhere in the world..."
+	#Stop dragon balls being stored in any container, including modded storage.
+	#Balls already inside one are ejected onto the floor when it is opened.
+	blockContainerStorage = true
+	#Backstop for blockContainerStorage: periodically sweep loaded storage near players and
+	#eject any ball pushed in by automation. Network storage such as AE2 is not reached.
+	sweepStoredBalls = true
+	#How often a full sweep pass begins, in seconds. A pass runs at a fixed small number of
+	#chunks per tick, so this changes how often that work runs, never how big a tick gets.
+	#Ignored when sweepStoredBalls is false.
+	#Range: 5 ~ 3600
+	sweepIntervalSeconds = 10
+	#How far around each online player the sweep looks, in chunks, and only in chunks that
+	#are already loaded. Reduce this first if you need to cut the load.
+	#Range: 1 ~ 32
+	sweepRadiusChunks = 4
+	#Drop dragon balls on player death even when the keepInventory gamerule is on, so balls
+	#stay in circulation. Everything else the player carries is unaffected.
+	dropOnDeath = true
+	#Drop carried dragon balls at the logout spot when a player disconnects, so logging off
+	#is not a hiding place. Exempt during a server shutdown or restart.
+	dropOnLogout = true
+	#Stop dragon balls being destroyed once on the ground: they never despawn, and one that
+	#falls out of the world returns to world spawn instead of being deleted.
+	indestructible = true
+	#Stop dragon balls leaving the dimension their set belongs to. Carrying one out drops it
+	#where you departed from; the travel itself is never blocked.
+	confineToHomeDimension = true
+	#Show dragon balls that are not placed in the world on the Dragon Radar, including balls
+	#carried by other players. Your own carried balls are never shown to you.
+	radarTracksLooseBalls = true
+
+[hell]
+	#Make the Nether a death dimension. Falling to the bottom of the Otherworld drops the
+	#player into the Nether, and they stay there until they take a nether portal back.
+	enabled = true
+	#Y below which a player in the Otherworld counts as having fallen off Snake Way.
+	#Range: 3 ~ 40
+	fallY = 3
+	#Fallers are scattered to a random point within this many blocks of the Nether origin,
+	#so nobody can camp a known landing spot.
+	#Range: 64 ~ 100000
+	scatterRadius = 2000
+
+[gravityStrain]
+	#Master toggle for gravity strain. Training under gravity too high for your stats drains
+	#stamina, then health, then knocks you down.
+	enabled = true
+	#Danger fraction at or below which nothing drains at all.
+	#This is the dimension-habitability control; healing is gated separately by
+	#regenSuppressionDanger. Raising it hands danger back.
+	#Range: 0.0 ~ 1.0
+	sustainableFraction = 0.0
+	#Seconds from full stamina to collapse at the hard stop, with no weights worn.
+	#Player-independent by construction: stats buy a higher gravity, not more seconds.
+	#Range: 1.0 ~ 600.0
+	enduranceSeconds = 6.0
+	#How sharply drain ramps above the sustainable line. Below 1.0 is concave, so low gravity
+	#already bites hard; 1.0 is linear; above 1.0 makes low danger nearly free instead.
+	#Range: 0.2 ~ 5.0
+	curveExponent = 0.5
+	#Drain multiplier while holding sneak. Deliberately not zero, because gravity boosts
+	#every TP source and a free rest would let the multiplier be farmed at no cost.
+	#Range: 0.0 ~ 1.0
+	restDrainFactor = 0.25
+	#Seconds from full health to zero at the hard stop, once stamina is exhausted.
+	#Range: 1.0 ~ 600.0
+	healthEnduranceSeconds = 18.0
+	#Health fraction at which the player is knocked down.
+	#0 disables knockdown entirely, draining straight to death with no rescue window.
+	#Range: 0.0 ~ 1.0
+	knockdownHealthPercent = 0.2
+	#Health drain multiplier while knocked down. Below 1.0 this buys time for someone to
+	#carry the player out or cut the machine.
+	#Range: 0.0 ~ 1.0
+	downedHealthDrainFactor = 0.3
+	#Danger above which regeneration and all healing stop.
+	#Separate from sustainableFraction on purpose: hostile dimensions should cost something
+	#while still being survivable.
+	#Range: 0.0 ~ 1.0
+	regenSuppressionDanger = 0.3
+	#Scale the drain by DragonMineZ's own weight-load table.
+	applyLoadMultiplier = true
+	#Off, gravity floors health at 1 HP instead of killing.
+	lethal = true
+	#Whether a Senzu Bean still restores stamina while you are straining under gravity.
+	#Everything else edible is suppressed either way, because ordinary food used to refill
+	#faster than gravity could drain and the escalation never ran.
+	senzuBypassesStrain = true
+
+[gravityMastery]
+	#Master toggle for Gravity Mastery: danger is driven by your learned mastery as a flat
+	#buffer instead of DragonMineZ's stat-derived resistance.
+	#An install created before this default changed keeps its stored value, because Forge
+	#adds missing keys but never rewrites one that already holds a value.
+	enabled = true
+	#Harshness of the danger curve. Sets where the shift-survivable edge sits for a given
+	#exponent; lower widens the survivable window.
+	#Range: 1.0E-4 ~ 100.0
+	dangerCoefficient = 0.0057
+	#How sharply danger climbs as gravity rises above your mastery.
+	#1.0 is linear; above 1.0 keeps the edge gentle while far-over turns lethal fast.
+	#Range: 0.2 ~ 5.0
+	dangerExponent = 1.8
+	#Drain-ramp exponent for the mastery model, separate from gravityStrain.curveExponent.
+	#1.0 is linear, which is already a genuine struggle because the buffer's range is large.
+	#Range: 0.2 ~ 5.0
+	masteryCurveExponent = 1.0
+	#Mastery a new character begins at, and the floor it never drops below.
+	#Must be at least 1 so the Overworld always sits at or below your mastery.
+	#Range: 1.0 ~ 1000000.0
+	startingMastery = 1.0
+	#Hard cap on mastery. Past this you cannot tolerate any more gravity.
+	#Range: 1.0 ~ 1000000.0
+	maxMastery = 1000.0
+	#Base pending-mastery accrual per second, scaled by how far over your mastery you are.
+	#Pending banks only after enduring endureBankSeconds continuously, and is lost entirely
+	#if you step to safety, log out, or die.
+	#Range: 0.0 ~ 100.0
+	gainRatePerSecond = 5.0E-4
+	#Shapes how accrual scales with how far over your mastery you are.
+	#Above 1.0 makes wide gaps accrue fast and the last of the gap a grind.
+	#Range: 0.2 ~ 5.0
+	gainCurveExponent = 2.0
+	#Seconds of continuous straining before pending mastery banks, after which the timer
+	#restarts. Brief in-and-out touches never reach it.
+	#Range: 1 ~ 3600
+	endureBankSeconds = 90
+	#Scales how much of your gravity buffer counts against DragonMineZ's movement penalties.
+	#At 1.0 the penalties vanish exactly when you have mastered the gravity.
+	#Range: 0.2 ~ 5.0
+	penaltyResistanceScale = 1.0
+	#Effective Strength needed per 1 G you shrug off, on top of your banked mastery.
+	#Only Strength counts, combined with your transformation multipliers, so which form you
+	#pick matters. 0 disables the Strength buffer entirely.
+	#Range: 0.0 ~ 100000.0
+	strengthPerResistance = 200.0
+	#Multiplies mastery accrual while you are transformed and still straining.
+	#A form that buffers you out of danger entirely earns nothing at all.
+	#Range: 0.0 ~ 5.0
+	transformedGainFactor = 0.5
+	#Off keeps DragonMineZ's temporary stat-based gravity TP bonus.
+	#On suppresses it and grants a permanent multiplier from your banked mastery instead,
+	#applying to every TP source wherever you are.
+	masteryTpReward = true
+	#The TP multiplier earned at full mastery, with masteryTpReward on.
+	#Values below 1.0 are treated as 1.0: this reward can never reduce a TP grant.
+	#Range: 1.0 ~ 10.0
+	maxTpMultiplier = 2.0
+	#The banked mastery that earns the full maxTpMultiplier, ramping linearly up to it.
+	#Deliberately lower than maxMastery: the band between them buys survivability only.
+	#Range: 1.0 ~ 100000.0
+	masteryForFullMultiplier = 500.0
+	#Replace DragonMineZ's Statistics Gravity row with the DMZ Plus readout, and fold the
+	#mastery TP multiplier into the TP Multiplier row and its tooltip.
+	#DMZ blanks the Gravity row whenever net gravity is zero, which is exactly when you have
+	#adapted to a heavy room. Read client-side, so it is a per-player display preference.
+	statsRowReadout = true
+
+[gravityDevice]
+	#A running gravity device is the source of truth for its sealed room: the room's gravity
+	#IS the device's setting, replacing the world's rather than adding to it.
+	#This cuts both ways, so a device set to 1 inside a heavy world becomes a shelter.
+	#The lighter-than-Earth footing half also needs the space module's gravity section on.
+	sourceOfTruth = true
+
+[rage]
+	#Master toggle for Rage: a party member killed near you spikes your Power Release past
+	#its normal ceiling, holds, then decays.
+	enabled = true
+	#Radius in blocks around the fallen party member within which party members enrage.
+	#Same dimension only. Sneaking members opt out. 0 turns rage off.
+	#Range: 0 ~ 256
+	radius = 32
+	#How far past your own Power Release ceiling rage takes you, as a multiplier of that cap.
+	#1.0 grants no release bonus but does NOT switch rage off: the charge and the Super
+	#Saiyan unlock still run. Use enabled or radius for that.
+	#Range: 1.0 ~ 3.0
+	multiplier = 1.2
+	#Seconds held at full rage before the decay starts.
+	#With 0 the peak lasts a single tick and you never fight at the raised number.
+	#Range: 0 ~ 300
+	holdSeconds = 15
+	#Seconds spent falling linearly from full rage back to where you started.
+	#0 snaps straight back when the hold ends.
+	#Range: 0 ~ 300
+	decaySeconds = 10
+	#Per-player cooldown between rages, in seconds, measured from the moment rage starts.
+	#Force-raised at load if it would not outlast the hold plus the decay, since below that
+	#a second death re-triggers mid-rage. A warning is logged when that clamp bites.
+	#Range: 0 ~ 3600
+	cooldownSeconds = 300
+	#Require that something actually killed the party member, so lava, the void, fall damage
+	#and /kill grant nobody rage. Off re-opens that as a farm.
+	#A killer inside the victim's own party never grants rage either way.
+	requireHostileKiller = true
+
+	[rage.charge]
+		#Force-charge the player when rage begins: aura, ki gain and a movement lock, each
+		#switchable below. This is the wind-up the Super Saiyan unlock lands at the end of.
+		enabled = true
+		#How long the forced charge lasts, in seconds.
+		#The Super Saiyan unlock resolves when it finishes, so 0 makes that unlock instant.
+		#Range: 0 ~ 60
+		seconds = 3
+		#Light up the player's aura for the duration.
+		#Not purely cosmetic: DragonMineZ grants a movement speed bonus while any aura is up.
+		showAura = true
+		#Actually gain ki during the charge, at DragonMineZ's own charging rate.
+		gainKi = true
+		#Root the player in place for the duration, like a real power-up.
+		#Note this takes control away involuntarily, in a fight, right after an ally died.
+		lockMovement = true
+
+	[rage.unlock]
+		#Let a sufficiently powerful rage unlock Super Saiyan for a Saiyan who has not got it yet.
+		enabled = true
+		#Which number the unlock threshold is compared against:
+		#BATTLE_POWER, LEVEL or TOTAL_STATS.
+		#An unrecognised value falls back to BATTLE_POWER with a warning.
+		metric = "BATTLE_POWER"
+		#The value of the chosen metric at or above which a rage unlocks Super Saiyan.
+		#Range: 0.0 ~ 1.0E9
+		threshold = 650.0
+		#Fraction of max ki restored when the unlock fires, floored at 0.10 however low
+		#you set it. A transformation needs ki to sustain, so an unlock at empty ki
+		#would drop straight back out of the form.
+		#Range: 0.0 ~ 1.0
+		restoreKiFraction = 0.3
+		#Fraction of max health restored when the unlock fires.
+		#Range: 0.0 ~ 1.0
+		restoreHealthFraction = 0.3
+

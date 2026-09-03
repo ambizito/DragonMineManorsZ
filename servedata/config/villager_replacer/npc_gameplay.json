@@ -1,0 +1,11 @@
+{
+  "allowNpcGriefing": false,
+  "allowNpcKiDestruction": false,
+  "restorePlayerBuiltBlocks": false,
+  "enableVillagerExpansionDragonBalls": true,
+  "npcPowerScale": 1.0,
+  "npcStatScale": 1.0,
+  "npcRandomScaleMin": 0.8,
+  "npcRandomScaleMax": 1.2,
+  "notorietyDurationTicks": 36000
+}

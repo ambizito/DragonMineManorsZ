@@ -1,0 +1,33 @@
+{
+  "_comments": {
+    "activationHealthThreshold": "HP ratio where Zenkai tracking starts. 0.25 \u003d 25% HP or lower.",
+    "maxStacks": "Maximum stacks gained from normal near-death damage.",
+    "deathPreventionMaxStacks": "Maximum stacks when lethal damage is survived by death prevention.",
+    "statBonusPerStack": "Flat stat gain ratio per stack. 0.005 \u003d +0.5% of the current raw stat per stack.",
+    "cooldownSeconds": "Cooldown after a Zenkai is awarded.",
+    "zenkaiDecayPerUse": "Each successful Zenkai loses this ratio of its boost per previous Zenkai. 0.02 \u003d 2% less per use.",
+    "friendlyFistStackMultiplier": "Stack multiplier when damage came from a player with Friendly Fist active.",
+    "shadowDummyGiveZenkai": "Whether damage caused by a DragonMineZ Shadow Dummy can contribute to Zenkai.",
+    "shadowDummyFriendlyFist": "When Shadow Dummy Zenkai is enabled, treats its damage like Friendly Fist damage and applies friendlyFistStackMultiplier.",
+    "maxBonusBaseStatRatio": "Maximum permanent Zenkai bonus per stat compared to the player\u0027s base stat before decay scaling. 1.0 with zenkaiDecayPerUse 0.02 allows up to 50x base stat total; 0 decay removes this cap.",
+    "boostedStats": "DMZ stats affected by Zenkai permanent bonuses. RES is split into equal DEF and STM bonuses."
+  },
+  "activationHealthThreshold": 0.25,
+  "maxStacks": 24,
+  "deathPreventionMaxStacks": 48,
+  "statBonusPerStack": 0.005,
+  "cooldownSeconds": 900,
+  "zenkaiDecayPerUse": 0.02,
+  "friendlyFistStackMultiplier": 0.5,
+  "shadowDummyGiveZenkai": false,
+  "shadowDummyFriendlyFist": true,
+  "maxBonusBaseStatRatio": 1.0,
+  "boostedStats": [
+    "STR",
+    "SKP",
+    "RES",
+    "VIT",
+    "PWR",
+    "ENE"
+  ]
+}

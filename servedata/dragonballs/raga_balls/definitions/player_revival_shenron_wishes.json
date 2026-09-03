@@ -1,0 +1,10 @@
+{
+  "dragon":"player_revival_shenron",
+  "wishes":[
+    {"type":"command","commands":["raga beginrevive %player%"],"description":"Revive any named living NPC or player waiting in Heaven or Otherworld.","name":"Revive NPC or Player"},
+    {"type":"tps","amount":5000,"description":"Receive training points.","name":"Training Points"},
+    {"type":"command","commands":["raga grantstats %player%"],"description":"Increase your core stats.","name":"Grant Stats"},
+    {"type":"recustomize","description":"Change race without deleting current stats.","name":"Change Race"},
+    {"type":"command","commands":["data modify entity %player% ForgeData.RagaFormWish set value 1b"],"description":"Unlock a selected form.","name":"Unlock Form"}
+  ]
+}

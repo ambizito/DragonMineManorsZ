@@ -1,0 +1,11 @@
+{
+  "enable": true,
+  "adaptativeMitigationParityRatio": 1.0,
+  "adaptativeMitigationParityValue": 0.6,
+  "adaptativeMitigationZeroRatio": 6.0,
+  "adaptativeDefenseMitigationCap": 0.8,
+  "cancelDamageMitigationThreshold": 20.0,
+  "adaptiveDefenseCapRatio": 4.0,
+  "adaptiveDefenseKiAttackEfficiency": 1.0,
+  "adaptiveDefenseStrikeAttackEfficiency": 1.0
+}

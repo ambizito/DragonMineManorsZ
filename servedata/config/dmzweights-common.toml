@@ -1,0 +1,11 @@
+
+[training]
+	#Peak TP multiplier when weight is optimal for your level.
+	#Range: 1.0 ~ 100.0
+	tpMultiplierPeak = 3.0
+	#Maximum TP that can be gained per combat hit.
+	#If -1, there is no limit.
+	#If the value is less than the base tpPerHit from DMZ config, the limit will be tpPerHit.
+	#Range: > -1
+	maxTpPerHit = -1
+

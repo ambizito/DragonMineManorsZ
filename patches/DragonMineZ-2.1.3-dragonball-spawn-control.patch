@@ -1,0 +1,152 @@
+diff --git a/src/main/java/com/dragonminez/common/dragonball/DragonBallPackManager.java b/src/main/java/com/dragonminez/common/dragonball/DragonBallPackManager.java
+index 6e96b3e2..d0047da0 100644
+--- a/src/main/java/com/dragonminez/common/dragonball/DragonBallPackManager.java
++++ b/src/main/java/com/dragonminez/common/dragonball/DragonBallPackManager.java
+@@ -135,7 +135,7 @@ public final class DragonBallPackManager {
+ 	}
+ 
+ 	private static final Set<String> BALLSET_KEYS = Set.of("id", "dimensions", "copies", "spawn_range",
+-			"summon_radius", "blocks", "asset_definition", "display_name");
++			"spawn_enabled", "natural_spawn", "summon_radius", "blocks", "asset_definition", "display_name");
+ 	private static final Set<String> RADAR_KEYS = Set.of("id", "item_registry_name", "dimensions", "ball_set",
+ 			"tooltip_key", "ranges", "recipe_definition", "asset_definition", "chip_item", "cpu_item",
+ 			"chip_model_item", "cpu_model_item", "display_name");
+diff --git a/src/main/java/com/dragonminez/common/dragonball/DragonBallSetDefinition.java b/src/main/java/com/dragonminez/common/dragonball/DragonBallSetDefinition.java
+index 0c4d0dd1..42033bd8 100644
+--- a/src/main/java/com/dragonminez/common/dragonball/DragonBallSetDefinition.java
++++ b/src/main/java/com/dragonminez/common/dragonball/DragonBallSetDefinition.java
+@@ -23,6 +23,7 @@ public class DragonBallSetDefinition {
+ 	private final Set<ResourceLocation> validDimensions;
+ 	private final IntSupplier copiesSupplier;
+ 	private final IntSupplier spawnRangeSupplier;
++	private final boolean spawnEnabled;
+ 	private final int summonRadius;
+ 	private final Map<Integer, String> blockRegistryNamesByStar;
+ 	private final String assetDefinitionId;
+@@ -35,7 +36,7 @@ public class DragonBallSetDefinition {
+ 			IntSupplier spawnRangeSupplier,
+ 			int summonRadius,
+ 			Map<Integer, String> blockRegistryNamesByStar) {
+-		this(id, validDimensions, copiesSupplier, spawnRangeSupplier, summonRadius, blockRegistryNamesByStar, null, null);
++		this(id, validDimensions, copiesSupplier, spawnRangeSupplier, summonRadius, blockRegistryNamesByStar, null, null, true);
+ 	}
+ 
+ 	public DragonBallSetDefinition(String id,
+@@ -46,10 +47,24 @@ public class DragonBallSetDefinition {
+ 			Map<Integer, String> blockRegistryNamesByStar,
+ 			String assetDefinitionId,
+ 			String displayName) {
++		this(id, validDimensions, copiesSupplier, spawnRangeSupplier, summonRadius, blockRegistryNamesByStar,
++				assetDefinitionId, displayName, true);
++	}
++
++	public DragonBallSetDefinition(String id,
++			Set<ResourceLocation> validDimensions,
++			IntSupplier copiesSupplier,
++			IntSupplier spawnRangeSupplier,
++			int summonRadius,
++			Map<Integer, String> blockRegistryNamesByStar,
++			String assetDefinitionId,
++			String displayName,
++			boolean spawnEnabled) {
+ 		this.id = id;
+ 		this.validDimensions = Set.copyOf(validDimensions);
+ 		this.copiesSupplier = copiesSupplier;
+ 		this.spawnRangeSupplier = spawnRangeSupplier;
++		this.spawnEnabled = spawnEnabled;
+ 		this.summonRadius = summonRadius;
+ 		this.blockRegistryNamesByStar = Map.copyOf(blockRegistryNamesByStar);
+ 		this.assetDefinitionId = assetDefinitionId == null || assetDefinitionId.isBlank() ? null : assetDefinitionId;
+@@ -61,6 +76,7 @@ public class DragonBallSetDefinition {
+ 	public boolean supportsDimension(ResourceKey<Level> dimension) { return validDimensions.contains(dimension.location()); }
+ 	public int getCopies() { return Math.max(1, copiesSupplier.getAsInt()); }
+ 	public int getSpawnRange() { return Math.max(1, spawnRangeSupplier.getAsInt()); }
++	public boolean isSpawnEnabled() { return spawnEnabled; }
+ 	public int getSummonRadius() { return summonRadius; }
+ 	public Map<Integer, String> getBlockRegistryNamesByStar() { return Collections.unmodifiableMap(blockRegistryNamesByStar); }
+ 	public Set<Integer> getStars() { return Collections.unmodifiableSet(new LinkedHashSet<>(blockRegistryNamesByStar.keySet())); }
+@@ -86,6 +102,7 @@ public class DragonBallSetDefinition {
+ 		root.add("dimensions", dimensions);
+ 		root.addProperty("copies", getCopies());
+ 		root.addProperty("spawn_range", getSpawnRange());
++		root.addProperty("spawn_enabled", spawnEnabled);
+ 		root.addProperty("summon_radius", summonRadius);
+ 		if (assetDefinitionId != null) root.addProperty("asset_definition", assetDefinitionId);
+ 		if (displayName != null) root.addProperty("display_name", displayName);
+@@ -102,12 +119,15 @@ public class DragonBallSetDefinition {
+ 		for (JsonElement element : root.getAsJsonArray("dimensions")) dimensions.add(ResourceLocation.parse(element.getAsString()));
+ 		int copies = root.has("copies") ? root.get("copies").getAsInt() : 5;
+ 		int spawnRange = root.get("spawn_range").getAsInt();
++		boolean spawnEnabled = !root.has("spawn_enabled") || root.get("spawn_enabled").getAsBoolean();
++		if (root.has("natural_spawn")) spawnEnabled &= root.get("natural_spawn").getAsBoolean();
+ 		int summonRadius = root.get("summon_radius").getAsInt();
+ 		Map<Integer, String> blockRegistryNamesByStar = new LinkedHashMap<>();
+ 		JsonObject blocks = root.getAsJsonObject("blocks");
+ 		for (String key : blocks.keySet()) blockRegistryNamesByStar.put(Integer.parseInt(key), blocks.get(key).getAsString());
+ 		String assetDefinitionId = root.has("asset_definition") ? root.get("asset_definition").getAsString() : null;
+ 		String displayName = root.has("display_name") ? root.get("display_name").getAsString() : null;
+-		return new DragonBallSetDefinition(id, dimensions, () -> copies, () -> spawnRange, summonRadius, blockRegistryNamesByStar, assetDefinitionId, displayName);
++		return new DragonBallSetDefinition(id, dimensions, () -> copies, () -> spawnRange, summonRadius,
++				blockRegistryNamesByStar, assetDefinitionId, displayName, spawnEnabled);
+ 	}
+ }
+diff --git a/src/main/java/com/dragonminez/common/events/ForgeCommonEvents.java b/src/main/java/com/dragonminez/common/events/ForgeCommonEvents.java
+index 4e7cc55f..23cb838f 100644
+--- a/src/main/java/com/dragonminez/common/events/ForgeCommonEvents.java
++++ b/src/main/java/com/dragonminez/common/events/ForgeCommonEvents.java
+@@ -467,6 +467,10 @@ public class ForgeCommonEvents {
+ 
+ 		if (ConfigManager.getServerConfig().getWorldGen().getGenerateDragonBalls()) {
+ 			for (var definition : DragonBallDefinitions.getBallSets()) {
++				if (!definition.isSpawnEnabled()) {
++					LogUtil.info(Env.COMMON, "Natural Dragon Balls spawn disabled for set: " + definition.getId());
++					continue;
++				}
+ 				ServerLevel targetLevel = event.getServer().getLevel(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.DIMENSION, definition.getValidDimensions().iterator().next()));
+ 				if (targetLevel == null) continue;
+ 				DragonBallSavedData data = DragonBallSavedData.get(targetLevel);
+diff --git a/src/main/java/com/dragonminez/server/events/DragonBallsHandler.java b/src/main/java/com/dragonminez/server/events/DragonBallsHandler.java
+index e5738307..57275de4 100644
+--- a/src/main/java/com/dragonminez/server/events/DragonBallsHandler.java
++++ b/src/main/java/com/dragonminez/server/events/DragonBallsHandler.java
+@@ -40,7 +40,7 @@ public class DragonBallsHandler {
+ 
+ 	public static void scatterDragonBalls(ServerLevel level, String setId) {
+ 		DragonBallSetDefinition definition = DragonBallDefinitions.getBallSet(setId);
+-		if (definition == null || !definition.supportsDimension(level.dimension())) return;
++		if (definition == null || !definition.isSpawnEnabled() || !definition.supportsDimension(level.dimension())) return;
+ 
+ 		DragonBallSavedData data = DragonBallSavedData.get(level);
+ 		Random random = new Random();
+@@ -97,6 +97,7 @@ public class DragonBallsHandler {
+ 		ChunkPos chunkPos = event.getChunk().getPos();
+ 
+ 		for (DragonBallSetDefinition definition : DragonBallDefinitions.getBallSetsForDimension(level.dimension())) {
++			if (!definition.isSpawnEnabled()) continue;
+ 			Map<Integer, List<BlockPos>> pending = data.getPendingBalls(definition.getId());
+ 			pending.forEach((star, targets) -> {
+ 				for (BlockPos target : new ArrayList<>(targets)) {
+@@ -134,6 +135,7 @@ public class DragonBallsHandler {
+ 		if (players.isEmpty()) return;
+ 		DragonBallSavedData data = DragonBallSavedData.get(level);
+ 		for (DragonBallSetDefinition definition : DragonBallDefinitions.getBallSetsForDimension(level.dimension())) {
++			if (!definition.isSpawnEnabled()) continue;
+ 			Map<Integer, List<BlockPos>> pending = data.getPendingBalls(definition.getId());
+ 			pending.forEach((star, targets) -> {
+ 				for (BlockPos target : new ArrayList<>(targets)) {
+@@ -154,6 +156,7 @@ public class DragonBallsHandler {
+ 	private static void rescanPendingBalls(ServerLevel level) {
+ 		DragonBallSavedData data = DragonBallSavedData.get(level);
+ 		for (DragonBallSetDefinition definition : DragonBallDefinitions.getBallSetsForDimension(level.dimension())) {
++			if (!definition.isSpawnEnabled()) continue;
+ 			Map<Integer, List<BlockPos>> pending = data.getPendingBalls(definition.getId());
+ 			pending.forEach((star, targets) -> {
+ 				for (BlockPos target : new ArrayList<>(targets)) {
+@@ -191,6 +194,7 @@ public class DragonBallsHandler {
+ 	}
+ 
+ 	private static void generateBallSafely(ServerLevel level, DragonBallSetDefinition definition, int star, BlockPos targetXZ) {
++		if (!definition.isSpawnEnabled()) return;
+ 		DragonBallSavedData data = DragonBallSavedData.get(level);
+ 		List<BlockPos> pendingForStar = data.getPendingBalls(definition.getId()).get(star);
+ 		if (pendingForStar == null || !pendingForStar.contains(targetXZ)) return;

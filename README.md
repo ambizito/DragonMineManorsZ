@@ -14,12 +14,19 @@ transformações foram ajustados para um grupo pequeno de amigos.
 - `patches/DragonMineZ-2.1.3-kaioken-prerequisites.patch`: código-fonte completo
   dos pré-requisitos sequenciais do Kaioken e do aviso que informa qual forma
   anterior ainda precisa ser dominada.
+- `patches/DragonMineZ-2.1.3-dragonball-spawn-control.patch`: adiciona suporte
+  aos campos `spawn_enabled` e `natural_spawn` das definições externas de
+  Esferas do Dragão, permitindo desativar a geração natural de um conjunto.
+- `servedata/`: pacote completo de servidor para Minecraft 1.20.1 e Forge
+  47.4.10, pronto para envio à raiz do servidor na EnxadaHost.
+- `DragonMineManorsZ-server-1.20.1-forge-47.4.10.zip`: o mesmo pacote já
+  compactado, com as pastas posicionadas diretamente na raiz do arquivo.
 - `docs/`: especificação dos campos, justificativas e comparação com o original.
 
 Todos os arquivos modificados do DragonMineZ estão representados integralmente
-nesses dois patches. Eles incluem `Character.java`, `SaiyanGlobalMastery.java`,
+nesses três patches. Eles incluem `Character.java`, `SaiyanGlobalMastery.java`,
 `MasteryCommand.java`, `DefaultFormsFactory.java`, `TransformationsHelper.java`,
-`ClientStatsEvents.java` e os recursos de idioma alterados/adicionados. As
+`ClientStatsEvents.java`, as classes de Esferas do Dragão e os recursos de idioma alterados/adicionados. As
 configurações finais do modpack ficam versionadas separadamente em `config/`.
 
 Os patches devem ser aplicados ao repositório oficial
@@ -29,6 +36,7 @@ Os patches devem ser aplicados ao repositório oficial
 ```powershell
 git apply DragonMineZ-2.1.3-global-mastery.patch
 git apply DragonMineZ-2.1.3-kaioken-prerequisites.patch
+git apply DragonMineZ-2.1.3-dragonball-spawn-control.patch
 ```
 
 ## Instalação

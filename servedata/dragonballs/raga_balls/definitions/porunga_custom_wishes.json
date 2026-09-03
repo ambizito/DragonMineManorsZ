@@ -1,0 +1,6 @@
+{
+  "dragon":"porunga",
+  "wishes":[
+    {"type":"command","commands":["raga beginrevive %player%"],"description":"Type a name to revive one living soul, or Everyone to return every living NPC and player from Heaven or Otherworld.","name":"Revive One or Everyone"}
+  ]
+}

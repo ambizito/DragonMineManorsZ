@@ -1,0 +1,57 @@
+# DragonMineManorsZ - configuracao ativa do FTB Essentials
+# Mantenha este arquivo sincronizado com defaultconfigs/ftbessentials-server.snbt.
+
+{
+	teleportation: {
+		back: {
+			enabled: true
+			cooldown: 30
+			warmup: 3
+			max: 10
+			only_on_death: false
+		}
+		blacklists: {
+			from: [ ]
+			to: [ ]
+		}
+		home: {
+			enabled: true
+			cooldown: 10
+			warmup: 3
+			max: 3
+		}
+		playerspawn: {
+			enabled: true
+			cooldown: 10
+			warmup: 3
+		}
+		rtp: {
+			enabled: true
+			cooldown: 600
+			warmup: 5
+			dimension_blacklist: [ ]
+			dimension_whitelist: ["minecraft:overworld"]
+			min_distance: 1000
+			max_distance: 15000
+			max_tries: 100
+		}
+		spawn: {
+			enabled: true
+			cooldown: 10
+			warmup: 3
+		}
+		tpa: {
+			enabled: true
+			cooldown: 10
+			warmup: 3
+		}
+		jump: { enabled: true }
+		tpl: { enabled: true }
+		tpx: { enabled: true }
+		warp: {
+			enabled: true
+			cooldown: 10
+			warmup: 3
+		}
+	}
+}

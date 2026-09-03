@@ -1,0 +1,10 @@
+{
+  "configVersion": 3,
+  "enabled": true,
+  "noPenaltyIdealWeightMulti": 0.01,
+  "penaltyMinimum": 0.005,
+  "penaltyIdealLow": 0.3,
+  "penaltyIdealHigh": 0.5,
+  "penaltyOverloaded": 0.9,
+  "flightPenaltyMultiplier": 0.5
+}
