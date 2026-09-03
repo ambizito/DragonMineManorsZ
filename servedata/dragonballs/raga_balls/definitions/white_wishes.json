@@ -1,0 +1,9 @@
+{
+  "dragon": "white_shenron",
+  "wishes": [
+    {"type":"command","commands":["raga beginrevive %player%"],"description":"Revive any named living NPC or player waiting in Heaven or Otherworld.","name":"Revive NPC or Player"},
+    {"type":"tps","amount":5000,"description":"A stable training-point wish.","name":"Training Points"},
+    {"type":"command","commands":["raga grantstats %player%"],"description":"A reduced stable power wish.","name":"Grant Stats"},
+    {"type":"recustomize","description":"Change race without deleting current stats.","name":"Change Race"}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id":"player_revival_porunga", "entity_registry_name":"player_revival_porunga",
+  "entity_width":1.2, "entity_height":2.2, "ball_set":"raga",
+  "dimensions":["minecraft:overworld","minecraft:the_nether","minecraft:the_end"],
+  "wish_screen_id":"porunga", "wish_count":7,
+  "asset_definition":"player_revival_porunga_assets"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "raga_ballset",
+  "flat_texture_prefix": "villager_replacer:block/custom/raga_ball_",
+  "inventory_texture_format": "villager_replacer:item/raga_ball_%d",
+  "geo_model": "villager_replacer:geo/block/raga_ball_player.geo.json",
+  "animation": "villager_replacer:animations/block/raga_ball_hover.animation.json",
+  "geo_texture_prefix": "villager_replacer:textures/block/custom/raga_ball_"
+}

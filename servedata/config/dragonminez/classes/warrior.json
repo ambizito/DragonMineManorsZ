@@ -1,0 +1,40 @@
+{
+  "baseStats": {
+    "STR": 6,
+    "SKP": 3,
+    "RES": 2,
+    "VIT": 1,
+    "PWR": 1,
+    "ENE": 0
+  },
+  "statScaling": {
+    "STR_scaling": 1.0,
+    "SKP_scaling": 0.7,
+    "STM_scaling": 0.6,
+    "DEF_scaling": 0.4,
+    "VIT_scaling": 0.6,
+    "PWR_scaling": 0.3,
+    "ENE_scaling": 1.0
+  },
+  "baseHp5": 0.0,
+  "hp5VitScaling": 0.0,
+  "baseEp5": 0.0,
+  "ep5EneScaling": 0.0,
+  "baseSp5": 0.0,
+  "sp5StmScaling": 0.0,
+  "tpCostMultiplier": 0.0,
+  "tpGainMultiplier": 0.0,
+  "passive": {
+    "enabled": true,
+    "values": {
+      "maxStacks": 10.0,
+      "defensePenetrationPerStack": 0.01,
+      "stackDurationTicks": 100.0,
+      "staminaRegenPerStack": 0.05
+    }
+  },
+  "configVersion": "2.1.3",
+  "displayName": "Warrior",
+  "displayColor": "#FF5555",
+  "exclusiveRaces": []
+}

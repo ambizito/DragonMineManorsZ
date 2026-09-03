@@ -1,0 +1,477 @@
+{
+  "packName": "DragonMineManorsZ Server",
+  "minecraftVersion": "1.20.1",
+  "forgeVersion": "47.4.10",
+  "javaVersion": 17,
+  "generatedAt": "2026-09-03T10:43:42.0501615-03:00",
+  "modCount": 89,
+  "totalModBytes": 437525169,
+  "dragonMineZSourceCommit": "3c58ae869788a37fb42d0ed47a5494724a07735a",
+  "mods": [
+    {
+      "file": "[1.20.1] SecurityCraft v1.10.2.1.jar",
+      "bytes": 4995865,
+      "sha256": "F7C637B291CCCD2C4A4F94048A6D08A48065C0618FEC03043D6F9E15AF27948A"
+    },
+    {
+      "file": "ad_astra-forge-1.20.1-1.15.20.jar",
+      "bytes": 7508861,
+      "sha256": "99E274894AF7C3B01622A74775A9960B5857B35951888414E733F8C2EC683F26"
+    },
+    {
+      "file": "alexsmobs-1.22.9.jar",
+      "bytes": 26350793,
+      "sha256": "16BC5BCC19DB9029C24F951346EC71098E6F5B0AFEF96E61894A2E9407AAD37C"
+    },
+    {
+      "file": "Apotheosis-1.20.1-7.4.8.jar",
+      "bytes": 2803994,
+      "sha256": "5ED8C17CF62837BB649D1054E3E4FE93C4D9BDEC98FE9F332E2637A260DA30DA"
+    },
+    {
+      "file": "ApothicAttributes-1.20.1-1.3.7.jar",
+      "bytes": 227511,
+      "sha256": "68487B11C0D4E2F67A85F2B04BF65E99AC15294F2923F4391F83E9542293187A"
+    },
+    {
+      "file": "apothicdmz-1.0.3.jar",
+      "bytes": 63349,
+      "sha256": "6C8266972E218CABAA7FBC91DD3EE7FACA5F97611763F1AAF30A89AF21E7EF65"
+    },
+    {
+      "file": "architectury-9.2.14-forge.jar",
+      "bytes": 580602,
+      "sha256": "218B471D0B8A1F6CDA14CFC1BEB9EEB0DF54304500ACC6C5613D9B88EC65D9AF"
+    },
+    {
+      "file": "baguettelib-1.20.1-Forge-2.0.5.jar",
+      "bytes": 63106,
+      "sha256": "97646CB92D00B6A8027FFAB845E2B71BF42FBF7BE19FEABE8AB8AA8DDD5A9652"
+    },
+    {
+      "file": "balm-forge-1.20.1-7.3.42.jar",
+      "bytes": 561670,
+      "sha256": "1ABE13B5DE575AF91EBC073B19E4E2CFEDBE795B15F406E9516ED52CBD2DE3A6"
+    },
+    {
+      "file": "Bookshelf-Forge-1.20.1-20.2.15.jar",
+      "bytes": 343925,
+      "sha256": "7980D4A0BEED1DCD2C283CF65F3C93F6B0085833F3AC490014979C95F1DFAF67"
+    },
+    {
+      "file": "botarium-forge-1.20.1-2.3.4.jar",
+      "bytes": 157633,
+      "sha256": "470810A364FF4AD4D4FCD4E55798263938FC893970EACECC58E8B741A392B1CF"
+    },
+    {
+      "file": "Capsule-1.20.1-8.0.105.jar",
+      "bytes": 359537,
+      "sha256": "64C979CC5BE4E4AB07EC49AD01E5FCFE362FF5A7B47DA60F8AB22467D64783D5"
+    },
+    {
+      "file": "cataclysmfortresses-1.20.1-Forge.jar",
+      "bytes": 19871,
+      "sha256": "92D6CC2811D51F375E4F751928145EDC35222AD6833A3C49E5A9923A4E5CF79A"
+    },
+    {
+      "file": "citadel-2.6.3-1.20.1.jar",
+      "bytes": 3185275,
+      "sha256": "56C7AB87348A5292583AAC787B6CF11B5193E77F02AF1D17EA75A96F8640B3CE"
+    },
+    {
+      "file": "Clumps-forge-1.20.1-12.0.0.4.jar",
+      "bytes": 20299,
+      "sha256": "1D1CFCF386F182B1D0BDBE4BD4FC57B96234E8C7468E95E1575AD4DD6433243A"
+    },
+    {
+      "file": "corpse-forge-1.20.1-1.0.23.jar",
+      "bytes": 245644,
+      "sha256": "8D77C5FC8DC981C750A8E66D4665F055457F748F0CE49A303D9BC50347BDBF7C"
+    },
+    {
+      "file": "corpsecurioscompat-1.20.1-Forge-3.1.3.jar",
+      "bytes": 23655,
+      "sha256": "FD2CB6CF0DC5B66316C265E54E9681883F33D52427E04ADED9BF4EF6C20B9FA3"
+    },
+    {
+      "file": "create-1.20.1-6.0.8.jar",
+      "bytes": 19170905,
+      "sha256": "6FBB910C367DBCE8E4FC7E5BF64B6EDD4DE980906ED00AF8E47E4AF843C0D9B0"
+    },
+    {
+      "file": "creatingspace-1.20.1-1.7.21.jar",
+      "bytes": 2423372,
+      "sha256": "1E2F527976CBAC9E965ADACA6DBC75790341F21DCDF087205748BCC55003E466"
+    },
+    {
+      "file": "curios-forge-5.14.1+1.20.1.jar",
+      "bytes": 398066,
+      "sha256": "1E817919A35B37CF30524AAEC73F0CA5130452F23F168F844854DF282EB8E51F"
+    },
+    {
+      "file": "dmzenchants-1.5.jar",
+      "bytes": 13300,
+      "sha256": "5BDD2AA266F594C69888661641C5F62D5CDA61ABA7C3A8A556810BFA0D16F156"
+    },
+    {
+      "file": "dmzplus-1.1.6.jar",
+      "bytes": 7101304,
+      "sha256": "3DAFC106DC01214D4D6415019A0CDF9EE5CAF58B779D6F4B221BFC1D79287EC7"
+    },
+    {
+      "file": "dmzrevamp-2.0.5.jar",
+      "bytes": 1303857,
+      "sha256": "68B02F3BF7B5FC7C6D0052014DEB045AB69FF18FF8268E0C20343F26AE25D7FC"
+    },
+    {
+      "file": "dmzsparking-1.3.3.jar",
+      "bytes": 47444260,
+      "sha256": "E55783CDBE2BF055604242B441A281FF87C16842EB49AD8385D0687C0588854E"
+    },
+    {
+      "file": "dmzweaponguard-1.0.jar",
+      "bytes": 7999,
+      "sha256": "49CFDE33794104360A53FC1E3936152E5590DA2F171317A8FEC442AFE9E80066"
+    },
+    {
+      "file": "dragonminez-2.1.3.jar",
+      "bytes": 61843330,
+      "sha256": "7CA045159B980C1C9A3A516CFF619C0DD447D6EF5E50DDF4044CCE4F7DF778CD"
+    },
+    {
+      "file": "dragonseeker-1.2.0-1.20.1.jar",
+      "bytes": 45639,
+      "sha256": "F26334D13614657A7DCB33BEA56E8A9F5C90CF585C8000EC66E15C86DD699D02"
+    },
+    {
+      "file": "dummmmmmy-1.20-2.0.12-forge.jar",
+      "bytes": 839685,
+      "sha256": "BD7F168EC56F14A25D36D9D0DC4D281E88F77B1BA678907B5C570E5C051A5CA4"
+    },
+    {
+      "file": "etstlib-3.0.0-beta.20.jar",
+      "bytes": 364843,
+      "sha256": "3BAFC16FBDFE870CA9423AA93273DC008A622B8074E429E112BCF005A5C3E95C"
+    },
+    {
+      "file": "Evolved Mekanism-1.20.1-1.2.1-fix4.jar",
+      "bytes": 2796591,
+      "sha256": "D2B26662A9E5B909CE24E02CB893AEEB758971E12F0678FAD4C14617F9CCDEAF"
+    },
+    {
+      "file": "Explorify v1.6.5.mod.jar",
+      "bytes": 767884,
+      "sha256": "2DC76398B48B2AAE9B4024642DA098B0880125572DE160CB5ECF91D102890CAD"
+    },
+    {
+      "file": "FarmersDelight-1.20.1-1.3.4.jar",
+      "bytes": 3311051,
+      "sha256": "34F03EB671EA1CA579B00C98E4541404CB96D1A292014AED9CC5EB45AD8AFBCE"
+    },
+    {
+      "file": "ftb-chunks-forge-2001.3.8.jar",
+      "bytes": 1159043,
+      "sha256": "783F7AA42089B6F72500801284796F7CC8EB641ECDDCF76F65BF586C017EFB02"
+    },
+    {
+      "file": "ftb-essentials-forge-2001.2.4.jar",
+      "bytes": 157732,
+      "sha256": "E0022BFE29DC10E373947701DAE1BC4CE75EE15FE21F6D89269677FBB9AEBF73"
+    },
+    {
+      "file": "ftb-library-forge-2001.2.13.jar",
+      "bytes": 780558,
+      "sha256": "41810281B65336265CAE2C88412022D02F2F0A3F28C66A06173D86F98ACF14A7"
+    },
+    {
+      "file": "ftb-teams-forge-2001.3.2.jar",
+      "bytes": 252579,
+      "sha256": "B1CB4D82EA9F137A87E12A7AAF3329619294B56F7D70337DFD557A76E10B6E07"
+    },
+    {
+      "file": "geckolib-forge-1.20.1-4.8.4.jar",
+      "bytes": 1038209,
+      "sha256": "C04ABBA4FD354DD8C0E8A732F1F05F4DCA893D2E1D962B2AB128BBD411478747"
+    },
+    {
+      "file": "GlitchCore-forge-1.20.1-0.0.1.1.jar",
+      "bytes": 87550,
+      "sha256": "E42A8B513DA08A910C133CAEAFAD9FC2FCC22FDAAA2EB3E2516E9112A5A0DB61"
+    },
+    {
+      "file": "iceandfire-2.1.13-1.20.1-beta-5.jar",
+      "bytes": 21854126,
+      "sha256": "2B80245FC9B7D6FDC61D71F9892F4C6114EB7F303F65634845AAAB25F84D1E82"
+    },
+    {
+      "file": "Iceberg-1.20.1-forge-1.1.25.jar",
+      "bytes": 134551,
+      "sha256": "91AD6B459E0C7A16A9F3DC90230248A696600CEEC6646AA23263559B8648DBC3"
+    },
+    {
+      "file": "Iglee's Library-1.20.1-1.2.7.jar",
+      "bytes": 238626,
+      "sha256": "490B53466944C46A49FCE89BF3D190BA9D4CBB2F634B3CDFDDB0FAEB6AA5F4B5"
+    },
+    {
+      "file": "Jade-1.20.1-Forge-11.13.3.jar",
+      "bytes": 553487,
+      "sha256": "A632C77975E5AEDFF6322B0072F8B0DB3F5D4BF914DF6BDCC87D1AEA4D5F55F4"
+    },
+    {
+      "file": "JsonThings-1.20.1-0.9.13.jar",
+      "bytes": 528983,
+      "sha256": "FED77277BC5ACB79C9B3DC72B5D4FAE2CEA654CB71605FD7910118A750DA0E3C"
+    },
+    {
+      "file": "L_Enders_Cataclysm-3.31.jar",
+      "bytes": 73916104,
+      "sha256": "C29DCF940168208517B72F2D9965828B106A6B94CBEA55D5001558C69A27B362"
+    },
+    {
+      "file": "lionfishapi-3.0.jar",
+      "bytes": 101931,
+      "sha256": "D2FDAF7E9BC53FDE7DA4A86AB17018A3ED6C16FC2D46DE5054E5A83E2BEF7871"
+    },
+    {
+      "file": "majrusz-library-forge-1.20.1-7.0.8.jar",
+      "bytes": 437340,
+      "sha256": "4D58FC2DB26343D6B163DBB8F8C98E554ADA6FFFB634B9896C2D274629090548"
+    },
+    {
+      "file": "majruszs-difficulty-forge-1.20.1-1.9.10.jar",
+      "bytes": 777242,
+      "sha256": "3A47DEE789E49050E2819E1C173C7FC4D8020A8604E7ED9AFB4017A941BA86F3"
+    },
+    {
+      "file": "Mantle-1.20.1-1.11.104.jar",
+      "bytes": 1625005,
+      "sha256": "6052E47C3981064BD5213728EAA3C5418289F6F85B07A1CD4DD1505239248838"
+    },
+    {
+      "file": "mekanism_weaponry-1.1.3.jar",
+      "bytes": 1018443,
+      "sha256": "64A01C0F42D4F1E7C8C4B5E349FB27EFB47E6BFBD61C6F79DBC5AB951C7B103C"
+    },
+    {
+      "file": "Mekanism-1.20.1-10.4.16.80.jar",
+      "bytes": 12558456,
+      "sha256": "3B0D191FA4A45E662F9725991D76A30192F30186ABB2BA694B873B5F7B9358D2"
+    },
+    {
+      "file": "MekanismGenerators-1.20.1-10.4.16.80.jar",
+      "bytes": 1054586,
+      "sha256": "BE2D5B8553F8638CFABF491002F95CEF6ACEF210F627ADDB391F5AF713502512"
+    },
+    {
+      "file": "MekanismWeapons-1.20.1-4.2.1.jar",
+      "bytes": 150905,
+      "sha256": "DC6F3E6311EEEFDF665A4DD8FC6767F2C4723960681BE97293DEB8AD9FB1E6B9"
+    },
+    {
+      "file": "MoogsEndStructures-1.20-2.0.3.jar",
+      "bytes": 1510937,
+      "sha256": "9142BDE3F2E42E609AF29D26626C9904EF21586DE00E55D989FABA1A6D42CC1B"
+    },
+    {
+      "file": "MoogsStructureLib-forge-1.20-3.1.2.jar",
+      "bytes": 418707,
+      "sha256": "6717EA463696DF6729E8F63B2A0C0ED174B73678D413E674AFD0B113EE22E18A"
+    },
+    {
+      "file": "moonlight-1.20-2.16.34-forge.jar",
+      "bytes": 1419416,
+      "sha256": "007C05AE799417CA7AA26669C5D97BE9DFACE5B6FC27ACA4CA8031CAFE4DDD6E"
+    },
+    {
+      "file": "Patchouli-1.20.1-85-FORGE.jar",
+      "bytes": 642732,
+      "sha256": "05F7B5D52F6B8F0FD7F8B4822FA07A192D1394D83A264309C9D221D6D4FD21C5"
+    },
+    {
+      "file": "Placebo-1.20.1-8.6.3.jar",
+      "bytes": 282474,
+      "sha256": "1CDF906CFBCBB5E5BE2EF1BB721F79A24B01BD2AC559C8CDBFB7693F62421571"
+    },
+    {
+      "file": "resourcefulconfig-forge-1.20.1-2.1.3.jar",
+      "bytes": 136923,
+      "sha256": "C404B9E5CF8595427A72D4CA6EE5730289168762B463F169BE3AE5DFE3727DED"
+    },
+    {
+      "file": "resourcefullib-forge-1.20.1-2.1.29.jar",
+      "bytes": 432753,
+      "sha256": "B13AFB95231D88E1CAEA5A045967E0FC291B29020B0D26AD39E6F9E9A551FEE8"
+    },
+    {
+      "file": "ScalingMobs-2.4.4.jar",
+      "bytes": 58254,
+      "sha256": "6C9F1417950F548BF4D1AA53DF316F75A1FD26D9FD6F6296AA3DF330859575B8"
+    },
+    {
+      "file": "sophisticatedbackpacks-1.20.1-3.24.67.2109.jar",
+      "bytes": 1159096,
+      "sha256": "1E241870BC8AAB7B709847E447156E12ABC44D727ED7954B1C618DA74347AA3B"
+    },
+    {
+      "file": "sophisticatedcore-1.20.1-1.3.84.2308.jar",
+      "bytes": 1640160,
+      "sha256": "B9262AF063EDC20459262D3E99890F0A3EA68C86EEDDEBE63C806CE386079A96"
+    },
+    {
+      "file": "sophisticatedstorage-1.20.1-1.4.86.2131.jar",
+      "bytes": 1867685,
+      "sha256": "33B4816BE111CED6E54E0651FD1FD933EEE9FEB8E284D371A3246DA06C65B6B2"
+    },
+    {
+      "file": "TConstruct-1.20.1-3.11.2.166.jar",
+      "bytes": 21572031,
+      "sha256": "653B49D73481A1325BA78ADC7273DEE6C765A51BAFDF264A7510576D6EF91C43"
+    },
+    {
+      "file": "TerraBlender-forge-1.20.1-3.0.1.10.jar",
+      "bytes": 107532,
+      "sha256": "C109016F46CA9BDAE69976BF080BBF2E8E5968CB66C0A78845F8CA6AF5DBBEB1"
+    },
+    {
+      "file": "TheGreatOutdoors_1.20.1Forge_V1.2.1.jar",
+      "bytes": 3728924,
+      "sha256": "67D928F6A09A160ADAA3EDBBC15D36C0E0471820DBC2FC2495C4AE45AAE34461"
+    },
+    {
+      "file": "tinkers_advanced_core-3.0.0-beta.5.jar",
+      "bytes": 189755,
+      "sha256": "384903A602685C4ECC18F93AE31B8E386F07C2147F8A150999F4658CB1FE8DB1"
+    },
+    {
+      "file": "tinkers_advanced_tools-3.0.0-beta.4.jar",
+      "bytes": 1304477,
+      "sha256": "C3DCAF0735EC5946ED2F4485BE9354F2807F78D13D455DD2DA7AC45A507D3A29"
+    },
+    {
+      "file": "tinkers_ingenuity-1.1.9.jar",
+      "bytes": 3128832,
+      "sha256": "80E31BEBE33C8BBE782D72587D54A59595349B59CA5AA4FF733E382F987F9B53"
+    },
+    {
+      "file": "Tinkers-Thinking-0.1.6.6.3.jar",
+      "bytes": 6317007,
+      "sha256": "660816D2272FA501F8093050E573FCE13D77CB22BE05DE1A7BF382F4F2FE0CE3"
+    },
+    {
+      "file": "TinkersKatanas-1.20.1-1.4.5.jar",
+      "bytes": 856632,
+      "sha256": "01AF06CEE6B13EC09B6631A246DC55BBE2C0814E99CAE30DBCEA3A2CAB1ADAF4"
+    },
+    {
+      "file": "TinkersLevellingAddon-1.20.1-1.4.3.jar",
+      "bytes": 319956,
+      "sha256": "2E343C330B9F4A97F1B32867ED0EC74C629ECD08CD91C15824B1B8C238F008A0"
+    },
+    {
+      "file": "tinkersplatinumtungsten-1.1.0-universal-1.20.1.jar",
+      "bytes": 837969,
+      "sha256": "05F029612321ABD1B8DB085E83F4B19F721124D64CD59C6BE546AEDC8892F5AA"
+    },
+    {
+      "file": "tru.e-ending-v1.1.0c.jar",
+      "bytes": 5525883,
+      "sha256": "3BF63A4ED7CB9A75727DA2301FE0642CE74C9E0384CDB79E9B3570D3AB320AAA"
+    },
+    {
+      "file": "twilightforest-1.20.1-4.3.2508-universal.jar",
+      "bytes": 23332091,
+      "sha256": "0BDC89263616D1B35C32EF82C5E9C14CBD20368E2FE8B468C72A28320BE7A778"
+    },
+    {
+      "file": "villager-replacer-1.1.8EB.jar",
+      "bytes": 35029710,
+      "sha256": "5925FD3FE3751D4B326D9C106E7DC1805263387D13CF771918D1DB3005D66AC7"
+    },
+    {
+      "file": "voicechat-forge-1.20.1-2.6.22.jar",
+      "bytes": 4923439,
+      "sha256": "F171E99FA99F007EF013AF5306F6C490FE79A11BE7E1B18940147D75CED045B9"
+    },
+    {
+      "file": "waystones-forge-1.20.1-14.1.20.jar",
+      "bytes": 533738,
+      "sha256": "5ECC6535596B5954F6293224BE6B35805C64F4D4AEDC2B9E32D9508DD529CABD"
+    },
+    {
+      "file": "YungsApi-1.20-Forge-4.0.6.jar",
+      "bytes": 370524,
+      "sha256": "101C30D01D0CF9D86190F578EB1E43BD06B64092E95662A00EF52946F472C7B1"
+    },
+    {
+      "file": "YungsBetterCaves-1.20.1-Forge-2.0.6.jar",
+      "bytes": 405975,
+      "sha256": "F4C6EAF00678BD46600DFC232CB2CC92F8FA28D9828C1EF27CD3F407D5152171"
+    },
+    {
+      "file": "YungsBetterDesertTemples-1.20-Forge-3.0.3.jar",
+      "bytes": 918012,
+      "sha256": "5A74294725232C665B908AF6E25224D111550CF69D74613E415B9F48FF150D16"
+    },
+    {
+      "file": "YungsBetterDungeons-1.20-Forge-4.0.4.jar",
+      "bytes": 792381,
+      "sha256": "93C24E4075C51DA0866F3FC92322BDB60E590AC2CD78DCE275460839C54C36F5"
+    },
+    {
+      "file": "YungsBetterEndIsland-1.20-Forge-2.0.6.jar",
+      "bytes": 387111,
+      "sha256": "05C2F43A67116F0BBCA32D903B55CE1655B9319ED6554080DE02BD1D0C232A83"
+    },
+    {
+      "file": "YungsBetterJungleTemples-1.20-Forge-2.0.5.jar",
+      "bytes": 806652,
+      "sha256": "728C0A807742356887EDF7D4F736B3870B7C84007EC9C495C27DA1DC0B61078D"
+    },
+    {
+      "file": "YungsBetterMineshafts-1.20-Forge-4.0.4.jar",
+      "bytes": 492998,
+      "sha256": "6632E7BCC58325098E85BCB755483DE7CB3AF92A5EA548F3B5C0162CBF0DC1DC"
+    },
+    {
+      "file": "YungsBetterNetherFortresses-1.20-Forge-2.0.6.jar",
+      "bytes": 619255,
+      "sha256": "12CFFC99DCCCA69D294BA5BC39C331367794B339061572A6F3773620303A2F51"
+    },
+    {
+      "file": "YungsBetterOceanMonuments-1.20-Forge-3.0.4.jar",
+      "bytes": 1033262,
+      "sha256": "BEA2640C4AFEB5231362A756D886CA4F246C7951175C91348272B3CE5D483BAE"
+    },
+    {
+      "file": "YungsBetterStrongholds-1.20-Forge-4.0.3.jar",
+      "bytes": 473564,
+      "sha256": "054B0A1BE86510ED6BD05DE66A29200F13F5603C0C9EB7E62074DDC3D19CB0E4"
+    },
+    {
+      "file": "YungsBetterWitchHuts-1.20-Forge-3.0.3.jar",
+      "bytes": 179190,
+      "sha256": "24B3BDC844755E8A39571B5000D8DD829543F7B150D154016CCD926E47D06A71"
+    }
+  ],
+  "excludedClientMods": [
+    "appleskin-forge-mc1.20.1-2.5.1.jar",
+    "BetterAdvancements-Forge-1.20.1-0.6.0.73.jar",
+    "configured-forge-1.20.1-2.2.3.jar",
+    "Controlling-forge-1.20.1-12.0.2.jar",
+    "EnchantmentDescriptions-Forge-1.20.1-17.1.21.jar",
+    "Essential_1-4-1-1_forge_1-20-1.jar",
+    "ImmediatelyFast-Forge-1.5.5+1.20.4.jar",
+    "jei-1.20.1-forge-15.56.0.205.jar",
+    "JustEnoughResources-1.20.1-1.4.0.247.jar",
+    "justzoom_forge_2.1.1_MC_1.20.1.jar",
+    "konkrete_forge_1.8.0_MC_1.20-1.20.1.jar",
+    "melody_forge_1.0.3_MC_1.20.1-1.20.4.jar",
+    "MouseTweaks-forge-mc1.20.1-2.25.1.jar",
+    "Prism-1.20.1-forge-1.0.5.jar",
+    "Searchables-forge-1.20.1-1.0.3.jar",
+    "xaerominimap-forge-1.20.1-26.4.2.jar",
+    "xaeroworldmap-forge-1.20.1-1.45.0.jar",
+    "YungsMenuTweaks-1.20.1-Forge-1.0.2.jar"
+  ]
+}

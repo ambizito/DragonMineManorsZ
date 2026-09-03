@@ -1,0 +1,7 @@
+{
+  "animation": "dmzplus:animations/entity/dragon/toronbo.animation.json",
+  "id": "toronbo",
+  "model": "dmzplus:geo/entity/dragon/toronbo.geo.json",
+  "renderer_type": "default",
+  "texture": "dmzplus:textures/entity/dragon/toronbo.png"
+}

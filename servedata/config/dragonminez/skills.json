@@ -1,0 +1,911 @@
+{
+  "configVersion": "2.1.3",
+  "kiSkills": [
+    "spiritbomb",
+    "supernova",
+    "supernova_cooler",
+    "big_bang",
+    "burning_attack",
+    "sokidan",
+    "final_flash",
+    "kamehameha",
+    "galick_gun",
+    "masenko",
+    "kienzan",
+    "kienzan_doble",
+    "death_beam",
+    "makkanko",
+    "emperor_death_beam",
+    "ki_barrage",
+    "final_explosion",
+    "soul_punisher",
+    "fake_moon",
+    "taiyoken",
+    "kamehameha_10x",
+    "dodonpa",
+    "light_grenade",
+    "kamehameha_super",
+    "kamehameha_true",
+    "kamehameha_black",
+    "kamehameha_black_super",
+    "kamehameha_majin",
+    "final_burst_cannon",
+    "super_galick_gun",
+    "big_bang_crash",
+    "super_masenko",
+    "ultimate_masenko",
+    "full_power_special_beam_cannon",
+    "death_ball",
+    "supercharged_death_ball",
+    "golden_death_ball",
+    "vanishing_ball",
+    "eraser_cannon",
+    "final_spirit_cannon",
+    "photon_flash",
+    "kamehameha_angry",
+    "spiritbomb_super",
+    "final_shine_attack",
+    "buster_cannon",
+    "finish_buster",
+    "explosive_demon_wave",
+    "death_cannon",
+    "power_blitz",
+    "perfect_barrier",
+    "android_barrier",
+    "beerus_ball",
+    "omega_blaster",
+    "big_bang_kamehameha",
+    "negative_karma_ball",
+    "revenge_death_ball"
+  ],
+  "formSkills": [
+    "superforms",
+    "legendaryforms",
+    "godforms",
+    "androidforms",
+    "beastforms"
+  ],
+  "stackSkills": [
+    "kaioken",
+    "ultimate",
+    "piccolobiodata",
+    "friezabiodata",
+    "frostgodforms",
+    "ultraego",
+    "ultrainstinct"
+  ],
+  "androidBlacklistedForms": [
+    "superforms",
+    "legendaryforms"
+  ],
+  "skills": {
+    "makkanko": {
+      "costs": [
+        3500
+      ],
+      "allowedRaces": []
+    },
+    "defense_penetration": {
+      "costs": [
+        600,
+        1200,
+        1800,
+        2200,
+        2600,
+        2800,
+        3000,
+        3200,
+        3600,
+        4000
+      ],
+      "allowedRaces": []
+    },
+    "supernova_cooler": {
+      "costs": [
+        15000
+      ],
+      "allowedRaces": []
+    },
+    "deadly_dance_vegetto": {
+      "costs": [
+        12000
+      ],
+      "allowedRaces": []
+    },
+    "healing_reduction": {
+      "costs": [
+        600,
+        1200,
+        1800,
+        2200,
+        2600,
+        2800,
+        3000,
+        3200,
+        3600,
+        4000
+      ],
+      "allowedRaces": []
+    },
+    "kiboost": {
+      "costs": [
+        2000,
+        4000,
+        6000,
+        8000
+      ],
+      "allowedRaces": []
+    },
+    "super_god_fist": {
+      "costs": [
+        10000
+      ],
+      "allowedRaces": []
+    },
+    "sprint": {
+      "costs": [
+        300,
+        600,
+        900,
+        1200,
+        1500,
+        1800,
+        2100,
+        2400,
+        2700,
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "ki_barrage": {
+      "costs": [
+        1000
+      ],
+      "allowedRaces": []
+    },
+    "wolf_fang": {
+      "costs": [
+        3500
+      ],
+      "allowedRaces": []
+    },
+    "kimanipulation": {
+      "costs": [
+        600,
+        1200,
+        1800,
+        2200,
+        2600,
+        2800,
+        3000,
+        3200,
+        3600,
+        4000
+      ],
+      "allowedRaces": []
+    },
+    "burning_attack": {
+      "costs": [
+        3500
+      ],
+      "allowedRaces": []
+    },
+    "kicontrol": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "supernova": {
+      "costs": [
+        12000
+      ],
+      "allowedRaces": []
+    },
+    "dragon_fist": {
+      "costs": [
+        6000
+      ],
+      "allowedRaces": []
+    },
+    "kiprotection": {
+      "costs": [
+        600,
+        1200,
+        1800,
+        2200,
+        2600,
+        2800,
+        3000,
+        3200,
+        3600,
+        4000
+      ],
+      "allowedRaces": []
+    },
+    "big_bang": {
+      "costs": [
+        4000
+      ],
+      "allowedRaces": []
+    },
+    "spiritbomb": {
+      "costs": [
+        10000
+      ],
+      "allowedRaces": []
+    },
+    "jump": {
+      "costs": [
+        300,
+        600,
+        900,
+        1200,
+        1500,
+        1800,
+        2100,
+        2400,
+        2700,
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "final_flash": {
+      "costs": [
+        5000
+      ],
+      "allowedRaces": []
+    },
+    "kaioken": {
+      "costs": [
+        1000,
+        1500,
+        2500,
+        4000,
+        7500
+      ],
+      "allowedRaces": []
+    },
+    "kienzan_doble": {
+      "costs": [
+        4000
+      ],
+      "allowedRaces": []
+    },
+    "ultimate": {
+      "costs": [
+        -1
+      ],
+      "allowedRaces": []
+    },
+    "emperor_death_beam": {
+      "costs": [
+        5000
+      ],
+      "allowedRaces": []
+    },
+    "galick_gun": {
+      "costs": [
+        2000
+      ],
+      "allowedRaces": []
+    },
+    "meteor": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "kienzan": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "taiyoken": {
+      "costs": [
+        2000
+      ],
+      "allowedRaces": []
+    },
+    "final_explosion": {
+      "costs": [
+        20000
+      ],
+      "allowedRaces": []
+    },
+    "kaioken_attack": {
+      "costs": [
+        5000
+      ],
+      "allowedRaces": []
+    },
+    "kamehameha": {
+      "costs": [
+        2000
+      ],
+      "allowedRaces": []
+    },
+    "death_beam": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "deadly_dance": {
+      "costs": [
+        8000
+      ],
+      "allowedRaces": []
+    },
+    "fusion": {
+      "costs": [
+        25000,
+        5000,
+        10000,
+        15000,
+        20000
+      ],
+      "allowedRaces": []
+    },
+    "oozaru_fist": {
+      "costs": [
+        15000
+      ],
+      "allowedRaces": []
+    },
+    "fly": {
+      "costs": [
+        1500,
+        600,
+        900,
+        1200,
+        1500,
+        1800,
+        2100,
+        2400,
+        2700,
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "fake_moon": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "ki_infusion": {
+      "costs": [
+        600,
+        1200,
+        1800,
+        2200,
+        2600,
+        2800,
+        3000,
+        3200,
+        3600,
+        4000
+      ],
+      "allowedRaces": []
+    },
+    "potentialunlock": {
+      "costs": [
+        600,
+        1600,
+        2400,
+        3200,
+        4000,
+        4800,
+        5600,
+        6400,
+        7200,
+        8000,
+        -1,
+        8800,
+        9600
+      ],
+      "allowedRaces": []
+    },
+    "soul_punisher": {
+      "costs": [
+        25000
+      ],
+      "allowedRaces": []
+    },
+    "meditation": {
+      "costs": [
+        300,
+        600,
+        900,
+        1200,
+        1500,
+        1800,
+        2100,
+        2400,
+        2700,
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "instant_transmission": {
+      "costs": [
+        600,
+        1200,
+        1800,
+        2200,
+        2600,
+        2800,
+        3000,
+        3200,
+        3600,
+        4000
+      ],
+      "allowedRaces": []
+    },
+    "kisense": {
+      "costs": [
+        300,
+        600,
+        900,
+        1200,
+        1500,
+        1800,
+        2100,
+        2400,
+        2700,
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "sokidan": {
+      "costs": [
+        4000
+      ],
+      "allowedRaces": []
+    },
+    "masenko": {
+      "costs": [
+        1500
+      ],
+      "allowedRaces": []
+    },
+    "kamehameha_10x": {
+      "costs": [
+        3500
+      ],
+      "allowedRaces": []
+    },
+    "dodonpa": {
+      "costs": [
+        1000
+      ],
+      "allowedRaces": []
+    },
+    "light_grenade": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "kamehameha_super": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "kamehameha_true": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "kamehameha_black": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "kamehameha_black_super": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "kamehameha_majin": {
+      "costs": [
+        2000
+      ],
+      "allowedRaces": [
+        "majin"
+      ]
+    },
+    "final_burst_cannon": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "super_galick_gun": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "big_bang_crash": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "super_masenko": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "ultimate_masenko": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "full_power_special_beam_cannon": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "death_ball": {
+      "costs": [
+        8500
+      ],
+      "allowedRaces": []
+    },
+    "supercharged_death_ball": {
+      "costs": [
+        10000
+      ],
+      "allowedRaces": []
+    },
+    "golden_death_ball": {
+      "costs": [
+        11000
+      ],
+      "allowedRaces": []
+    },
+    "vanishing_ball": {
+      "costs": [
+        9500
+      ],
+      "allowedRaces": [
+        "majin"
+      ]
+    },
+    "eraser_cannon": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "final_spirit_cannon": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "photon_flash": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": [
+        "human",
+        "bioandroid"
+      ]
+    },
+    "kamehameha_angry": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "spiritbomb_super": {
+      "costs": [
+        12500
+      ],
+      "allowedRaces": []
+    },
+    "final_shine_attack": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "buster_cannon": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "finish_buster": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "explosive_demon_wave": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "death_cannon": {
+      "costs": [
+        2500
+      ],
+      "allowedRaces": []
+    },
+    "power_blitz": {
+      "costs": [
+        2000
+      ],
+      "allowedRaces": [
+        "human",
+        "bioandroid"
+      ]
+    },
+    "perfect_barrier": {
+      "costs": [
+        6000
+      ],
+      "allowedRaces": []
+    },
+    "android_barrier": {
+      "costs": [
+        7000
+      ],
+      "allowedRaces": [
+        "human",
+        "bioandroid"
+      ]
+    },
+    "beerus_ball": {
+      "costs": [
+        11500
+      ],
+      "allowedRaces": []
+    },
+    "omega_blaster": {
+      "costs": [
+        3500
+      ],
+      "allowedRaces": []
+    },
+    "big_bang_kamehameha": {
+      "costs": [
+        3000
+      ],
+      "allowedRaces": []
+    },
+    "negative_karma_ball": {
+      "costs": [
+        10500
+      ],
+      "allowedRaces": []
+    },
+    "revenge_death_ball": {
+      "costs": [
+        10000
+      ],
+      "allowedRaces": []
+    },
+    "piccolobiodata": {
+      "costs": [
+        400000,
+        1750000
+      ],
+      "allowedRaces": [
+        "bioandroid"
+      ]
+    },
+    "friezabiodata": {
+      "costs": [
+        350000,
+        1500000
+      ],
+      "allowedRaces": [
+        "bioandroid"
+      ]
+    },
+    "frostgodforms": {
+      "costs": [
+        100000,
+        500000
+      ],
+      "allowedRaces": [
+        "frostdemon"
+      ]
+    },
+    "ultraego": {
+      "costs": [
+        75000,
+        150000
+      ],
+      "allowedRaces": [
+        "saiyan"
+      ]
+    },
+    "ultrainstinct": {
+      "costs": [
+        75000,
+        150000
+      ],
+      "allowedRaces": [
+        "saiyan"
+      ]
+    }
+  },
+  "skillOfferings": {
+    "vegeta": [
+      "defense_penetration",
+      "potentialunlock",
+      "galick_gun",
+      "big_bang",
+      "final_flash",
+      "final_explosion",
+      "fake_moon",
+      "deadly_dance_vegetto",
+      "final_burst_cannon",
+      "super_galick_gun",
+      "final_shine_attack"
+    ],
+    "goku": [
+      "fly",
+      "instant_transmission",
+      "fusion",
+      "spiritbomb",
+      "dragon_fist",
+      "super_god_fist",
+      "oozaru_fist",
+      "kamehameha_true",
+      "kamehameha_super",
+      "kamehameha_angry",
+      "kamehameha_10x",
+      "big_bang_kamehameha"
+    ],
+    "oldkai": [
+      "ki_infusion",
+      "healing_reduction",
+      "soul_punisher"
+    ],
+    "frieza": [
+      "fly",
+      "jump",
+      "sprint",
+      "kisense",
+      "meditation",
+      "potentialunlock",
+      "instant_transmission",
+      "death_beam",
+      "emperor_death_beam",
+      "supernova",
+      "kienzan_doble",
+      "deadly_dance",
+      "meteor",
+      "death_ball",
+      "supercharged_death_ball",
+      "golden_death_ball",
+      "death_cannon",
+      "frostgodforms"
+    ],
+    "cell": [
+      "kicontrol",
+      "kimanipulation",
+      "ki_infusion",
+      "kiprotection",
+      "defense_penetration",
+      "healing_reduction",
+      "kiboost",
+      "kienzan",
+      "galick_gun",
+      "masenko",
+      "death_beam",
+      "deadly_dance",
+      "meteor",
+      "big_bang_crash",
+      "photon_flash",
+      "power_blitz",
+      "perfect_barrier",
+      "android_barrier",
+      "piccolobiodata",
+      "friezabiodata"
+    ],
+    "roshi": [
+      "jump",
+      "meditation",
+      "kicontrol"
+    ],
+    "trunks": [
+      "kiboost",
+      "kiprotection",
+      "burning_attack",
+      "galick_gun",
+      "meteor",
+      "buster_cannon",
+      "finish_buster"
+    ],
+    "piccolo": [
+      "potentialunlock",
+      "kicontrol",
+      "masenko",
+      "makkanko",
+      "kienzan",
+      "full_power_special_beam_cannon",
+      "light_grenade",
+      "explosive_demon_wave"
+    ],
+    "gohan": [
+      "kiboost",
+      "kiprotection",
+      "kisense",
+      "masenko",
+      "makkanko",
+      "super_masenko",
+      "ultimate_masenko",
+      "beastforms"
+    ],
+    "default": [
+      "jump"
+    ],
+    "yamcha": [
+      "kicontrol",
+      "ki_infusion",
+      "wolf_fang",
+      "sokidan"
+    ],
+    "kingkai": [
+      "kaioken",
+      "potentialunlock",
+      "kimanipulation",
+      "kaioken_attack",
+      "spiritbomb",
+      "spiritbomb_super"
+    ],
+    "krillin": [
+      "sprint",
+      "kisense",
+      "kienzan",
+      "kienzan_doble",
+      "deadly_dance"
+    ],
+    "beerus": [
+      "ultraego",
+      "beerus_ball"
+    ],
+    "whis": [
+      "ultrainstinct"
+    ],
+    "tournament_announcer": [],
+    "buu": [
+      "kamehameha_majin",
+      "vanishing_ball"
+    ],
+    "tien": [
+      "dodonpa",
+      "taiyoken",
+      "kamehameha",
+      "ki_barrage"
+    ]
+  },
+  "strikeSkills": [
+    "meteor",
+    "dragon_fist",
+    "deadly_dance_vegetto",
+    "deadly_dance",
+    "kaioken_attack",
+    "wolf_fang",
+    "oozaru_fist",
+    "super_god_fist"
+  ]
+}

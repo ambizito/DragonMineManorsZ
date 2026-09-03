@@ -1,0 +1,131 @@
+
+#How this mod behaves next to other DragonMineZ add-ons.
+#Whoever else brings the same content gets it, unless you say otherwise here.
+[compatibility]
+
+	#Dragon Block Noea (noeabosses).
+	#Both mods define the same nine transformation groups: godforms, beastforms,
+	#frostgodforms, friezabiodata, piccolobiodata, bioevolution, superforms,
+	#ultraego and ultrainstinct. Whichever writes last wins, which is why forms
+	#went missing or showed up twice.
+	#true  - install our versions of those groups
+	#false - leave them to Dragon Block Noea (default)
+	[compatibility.noea]
+		forms = false
+		#Dragon Block Noea brings a Beerus planet as well - 12802 pieces of its
+		#own. Ours is a separate dimension, so both would stand side by side.
+		#true  - unlock our Beerus planet as well
+		#false - leave the planet to Dragon Block Noea (default)
+		beerusPlanet = false
+
+	#DragonMineZ Super (dmzsuper).
+	#DragonMineZ itself hands the Beerus planet to this mod: its own space pod
+	#destination 'beerus' points at the dimension dmzsuper:beerus_planet. With
+	#dmzsuper installed our planet would be a second, identical-looking entry.
+	#true  - unlock our Beerus planet as well
+	#false - leave the planet to DragonMineZ Super (default)
+	[compatibility.dmzsuper]
+		beerusPlanet = false
+		#DragonMineZ Super also defines the groups ultraego and ultrainstinct,
+		#with the same group and form names as ours but different values. Whichever
+		#writes last wins.
+		#true  - install our versions of those two groups
+		#false - leave them to DragonMineZ Super (default)
+		forms = false
+
+#Flight.
+[flight]
+	#How fast Combat Flight sinks when you hold neither ascend nor descend,
+	#in blocks per tick.
+	#DragonMineZ hard-codes 0.05, which is a block a second downwards - so holding
+	#jump is not how you climb, it is how you avoid falling. Aiming, charging and
+	#dodging all happen during a permanent slow descent.
+	#0.0  - hold your height (default). Search Flight stays the fast way to travel,
+	#       Combat Flight becomes the one you fight in.
+	#0.05 - DragonMineZ' behaviour.
+	#Anything in between works; the value is used as-is.
+	#Range: 0.0 ~ 1.0
+	combatFlightSink = 0.0
+	#How many ticks the flight aura keeps burning after the sprint
+	#threshold drops, in ticks.
+	#DragonMineZ switches the aura by 'fly skill active AND sprinting AND faster
+	#than 0.65 blocks per tick', re-decided every server tick. It does fade out
+	#rather than cut, but there is no hold - every corner, every brake, every
+	#moment the speed grazes the threshold turns the fade around, so a short burst
+	#never reaches full brightness.
+	#20 - one second of hold (default). 0 - DragonMineZ' behaviour.
+	#This is render-only: the aura you see is held, nothing else. The server flag
+	#also grants the turbo speed bonus and the aura light level, and neither is
+	#touched here.
+	#Range: 0 ~ 200
+	auraLatchTicks = 20
+	#How many aura particles sweep back from a flying player per tick.
+	#This is the anime silhouette: the ki aura is not a flame standing over your
+	#head while you fly, it lies back along the body into a plume. Built from
+	#DragonMineZ' own aura particle at DragonMineZ' own measurements - ring radius
+	#0.15 to 0.60 of the body scale, two blocks long, tapering towards the tail.
+	#DragonMineZ spawns 0 to 2 of these per tick for a standing aura, and only for
+	#whitelisted players, so nothing is drawn twice.
+	#2 - a steady plume (default). 0 - off.
+	#Range: 0 ~ 12
+	auraSweepPerTick = 2
+	#Size of the swept aura particles, as a multiple of the body scale.
+	#1.0 is DragonMineZ' own size for its standing aura (default).
+	#Range: 0.1 ~ 4.0
+	auraSweepScale = 1.0
+	#How many fine ki motes a flying player leaves per tick.
+	#DragonMineZ' own ki_trail particles - the same specks its ki attacks shed -
+	#tinted with that player's aura colour. They are the speed lines next to the
+	#plume. Nothing here is drawn as geometry, so it stays inside the game's own
+	#visual language, and none of it needs network traffic: everyone's position is
+	#known anyway.
+	#2 - a thin stream (default). 0 - no motes.
+	#Range: 0 ~ 12
+	trailsPerTick = 2
+	#How large the trail particles are.
+	#DragonMineZ' own scale factor: the particle picks a random size between 0.1
+	#and 0.4 times this value, so it is a ceiling rather than a fixed size.
+	#0.6 - clearly visible, not loud (default).
+	#Range: 0.05 ~ 3.0
+	trailScale = 0.6
+	#How fast a flying player has to move before a trail appears, in blocks
+	#per tick.
+	#Gates both the plume and the motes. Deliberately not tied to DragonMineZ' aura
+	#switch: that one also demands the sprint key and 0.65 blocks per tick, so
+	#anything hung on it would stay invisible most of the time.
+	#0.35 - a brisk flight (default). Lower means effects almost always.
+	#Range: 0.0 ~ 3.0
+	trailMinSpeed = 0.35
+
+#Lock-on targeting.
+#Who can be locked stays DragonMineZ' decision: the kisense skill, its range
+#of 15 + 5 per level (+25 when android-upgraded), cloaked players, god forms
+#and Taiyoken blindness all keep working exactly as before. Only the choice of
+#target among those changes.
+[lockOn]
+	#Half-angle of the search cone in degrees, measured from where you look.
+	#DragonMineZ casts a single ray down the crosshair, so a target has to sit
+	#almost exactly under it and the nearest one along that ray always wins - a
+	#saibaman in front hides the boss behind it.
+	#45.0 - the quadrant in front of you (default).
+	#Small values approach DragonMineZ' behaviour, large ones let targets behind
+	#your shoulder in.
+	#Range: 1.0 ~ 90.0
+	coneDegrees = 45.0
+	#How much battle power counts when several targets are in the cone.
+	#The bonus is capped at a hundredfold difference either way and is worth at
+	#most this value, so it decides near-ties and can never pull the lock off
+	#something you are clearly aiming at.
+	#0.5 - a tenfold stronger opponent wins ties worth about 9 degrees (default).
+	#0.0 - angle and distance only.
+	#Range: 0.0 ~ 5.0
+	powerWeight = 0.5
+	#How many ticks a lock survives losing line of sight.
+	#DragonMineZ drops the target the moment anything comes between you, which in
+	#a fight means every pillar, every dash behind cover.
+	#40 - two seconds (default). 0 - drop it at once, as DragonMineZ does.
+	#Everything else still applies during the grace: range, cloak, death and
+	#Taiyoken end the lock immediately.
+	#Range: 0 ~ 200
+	occlusionGraceTicks = 40
+

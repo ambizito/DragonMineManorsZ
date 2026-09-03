@@ -1,0 +1,4 @@
+{"id":"player_revival_porunga_assets","renderer_type":"default",
+ "model":"dragonminez:geo/entity/dragon/porunga.geo.json",
+ "texture":"dragonminez:textures/entity/dragon/porunga.png",
+ "animation":"dragonminez:animations/entity/dragon/porunga.animation.json"}

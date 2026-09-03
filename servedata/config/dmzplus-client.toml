@@ -1,0 +1,135 @@
+
+#Aura
+[aura]
+	#Use the DMZ Plus radial aura during fast flight instead of DragonMineZ's standing flame,
+	#which is drawn to rise and reads oddly on a body pitched toward horizontal.
+	#Purely cosmetic, and only you see the difference.
+	flightAura = true
+	#Hide crackling effects while flying fast: the transformation lightning and the sparking
+	#overlay. Both return as soon as you slow down, and nothing about the form changes.
+	hideFlightLightning = true
+	#Per-aura-type animation rate, as "type=rate" entries.
+	#An absolute rate, not a multiplier, and it steps a four-frame sheet.
+	#Any type not listed keeps DragonMineZ's own rate, so an empty list is stock behaviour.
+	#Type names are the same strings as auraType in DragonMineZ's race and form configs.
+	auraSpeeds = ["dmzplus_surge=0.25", "god=0.25"]
+	#Aura types whose crackling sparks are hidden, as bare type names.
+	#The governing type is the one showing: the stack form's, else the active form's, else
+	#your race's. Independent of hideFlightLightning, which covers fast flight only.
+	hideAuraSparks = []
+
+#Space
+[space]
+
+	[space.hud]
+		#Show a speed readout while piloting a space pod.
+		#It hides while the scouter overlay is up and while F3 is open.
+		enabled = true
+		#Which screen corner the readout sits in.
+		#BOTTOM_RIGHT by default, because DragonMineZ already uses the other three.
+		#Allowed Values: TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT
+		corner = "BOTTOM_RIGHT"
+
+	[space.hyperdrive]
+		#Visual speed effect in deep space: streaks rush past and the field of view widens,
+		#both scaling with how close you are to top speed. Purely cosmetic.
+		#Turn it off if moving field of view makes you motion sick.
+		enabled = true
+		#Multiplier on the whole effect. 0 turns it off, 1 is the tuned default.
+		#It scales the streak length and the field-of-view swing together, so lower it
+		#for a calmer jump rather than to trade one against the other.
+		#Range: 0.0 ~ 5.0
+		strength = 1.0
+		#Blocks/second that counts as flat out, for everyone.
+		#Deliberately one absolute speed rather than each player's own top speed, so a slow
+		#flier does not saturate the effect instantly. Raise it when faster ships exist.
+		#Range: 1.0 ~ 10000.0
+		fullEffectSpeed = 200.0
+		#How late the effect builds. 1 is linear; higher keeps ordinary travel clean and makes
+		#only genuinely high speed dramatic.
+		#Range: 1.0 ~ 10.0
+		curve = 3.0
+		#How many streaks the hyperspace jump draws. 0 leaves the jump with no streaks at all.
+		#Range: 0 ~ 5000
+		streaks = 700
+		#How far the stars and painted sky fade out at full jump speed.
+		#1 hides them completely; 0 leaves them at full brightness throughout.
+		#Range: 0.0 ~ 1.0
+		skyFade = 0.9
+		#How bright a distant-system galaxy marker stays at full jump speed, as a fraction of
+		#normal. Deliberately the exception to skyFade, so you keep a fixed point to steer by.
+		#Range: 0.0 ~ 1.0
+		markerGlow = 0.25
+
+	[space.sky]
+		#Draw the painted Milky Way behind the stars in space dimensions.
+		#Takes effect immediately; no restart or resource reload needed.
+		paintedSky = true
+		#Multiplier on how bright the painted sky is. 0 hides it, 1 is what each dimension
+		#authored. Use this to balance it against the stars rather than editing star counts.
+		#Range: 0.0 ~ 3.0
+		paintedSkyBrightness = 1.0
+		#Multiplier on how many stars every layer draws. 0 leaves only the painted sky.
+		#Applies to the scatter, the galactic band and the clusters together.
+		#Range: 0.0 ~ 3.0
+		starDensity = 1.0
+		#How strongly the view whites out near a star's core, where 0 disables it.
+		#Also scaled by Minecraft's own Distortion Effects accessibility slider.
+		#Range: 0.0 ~ 1.0
+		starGlare = 1.0
+		#How solid a star looks, where 1.0 is opaque. Lower values let its glow and
+		#the stars behind it show through, so it reads as burning gas rather than a box.
+		#Range: 0.05 ~ 1.0
+		sunOpacity = 0.7
+		#Colour of the air just inside a star, as packed RGB. The default is a deep orange.
+		#Range: 0 ~ 16777215
+		starInteriorBoundaryColour = 14237701
+		#Colour at a star's core, as packed RGB. The default is a near-white glare.
+		#Range: 0 ~ 16777215
+		starInteriorCoreColour = 16773823
+		#How far you can see at a star's core, in blocks.
+		#Not 0: a zero view distance renders nothing at all, including your own hand.
+		#Range: 1.0 ~ 256.0
+		starInteriorViewDistance = 6.0
+		#How brightly a star's glow burns, as a multiplier on what its sky file asks for.
+		#0 switches the glow off; above 1 blows the core out to white sooner.
+		#Range: 0.0 ~ 4.0
+		coronaIntensity = 1.0
+		#How planets and suns in the sky are drawn.
+		#AUTHORED keeps what each dimension declares, FLAT draws everything as a cheap sprite,
+		#and CUBE or SPHERE override only bodies that declare no physical radius, which since suns
+		#gained one is the ground beneath you on a surface and nothing in deep space.
+		#A sprite that was never declared solid is never turned into one.
+		#Allowed Values: AUTHORED, FLAT, CUBE, SPHERE
+		bodyShape = "CUBE"
+		#Multiplier on how fast sky bodies rotate. 0 stops them dead.
+		#Rotation is what makes a low-resolution planet texture read convincingly.
+		#Range: 0.0 ~ 4.0
+		bodySpin = 1.0
+
+	[space.captureBubble]
+		#Mark where a planet's capture boundary sits, as a shimmering curtain of light.
+		#Purely a visual: it changes nothing about where capture actually fires.
+		enabled = true
+		#Multiplier on how many particles the curtain uses. 0 turns it off.
+		#Lower this rather than disabling the curtain if it costs you frames.
+		#Range: 0.0 ~ 5.0
+		density = 1.0
+		#What the curtain is made of.
+		#White competes with the starfield, which draws thousands of mostly-white stars.
+		#Green and violet appear in no star colour at all, which is why they stand out.
+		#Allowed Values: GREEN, CYAN, WHITE, SPARK, BLUE_FLAME, PURPLE
+		particle = "GREEN"
+		#How many blocks before the boundary the curtain appears, and over which it thickens.
+		#Larger gives more warning but makes the edge less precise to judge.
+		#0 disables the curtain, the same as turning enabled off.
+		#Range: 0 ~ 1024
+		approachRange = 96
+
+	[space.transition]
+		#Hold the last frame of the dimension you are leaving instead of showing the black
+		#loading box, so a layer change reads as one continuous movement.
+		#It does not make the transition faster: only what you look at changes.
+		#Scoped to space on purpose, since an ordinary Nether trip would read as a hang.
+		seamless = true
+

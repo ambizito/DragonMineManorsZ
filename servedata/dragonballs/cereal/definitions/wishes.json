@@ -1,0 +1,18 @@
+{
+  "dragon": "toronbo",
+  "wishes": [
+    {
+      "type": "tps",
+      "amount": 10000,
+      "description": "wish.dmzplus.toronbo.strength.desc",
+      "name": "wish.dmzplus.toronbo.strength.name"
+    },
+    {
+      "type": "item",
+      "count": 8,
+      "itemId": "dragonminez:senzu_bean",
+      "description": "wish.dmzplus.toronbo.senzu.desc",
+      "name": "wish.dmzplus.toronbo.senzu.name"
+    }
+  ]
+}

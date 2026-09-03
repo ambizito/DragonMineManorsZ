@@ -1,0 +1,31 @@
+# DragonMineManorsZ - configuracao ativa do FTB Chunks
+# Mantenha este arquivo sincronizado com defaultconfigs/ftbchunks/ftbchunks-world.snbt.
+
+{
+	disable_protection: false
+	max_claimed_chunks: 100
+	max_force_loaded_chunks: 10
+	hard_team_claim_limit: 500
+	hard_team_force_limit: 25
+	no_wilderness: false
+	piston_protection: true
+	protect_unknown_explosions: true
+	pvp_mode: "per_team"
+	fake_players: "check"
+	force_load_mode: "default"
+	team_prop_defaults: {
+		def_allow_explosions: false
+		def_block_edit: "allies"
+		def_block_edit_interact: "allies"
+		def_block_interact: "allies"
+		def_claim_visibility: "public"
+		def_entity_attack: "allies"
+		def_entity_interact: "allies"
+		def_fake_player_ids: true
+		def_fake_players: false
+		def_mob_griefing: false
+		def_named_fake_players: [ ]
+		def_player_visibility: "allies"
+		def_pvp: false
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "asset_definition": "super_shenron",
+  "ball_set": "super",
+  "dimensions": [
+    "dmzplus:universe_7_deep_space"
+  ],
+  "entity_height": 60.0,
+  "entity_registry_name": "super_shenron",
+  "entity_width": 80.0,
+  "id": "super_shenron",
+  "wish_count": 1,
+  "wish_screen_id": "super_shenron"
+}

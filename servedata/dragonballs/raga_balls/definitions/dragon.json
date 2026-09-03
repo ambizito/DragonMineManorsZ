@@ -1,0 +1,11 @@
+{
+  "id": "raga_dragon",
+  "entity_registry_name": "raga_dragon",
+  "entity_width": 1.2,
+  "entity_height": 2.2,
+  "dimensions": ["minecraft:overworld", "dmzsuper:planet_surface"],
+  "ball_set": "raga",
+  "wish_screen_id": "raga_dragon",
+  "wish_count": 4,
+  "asset_definition": "raga_divine_shenron"
+}

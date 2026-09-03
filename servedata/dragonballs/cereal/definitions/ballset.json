@@ -1,0 +1,15 @@
+{
+  "asset_definition": "cereal_ballset",
+  "blocks": {
+    "1": "cereal_dball1",
+    "2": "cereal_dball2"
+  },
+  "copies": 1,
+  "dimensions": [
+    "dmzplus:cereal"
+  ],
+  "display_name": "Cerealian",
+  "id": "cereal",
+  "spawn_range": 1000,
+  "summon_radius": 5
+}

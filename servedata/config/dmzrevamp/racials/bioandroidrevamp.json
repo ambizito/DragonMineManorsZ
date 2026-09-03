@@ -1,0 +1,8 @@
+{
+  "_comments": {
+    "effectMultiplier": "Multiplier applied to Human, Saiyan, and Frost Demon passive effects. 0.5 \u003d 50% strength, 1.0 \u003d full strength.",
+    "healthRegenMultiplier": "Multiplier applied to Bio-Android race HP regeneration. 0.5 matches the standard Overhaul race HP regeneration rate."
+  },
+  "effectMultiplier": 0.5,
+  "healthRegenMultiplier": 0.5
+}

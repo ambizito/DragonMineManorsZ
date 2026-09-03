@@ -1,0 +1,7 @@
+{
+  "id": "raga_divine_shenron",
+  "renderer_type": "default",
+  "model": "villager_replacer:geo/entity/raga_super_shenron.geo.json",
+  "texture": "villager_replacer:textures/entity/raga_super_shenron.png",
+  "animation": "dragonminez:animations/entity/dragon/shenron.animation.json"
+}

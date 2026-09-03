@@ -1,0 +1,9 @@
+
+[microphone]
+	#Multiplier applied to your measured loudness before it is compared against the server's
+	#thresholds. Tune it once against the live meter rather than guessing.
+	#Range: 0.1 ~ 20.0
+	micGain = 1.0
+	#Show the loudness meter and its threshold marks while transmitting.
+	showMeter = true
+

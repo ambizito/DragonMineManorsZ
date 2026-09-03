@@ -1,0 +1,13 @@
+{
+  "comment": "Files this mod installed into config/dragonminez, and a fingerprint of the versions it shipped. Used to hand groups back when compatibility.noea.forms is false, and to refresh our own forms after an update. Do not edit.",
+  "bundleHash": "e90bc4e897077f6f",
+  "installed": [
+    "forms/frostgodforms.json",
+    "forms/ultraego.json",
+    "forms/ultrainstinct.json",
+    "forms/friezabiodata.json",
+    "races/saiyan/forms/beastforms.json",
+    "races/saiyan/forms/godforms.json",
+    "forms/piccolobiodata.json"
+  ]
+}

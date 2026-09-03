@@ -1,0 +1,30 @@
+{
+  "dragon": "raga_dragon",
+  "wishes": [
+    {"type":"command","commands":["raga beginrevive %player%"],"description":"Revive any named living NPC or player waiting in Heaven or Otherworld.","name":"Revive NPC or Player"},
+    {"type":"command","commands":["raga grantstats %player%"],"description":"wish.raga.stats.desc","name":"wish.raga.stats.name"},
+    {"type":"tps","amount":50000,"description":"wish.raga.tps.desc","name":"wish.raga.tps.name"},
+    {"type":"recustomize","description":"wish.raga.race.desc","name":"wish.raga.race.name"},
+    {"type":"command","commands":["data modify entity %player% ForgeData.RagaFormWish set value 1b"],"description":"wish.raga.form.desc","name":"wish.raga.form.name"},
+    {"type":"command","commands":["data modify entity %player% ForgeData.RagaKillWish set value 1b"],"description":"wish.raga.kill.desc","name":"wish.raga.kill.name"},
+    {"type":"command","commands":["raga grantnamekpower %player%"],"description":"Grant a named non-Namekian the power to create Dragon Balls.","name":"Grant Namekian Power"},
+    {"type":"command","commands":["raga grantblood %player%"],"description":"Receive an extremely rare Bottle of Namekian Blood.","name":"Bottle of Namekian Blood"},
+    {"type":"command","commands":["raga grantdivinepower %player%"],"description":"Grant Divine Namekian Power required to create Godlike Dragon Balls.","name":"Divine Namekian Power"},
+    {"type":"item","itemId":"dragonminez:senzu_bean","count":32,"description":"Receive a large supply of Senzu Beans.","name":"Senzu Beans"},
+    {"type":"item","itemId":"dragonminez:power_pole","count":1,"description":"Receive the legendary Power Pole.","name":"Power Pole"},
+    {"type":"item","itemId":"dragonminez:might_tree_fruit","count":16,"description":"Receive fruit from the Tree of Might.","name":"Tree of Might Fruit"},
+    {"type":"item","itemId":"dragonminez:t2_radar_cpu","count":4,"description":"Receive advanced radar components.","name":"Radar CPUs"},
+    {"type":"item","itemId":"dragonminez:saiyan_ship","count":1,"description":"Receive a Saiyan space pod.","name":"Saiyan Ship"},
+    {"type":"item","itemId":"dragonminez:brave_sword","count":1,"description":"Receive the Brave Sword.","name":"Brave Sword"},
+    {"type":"passivereset","description":"Reset your racial passive choice.","name":"Reset Racial Passive"},
+    {"type":"relocatestats","description":"Redistribute your trained attributes.","name":"Relocate Stats"},
+    {"type":"changedifficulty","description":"Change your saga difficulty.","name":"Change Difficulty"},
+    {"type":"resetstory","description":"Reset your story progress.","name":"Reset Story"},
+    {"type":"item_list_wish","items":[{"itemType":"item","itemId":"dragonminez:kikono_shard","count":64},{"itemType":"item","itemId":"minecraft:iron_ingot","count":128}],"description":"Receive rare crafting materials.","name":"Rare Materials"},
+    {"type":"item_list_wish","items":[{"itemType":"item","itemId":"dragonminez:strongest_armor_chestplate","count":1},{"itemType":"item","itemId":"dragonminez:strongest_armor_leggings","count":1},{"itemType":"item","itemId":"dragonminez:strongest_armor_boots","count":1}],"description":"Receive the Strongest Armor set.","name":"Strongest Armor"},
+    {"type":"item_list_wish","items":[{"itemType":"item","itemId":"dragonminez:invencible_armor_helmet","count":1},{"itemType":"item","itemId":"dragonminez:invencible_armor_chestplate","count":1},{"itemType":"item","itemId":"dragonminez:invencible_armor_leggings","count":1},{"itemType":"item","itemId":"dragonminez:invencible_armor_boots","count":1}],"description":"Receive the Invincible Armor set.","name":"Invincible Armor"},
+    {"type":"item_list_wish","items":[{"itemType":"item","itemId":"dragonminez:invencible_blue_armor_helmet","count":1},{"itemType":"item","itemId":"dragonminez:invencible_blue_armor_chestplate","count":1},{"itemType":"item","itemId":"dragonminez:invencible_blue_armor_leggings","count":1},{"itemType":"item","itemId":"dragonminez:invencible_blue_armor_boots","count":1}],"description":"Receive the blue Invincible Armor set.","name":"Blue Invincible Armor"},
+    {"type":"item_list_wish","items":[{"itemType":"item","itemId":"dragonminez:pothala_left","count":1},{"itemType":"item","itemId":"dragonminez:pothala_right","count":1}],"description":"Receive a yellow Pothala pair.","name":"Yellow Pothala"},
+    {"type":"item_list_wish","items":[{"itemType":"item","itemId":"dragonminez:green_pothala_left","count":1},{"itemType":"item","itemId":"dragonminez:green_pothala_right","count":1}],"description":"Receive a green Pothala pair.","name":"Green Pothala"}
+  ]
+}
