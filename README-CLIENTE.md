@@ -38,8 +38,5 @@ SHA-256 do JAR desta versão:
 7CA045159B980C1C9A3A516CFF619C0DD447D6EF5E50DDF4044CCE4F7DF778CD
 ```
 
-SHA-256 do pacote de atualização do cliente:
-
-```text
-5FE6574D9BB6899F057C3C048E5759F037973A3D319BA6988DEDB2557E1D4A42
-```
+O hash do pacote ZIP fica no arquivo `SHA256SUMS-0.1.26.9.3.txt` publicado na
+mesma release.
