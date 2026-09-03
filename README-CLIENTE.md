@@ -1,6 +1,6 @@
 # DragonMineManorsZ — atualização do cliente
 
-Versão **0.1.26.9.3**, para Minecraft 1.20.1, Forge 47.4.10 e Java 17.
+Versão **0.2.26.9.3**, para Minecraft 1.20.1, Forge 47.4.10 e Java 17.
 
 O pacote de cliente inclui o JAR modificado do DragonMineZ, as configurações de
 balanceamento, as definições das Esferas do Dragão e os modelos de configuração
@@ -13,7 +13,7 @@ keybinds nem opções gráficas pessoais.
 2. No CurseForge, abra **Opções do perfil** e ative **Permitir gerenciamento de
    conteúdo para este perfil**.
 3. Abra a pasta da instância do modpack.
-4. Extraia o conteúdo de `DragonMineManorsZ-client-0.1.26.9.3.zip` diretamente
+4. Extraia o conteúdo de `DragonMineManorsZ-client-0.2.26.9.3.zip` diretamente
    nessa pasta. `mods`, `config`, `dragonballs` e `defaultconfigs` devem ficar na
    raiz da instância.
 5. Confirme a substituição dos arquivos existentes.
@@ -30,13 +30,13 @@ D:\CurseForge\Instances\Dragon Mine Z
 
 Todos os jogadores e o servidor devem usar o mesmo
 `dragonminez-2.1.3.jar`. As configurações administrativas específicas do
-servidor estão no pacote `DragonMineManorsZ-server-0.1.26.9.3.zip`.
+servidor estão no pacote `DragonMineManorsZ-server-0.2.26.9.3.zip`.
 
 SHA-256 do JAR desta versão:
 
 ```text
-7CA045159B980C1C9A3A516CFF619C0DD447D6EF5E50DDF4044CCE4F7DF778CD
+3402661235C516DB1404326F0D992EDFFA743E246D8DEAE48DEB3D786E3CB0A7
 ```
 
-O hash do pacote ZIP fica no arquivo `SHA256SUMS-0.1.26.9.3.txt` publicado na
+O hash do pacote ZIP fica no arquivo `SHA256SUMS-0.2.26.9.3.txt` publicado na
 mesma release.

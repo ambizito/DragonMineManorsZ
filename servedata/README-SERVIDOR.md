@@ -1,6 +1,6 @@
 # DragonMineManorsZ — pacote de servidor
 
-Versão do modpack: **0.1.26.9.3**.
+Versão do modpack: **0.2.26.9.3**.
 
 Pacote para **Minecraft 1.20.1**, **Forge 47.4.10** e **Java 17**.
 
@@ -66,4 +66,4 @@ adicionados ao servidor.
 upload terminou sem corrupção.
 
 O JAR modificado do DragonMineZ incluído neste pacote tem SHA-256
-`7CA045159B980C1C9A3A516CFF619C0DD447D6EF5E50DDF4044CCE4F7DF778CD`.
+`3402661235C516DB1404326F0D992EDFFA743E246D8DEAE48DEB3D786E3CB0A7`.

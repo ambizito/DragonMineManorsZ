@@ -5,7 +5,7 @@
   "javaVersion": 17,
   "generatedAt": "2026-09-03T10:43:42.0501615-03:00",
   "modCount": 89,
-  "totalModBytes": 437525169,
+  "totalModBytes": 437525157,
   "dragonMineZSourceCommit": "3c58ae869788a37fb42d0ed47a5494724a07735a",
   "mods": [
     {
@@ -135,8 +135,8 @@
     },
     {
       "file": "dragonminez-2.1.3.jar",
-      "bytes": 61843330,
-      "sha256": "7CA045159B980C1C9A3A516CFF619C0DD447D6EF5E50DDF4044CCE4F7DF778CD"
+      "bytes": 61843318,
+      "sha256": "3402661235C516DB1404326F0D992EDFFA743E246D8DEAE48DEB3D786E3CB0A7"
     },
     {
       "file": "dragonseeker-1.2.0-1.20.1.jar",
