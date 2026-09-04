@@ -54,7 +54,7 @@
       "passiveMasteryEveryFiveSeconds": 0.05,
       "maxCostMultiplier": 0.678,
       "maxStatsMultiplier": 1.75,
-      "formRequisite": "oozaru.supersaiyan4lb",
+      "formRequisite": "godforms.supersaiyangod",
       "formRequisiteType": "all",
       "unlockOnMastery": 100,
       "stackOnMastery": 75,
