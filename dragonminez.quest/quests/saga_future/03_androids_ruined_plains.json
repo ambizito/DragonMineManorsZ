@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_a17",
       "count": 1,
-      "health": 217000.0,
-      "meleeDamage": 9000.0,
-      "kiDamage": 8160.0,
+      "health": 434000.0,
+      "meleeDamage": 5400.0,
+      "kiDamage": 4896.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
@@ -50,9 +50,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_a18",
       "count": 1,
-      "health": 210000.0,
-      "meleeDamage": 8700.0,
-      "kiDamage": 7820.0,
+      "health": 420000.0,
+      "meleeDamage": 5220.0,
+      "kiDamage": 4692.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

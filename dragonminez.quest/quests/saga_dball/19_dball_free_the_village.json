@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dragonminez:red_ribbon_soldier",
       "count": 5,
-      "health": 874000.0,
-      "meleeDamage": 36200.0,
-      "kiDamage": 32900.0,
+      "health": 1748000.0,
+      "meleeDamage": 21720.0,
+      "kiDamage": 19740.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

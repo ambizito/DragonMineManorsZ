@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_puipui",
       "count": 1,
-      "health": 252000.0,
-      "meleeDamage": 10500.0,
-      "kiDamage": 9520.0,
+      "health": 504000.0,
+      "meleeDamage": 6300.0,
+      "kiDamage": 5712.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

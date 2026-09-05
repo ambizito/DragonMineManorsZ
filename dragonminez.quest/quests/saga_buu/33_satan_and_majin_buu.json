@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_buufat",
       "count": 1,
-      "health": 437500.0,
-      "meleeDamage": 18300.0,
-      "kiDamage": 16660.0,
+      "health": 875000.0,
+      "meleeDamage": 10980.0,
+      "kiDamage": 9996.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_superbuu_piccolo",
       "count": 1,
-      "health": 580000.0,
-      "meleeDamage": 24000.0,
-      "kiDamage": 22000.0,
+      "health": 1160000.0,
+      "meleeDamage": 14400.0,
+      "kiDamage": 13200.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

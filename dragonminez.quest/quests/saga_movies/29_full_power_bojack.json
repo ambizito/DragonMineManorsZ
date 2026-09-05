@@ -45,9 +45,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_bojack_fp",
       "count": 1,
-      "health": 574000.0,
-      "meleeDamage": 23400.0,
-      "kiDamage": 21080.0,
+      "health": 1148000.0,
+      "meleeDamage": 14040.0,
+      "kiDamage": 12648.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

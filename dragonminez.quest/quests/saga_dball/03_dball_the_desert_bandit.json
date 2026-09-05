@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_yamcha",
       "count": 1,
-      "health": 830000.0,
-      "meleeDamage": 34380.0,
-      "kiDamage": 31240.0,
+      "health": 1660000.0,
+      "meleeDamage": 20628.0,
+      "kiDamage": 18744.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

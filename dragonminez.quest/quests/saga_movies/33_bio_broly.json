@@ -45,9 +45,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_bio_broly",
       "count": 1,
-      "health": 805000.0,
-      "meleeDamage": 33600.0,
-      "kiDamage": 30600.0,
+      "health": 1610000.0,
+      "meleeDamage": 20160.0,
+      "kiDamage": 18360.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

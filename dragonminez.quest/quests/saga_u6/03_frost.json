@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u6_frost",
       "count": 1,
-      "health": 1710000.0,
-      "meleeDamage": 71550.0,
-      "kiDamage": 65020.0,
+      "health": 3420000.0,
+      "meleeDamage": 42930.0,
+      "kiDamage": 39012.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

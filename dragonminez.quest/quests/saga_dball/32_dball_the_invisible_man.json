@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_invisible_man",
       "count": 1,
-      "health": 928000.0,
-      "meleeDamage": 38440.0,
-      "kiDamage": 34930.0,
+      "health": 1856000.0,
+      "meleeDamage": 23064.0,
+      "kiDamage": 20958.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

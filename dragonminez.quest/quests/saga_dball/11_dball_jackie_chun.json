@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_jackie_chun",
       "count": 1,
-      "health": 852000.0,
-      "meleeDamage": 35290.0,
-      "kiDamage": 32070.0,
+      "health": 1704000.0,
+      "meleeDamage": 21174.0,
+      "kiDamage": 19242.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

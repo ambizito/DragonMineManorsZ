@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_man_wolf",
       "count": 1,
-      "health": 966000.0,
-      "meleeDamage": 40010.0,
-      "kiDamage": 36360.0,
+      "health": 1932000.0,
+      "meleeDamage": 24006.0,
+      "kiDamage": 21816.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

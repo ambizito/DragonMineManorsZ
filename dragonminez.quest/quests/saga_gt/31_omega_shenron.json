@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_gt_omega",
       "count": 1,
-      "health": 1670000.0,
-      "meleeDamage": 69870.0,
-      "kiDamage": 63500.0,
+      "health": 3340000.0,
+      "meleeDamage": 41922.0,
+      "kiDamage": 38100.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

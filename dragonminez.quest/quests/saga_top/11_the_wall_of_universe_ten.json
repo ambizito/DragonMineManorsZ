@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u10_napapa",
       "count": 1,
-      "health": 820000.0,
-      "meleeDamage": 34290.0,
-      "kiDamage": 31160.0,
+      "health": 1640000.0,
+      "meleeDamage": 20574.0,
+      "kiDamage": 18696.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
@@ -46,9 +46,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u10_murichim",
       "count": 1,
-      "health": 820000.0,
-      "meleeDamage": 34290.0,
-      "kiDamage": 31160.0,
+      "health": 1640000.0,
+      "meleeDamage": 20574.0,
+      "kiDamage": 18696.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

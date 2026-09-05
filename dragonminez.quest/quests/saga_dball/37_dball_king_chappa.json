@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_king_chappa",
       "count": 1,
-      "health": 958000.0,
-      "meleeDamage": 39680.0,
-      "kiDamage": 36060.0,
+      "health": 1916000.0,
+      "meleeDamage": 23808.0,
+      "kiDamage": 21636.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

@@ -45,9 +45,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_dr_wheelo",
       "count": 1,
-      "health": 6500.0,
-      "meleeDamage": 364.0,
-      "kiDamage": 364.0,
+      "health": 13000.0,
+      "meleeDamage": 218.4,
+      "kiDamage": 218.4,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

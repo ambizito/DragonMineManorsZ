@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_rof_tagoma",
       "count": 1,
-      "health": 1060000.0,
-      "meleeDamage": 44350.0,
-      "kiDamage": 40300.0,
+      "health": 2120000.0,
+      "meleeDamage": 26610.0,
+      "kiDamage": 24180.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

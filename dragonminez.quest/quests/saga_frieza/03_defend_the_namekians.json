@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "#dragonminez:frieza_soldiers",
       "count": 16,
-      "health": 9990.0,
-      "meleeDamage": 120.0,
-      "kiDamage": 137.0,
+      "health": 3980.0,
+      "meleeDamage": 78.0,
+      "kiDamage": 82.2,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

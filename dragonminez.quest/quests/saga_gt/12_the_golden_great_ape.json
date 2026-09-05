@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_gt_baby_oozaru",
       "count": 1,
-      "health": 1340000.0,
-      "meleeDamage": 56070.0,
-      "kiDamage": 50950.0,
+      "health": 2680000.0,
+      "meleeDamage": 33642.0,
+      "kiDamage": 30570.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

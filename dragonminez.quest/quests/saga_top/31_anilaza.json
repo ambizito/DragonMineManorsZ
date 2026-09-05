@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u3_anilaza",
       "count": 1,
-      "health": 2440000.0,
-      "meleeDamage": 102090.0,
-      "kiDamage": 92780.0,
+      "health": 4880000.0,
+      "meleeDamage": 61254.0,
+      "kiDamage": 55668.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

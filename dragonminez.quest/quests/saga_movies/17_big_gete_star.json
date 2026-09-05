@@ -45,9 +45,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_gete_robot",
       "count": 10,
-      "health": 3094.0,
-      "meleeDamage": 200.0,
-      "kiDamage": 214.0,
+      "health": 6188.0,
+      "meleeDamage": 120.0,
+      "kiDamage": 128.4,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

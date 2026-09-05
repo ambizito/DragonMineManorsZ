@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_mercenary_tao2",
       "count": 1,
-      "health": 1070000.0,
-      "meleeDamage": 44450.0,
-      "kiDamage": 40390.0,
+      "health": 2140000.0,
+      "meleeDamage": 26670.0,
+      "kiDamage": 24234.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

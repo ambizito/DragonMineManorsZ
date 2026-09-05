@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u9_basil",
       "count": 1,
-      "health": 1490000.0,
-      "meleeDamage": 62340.0,
-      "kiDamage": 56650.0,
+      "health": 2980000.0,
+      "meleeDamage": 37404.0,
+      "kiDamage": 33990.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

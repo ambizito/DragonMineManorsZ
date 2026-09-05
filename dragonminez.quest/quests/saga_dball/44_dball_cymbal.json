@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_cymbal",
       "count": 1,
-      "health": 993000.0,
-      "meleeDamage": 41130.0,
-      "kiDamage": 37380.0,
+      "health": 1986000.0,
+      "meleeDamage": 24678.0,
+      "kiDamage": 22428.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

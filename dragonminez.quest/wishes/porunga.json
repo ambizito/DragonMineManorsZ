@@ -12,7 +12,7 @@
     "type": "item_list_wish"
   },
   {
-    "amount": 500000,
+    "amount": 15000,
     "name": "wish.porunga.tps.name",
     "description": "wish.porunga.tps.desc",
     "type": "tps"

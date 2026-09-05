@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_shin",
       "count": 1,
-      "health": 231000.0,
-      "meleeDamage": 9600.0,
-      "kiDamage": 8670.0,
+      "health": 462000.0,
+      "meleeDamage": 5760.0,
+      "kiDamage": 5202.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

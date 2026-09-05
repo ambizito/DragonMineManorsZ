@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_jiren",
       "count": 1,
-      "health": 2570000.0,
-      "meleeDamage": 107530.0,
-      "kiDamage": 97720.0,
+      "health": 5140000.0,
+      "meleeDamage": 64518.0,
+      "kiDamage": 58632.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

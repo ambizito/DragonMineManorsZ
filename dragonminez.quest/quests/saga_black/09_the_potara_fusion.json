@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_zamasu_fused",
       "count": 1,
-      "health": 2040000.0,
-      "meleeDamage": 85360.0,
-      "kiDamage": 77570.0,
+      "health": 4080000.0,
+      "meleeDamage": 51216.0,
+      "kiDamage": 46542.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

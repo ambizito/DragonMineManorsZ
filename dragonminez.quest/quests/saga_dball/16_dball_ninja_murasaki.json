@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_ninja_murasaki",
       "count": 1,
-      "health": 862000.0,
-      "meleeDamage": 35710.0,
-      "kiDamage": 32450.0,
+      "health": 1724000.0,
+      "meleeDamage": 21426.0,
+      "kiDamage": 19470.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

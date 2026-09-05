@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_recoome",
       "count": 1,
-      "health": 40862.0,
-      "meleeDamage": 126.0,
-      "kiDamage": 238.0,
+      "health": 9724.0,
+      "meleeDamage": 159.0,
+      "kiDamage": 142.79999999999998,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

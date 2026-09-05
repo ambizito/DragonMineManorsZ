@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_frieza_first",
       "count": 1,
-      "health": 90282.0,
-      "meleeDamage": 200.0,
-      "kiDamage": 428.0,
+      "health": 18564.0,
+      "meleeDamage": 278.4,
+      "kiDamage": 256.8,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

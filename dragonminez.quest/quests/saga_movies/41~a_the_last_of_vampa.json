@@ -37,9 +37,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_mv_paragus",
       "count": 1,
-      "health": 2800000.0,
-      "meleeDamage": 120000.0,
-      "kiDamage": 110000.0,
+      "health": 5600000.0,
+      "meleeDamage": 72000.0,
+      "kiDamage": 66000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

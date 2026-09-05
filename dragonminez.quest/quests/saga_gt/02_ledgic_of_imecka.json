@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_gt_ledgic",
       "count": 1,
-      "health": 1150000.0,
-      "meleeDamage": 48120.0,
-      "kiDamage": 43730.0,
+      "health": 2300000.0,
+      "meleeDamage": 28872.0,
+      "kiDamage": 26238.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

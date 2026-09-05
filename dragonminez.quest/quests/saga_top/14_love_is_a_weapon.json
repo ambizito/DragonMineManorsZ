@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u2_rozie",
       "count": 1,
-      "health": 832000.0,
-      "meleeDamage": 34800.0,
-      "kiDamage": 31620.0,
+      "health": 1664000.0,
+      "meleeDamage": 20880.0,
+      "kiDamage": 18972.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
@@ -46,9 +46,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u2_kakunsa",
       "count": 1,
-      "health": 832000.0,
-      "meleeDamage": 34800.0,
-      "kiDamage": 31620.0,
+      "health": 1664000.0,
+      "meleeDamage": 20880.0,
+      "kiDamage": 18972.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

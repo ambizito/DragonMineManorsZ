@@ -45,9 +45,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_neiz",
       "count": 1,
-      "health": 5304.0,
-      "meleeDamage": 309.0,
-      "kiDamage": 357.0,
+      "health": 10608.0,
+      "meleeDamage": 185.4,
+      "kiDamage": 214.2,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
@@ -55,9 +55,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_salza",
       "count": 1,
-      "health": 6409.0,
-      "meleeDamage": 377.0,
-      "kiDamage": 441.0,
+      "health": 12818.0,
+      "meleeDamage": 226.2,
+      "kiDamage": 264.59999999999997,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
@@ -65,9 +65,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_dore",
       "count": 1,
-      "health": 7514.0,
-      "meleeDamage": 421.0,
-      "kiDamage": 524.0,
+      "health": 15028.0,
+      "meleeDamage": 252.6,
+      "kiDamage": 314.4,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

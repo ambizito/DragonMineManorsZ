@@ -45,9 +45,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_a13",
       "count": 1,
-      "health": 294000.0,
-      "meleeDamage": 11400.0,
-      "kiDamage": 10540.0,
+      "health": 588000.0,
+      "meleeDamage": 6840.0,
+      "kiDamage": 6324.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u6_botamo",
       "count": 1,
-      "health": 1660000.0,
-      "meleeDamage": 69460.0,
-      "kiDamage": 63120.0,
+      "health": 3320000.0,
+      "meleeDamage": 41676.0,
+      "kiDamage": 37872.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

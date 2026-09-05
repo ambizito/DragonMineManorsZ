@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_mummy",
       "count": 1,
-      "health": 936000.0,
-      "meleeDamage": 38770.0,
-      "kiDamage": 35230.0,
+      "health": 1872000.0,
+      "meleeDamage": 23262.0,
+      "kiDamage": 21138.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

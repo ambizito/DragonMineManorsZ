@@ -37,9 +37,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_mv_gamma1",
       "count": 1,
-      "health": 3300000.0,
-      "meleeDamage": 140000.0,
-      "kiDamage": 120000.0,
+      "health": 6600000.0,
+      "meleeDamage": 84000.0,
+      "kiDamage": 72000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

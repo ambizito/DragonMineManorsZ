@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_spopovitch",
       "count": 1,
-      "health": 238000.0,
-      "meleeDamage": 9900.0,
-      "kiDamage": 8840.0,
+      "health": 476000.0,
+      "meleeDamage": 5940.0,
+      "kiDamage": 5304.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

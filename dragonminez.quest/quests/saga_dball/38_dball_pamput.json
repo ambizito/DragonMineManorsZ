@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_pamput",
       "count": 1,
-      "health": 954000.0,
-      "meleeDamage": 39520.0,
-      "kiDamage": 35910.0,
+      "health": 1908000.0,
+      "meleeDamage": 23712.0,
+      "kiDamage": 21546.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

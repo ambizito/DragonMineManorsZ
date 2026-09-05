@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_yakon",
       "count": 1,
-      "health": 273000.0,
-      "meleeDamage": 11400.0,
-      "kiDamage": 10370.0,
+      "health": 546000.0,
+      "meleeDamage": 6840.0,
+      "kiDamage": 6222.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

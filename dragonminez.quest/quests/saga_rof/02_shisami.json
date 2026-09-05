@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_rof_shisami",
       "count": 1,
-      "health": 890000.0,
-      "meleeDamage": 37240.0,
-      "kiDamage": 33840.0,
+      "health": 1780000.0,
+      "meleeDamage": 22344.0,
+      "kiDamage": 20304.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

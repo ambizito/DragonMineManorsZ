@@ -45,9 +45,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_cooler",
       "count": 1,
-      "health": 61880.0,
-      "meleeDamage": 2873.0,
-      "kiDamage": 2499.0,
+      "health": 123760.0,
+      "meleeDamage": 1723.8,
+      "kiDamage": 1499.3999999999999,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

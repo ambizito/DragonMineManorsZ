@@ -37,9 +37,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_mv_broly_lssj",
       "count": 1,
-      "health": 3100000.0,
-      "meleeDamage": 130000.0,
-      "kiDamage": 120000.0,
+      "health": 6200000.0,
+      "meleeDamage": 78000.0,
+      "kiDamage": 72000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

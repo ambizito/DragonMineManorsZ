@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_gt_dragon5",
       "count": 1,
-      "health": 1460000.0,
-      "meleeDamage": 61090.0,
-      "kiDamage": 55510.0,
+      "health": 2920000.0,
+      "meleeDamage": 36654.0,
+      "kiDamage": 33306.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

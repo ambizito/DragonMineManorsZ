@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_vampire",
       "count": 1,
-      "health": 926000.0,
-      "meleeDamage": 38360.0,
-      "kiDamage": 34860.0,
+      "health": 1852000.0,
+      "meleeDamage": 23016.0,
+      "kiDamage": 20916.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

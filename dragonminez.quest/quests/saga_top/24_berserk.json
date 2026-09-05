@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_tk_kale_ssj",
       "count": 1,
-      "health": 2060000.0,
-      "meleeDamage": 86190.0,
-      "kiDamage": 78330.0,
+      "health": 4120000.0,
+      "meleeDamage": 51714.0,
+      "kiDamage": 46998.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_superbuu_gotenks",
       "count": 1,
-      "health": 560000.0,
-      "meleeDamage": 23400.0,
-      "kiDamage": 21250.0,
+      "health": 1120000.0,
+      "meleeDamage": 14040.0,
+      "kiDamage": 12750.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

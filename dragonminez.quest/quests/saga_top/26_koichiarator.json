@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u3_koichiarator",
       "count": 1,
-      "health": 2190000.0,
-      "meleeDamage": 91630.0,
-      "kiDamage": 83270.0,
+      "health": 4380000.0,
+      "meleeDamage": 54978.0,
+      "kiDamage": 49962.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

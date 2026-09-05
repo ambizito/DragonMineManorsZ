@@ -45,9 +45,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_slug_soldier",
       "count": 8,
-      "health": 1040.0,
-      "meleeDamage": 66.0,
-      "kiDamage": 91.0,
+      "health": 2080.0,
+      "meleeDamage": 39.6,
+      "kiDamage": 54.6,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

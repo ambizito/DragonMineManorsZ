@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_friezasoldier02",
       "count": 3,
-      "health": 8850.0,
-      "meleeDamage": 50.0,
-      "kiDamage": 70.0,
+      "health": 1700.0,
+      "meleeDamage": 30.0,
+      "kiDamage": 42.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

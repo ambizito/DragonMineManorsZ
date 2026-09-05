@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_tien_early",
       "count": 1,
-      "health": 988000.0,
-      "meleeDamage": 40930.0,
-      "kiDamage": 37190.0,
+      "health": 1976000.0,
+      "meleeDamage": 24558.0,
+      "kiDamage": 22314.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

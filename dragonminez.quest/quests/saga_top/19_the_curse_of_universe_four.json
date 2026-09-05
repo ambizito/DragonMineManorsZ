@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u4_dercori",
       "count": 1,
-      "health": 1510000.0,
-      "meleeDamage": 63180.0,
-      "kiDamage": 57410.0,
+      "health": 3020000.0,
+      "meleeDamage": 37908.0,
+      "kiDamage": 34446.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

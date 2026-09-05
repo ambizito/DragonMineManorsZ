@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_goku_end_ssj2",
       "count": 1,
-      "health": 322000.0,
-      "meleeDamage": 13500.0,
-      "kiDamage": 12240.0,
+      "health": 644000.0,
+      "meleeDamage": 8100.0,
+      "kiDamage": 7344.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
@@ -50,9 +50,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_vegeta_majin",
       "count": 1,
-      "health": 336000.0,
-      "meleeDamage": 14100.0,
-      "kiDamage": 12750.0,
+      "health": 672000.0,
+      "meleeDamage": 8460.0,
+      "kiDamage": 7650.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_dodoria",
       "count": 1,
-      "health": 13205.0,
-      "meleeDamage": 127.0,
-      "kiDamage": 221.0,
+      "health": 6410.0,
+      "meleeDamage": 113.39999999999999,
+      "kiDamage": 132.6,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

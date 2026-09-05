@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_rof_golden_frieza",
       "count": 1,
-      "health": 1770000.0,
-      "meleeDamage": 74060.0,
-      "kiDamage": 67300.0,
+      "health": 3540000.0,
+      "meleeDamage": 44436.0,
+      "kiDamage": 40380.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

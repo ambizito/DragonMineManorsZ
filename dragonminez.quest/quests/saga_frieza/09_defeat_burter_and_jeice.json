@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_burter",
       "count": 1,
-      "health": 4862.0,
-      "meleeDamage": 265.0,
-      "kiDamage": 238.0,
+      "health": 9724.0,
+      "meleeDamage": 159.0,
+      "kiDamage": 142.79999999999998,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
@@ -50,9 +50,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_jeice",
       "count": 1,
-      "health": 40862.0,
-      "meleeDamage": 135.0,
-      "kiDamage": 238.0,
+      "health": 9724.0,
+      "meleeDamage": 159.0,
+      "kiDamage": 142.79999999999998,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

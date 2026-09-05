@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_whis",
       "count": 1,
-      "health": 1790000.0,
-      "meleeDamage": 74900.0,
-      "kiDamage": 68060.0,
+      "health": 3580000.0,
+      "meleeDamage": 44940.0,
+      "kiDamage": 40836.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

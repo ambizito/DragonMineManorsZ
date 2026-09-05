@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_dabura",
       "count": 1,
-      "health": 308000.0,
-      "meleeDamage": 12900.0,
-      "kiDamage": 11730.0,
+      "health": 616000.0,
+      "meleeDamage": 7740.0,
+      "kiDamage": 7038.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

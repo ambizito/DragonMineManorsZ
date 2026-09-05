@@ -12,7 +12,7 @@
     "type": "item_list_wish"
   },
   {
-    "amount": 200000,
+    "amount": 5000,
     "name": "wish.shenron.tps.name",
     "description": "wish.shenron.tps.desc",
     "type": "tps"
