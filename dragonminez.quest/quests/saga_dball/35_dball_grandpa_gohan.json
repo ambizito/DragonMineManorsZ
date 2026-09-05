@@ -1,0 +1,52 @@
+{
+  "id": 35,
+  "title": "quest.dmzsparking.dball.35.name",
+  "description": "quest.dmzsparking.dball.35.desc",
+  "type": "SAGA",
+  "category": "saga_dball",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "dball_saga",
+        "questId": 34
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2557
+      },
+      {
+        "type": "BIOME",
+        "biome": "minecraft:desert"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_cl_grandpa_gohan",
+      "count": 1,
+      "health": 952000.0,
+      "meleeDamage": 39430.0,
+      "kiDamage": 35840.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 208800
+    }
+  ]
+}

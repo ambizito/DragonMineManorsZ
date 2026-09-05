@@ -1,0 +1,45 @@
+{
+  "id": "bog_what_the_scouter_missed",
+  "title": "sidequest.dmzsparking.bog_what_the_scouter_missed.name",
+  "description": "sidequest.dmzsparking.bog_what_the_scouter_missed.desc",
+  "type": "SIDEQUEST",
+  "category": "collection",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "kingkai",
+  "turn_in": "kingkai",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "beerus_saga",
+        "questId": 2
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "dragonminez:kikono_shard",
+      "count": 10
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:amethyst_shard",
+      "count": 12
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "kingkai"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 119300
+    }
+  ]
+}

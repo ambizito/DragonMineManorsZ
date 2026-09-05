@@ -1,0 +1,52 @@
+{
+  "id": 27,
+  "title": "quest.dmzsparking.top.27.name",
+  "description": "quest.dmzsparking.top.27.desc",
+  "type": "SAGA",
+  "category": "saga_top",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "top_saga",
+        "questId": 26
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 4980
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:null_realm"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_tk_kefla_ssj",
+      "count": 1,
+      "health": 2300000.0,
+      "meleeDamage": 96230.0,
+      "kiDamage": 87450.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 340200
+    }
+  ]
+}

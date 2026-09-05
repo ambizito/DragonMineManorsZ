@@ -1,0 +1,46 @@
+{
+  "id": 6,
+  "title": "quest.dmzsparking.beerus.6.name",
+  "description": "quest.dmzsparking.beerus.6.desc",
+  "type": "SAGA",
+  "category": "saga_beerus",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "beerus_saga",
+        "questId": 5
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3400
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:beerus_planet"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "DIMENSION",
+      "dimension": "dmzsparking:beerus_planet"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 109300
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": 33,
+  "title": "quest.dmzsparking.dball.33.name",
+  "description": "quest.dmzsparking.dball.33.desc",
+  "type": "SAGA",
+  "category": "saga_dball",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "dball_saga",
+        "questId": 32
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2540
+      },
+      {
+        "type": "BIOME",
+        "biome": "minecraft:desert"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_cl_mummy",
+      "count": 1,
+      "health": 936000.0,
+      "meleeDamage": 38770.0,
+      "kiDamage": 35230.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 185500
+    }
+  ]
+}

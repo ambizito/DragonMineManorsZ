@@ -1,0 +1,48 @@
+{
+  "id": 56,
+  "title": "quest.dmzsparking.dball.56.name",
+  "description": "quest.dmzsparking.dball.56.desc",
+  "type": "SAGA",
+  "category": "saga_dball",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "dball_saga",
+        "questId": 55
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2700
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_cl_giant_piccolo",
+      "count": 1,
+      "health": 1150000.0,
+      "meleeDamage": 47640.0,
+      "kiDamage": 43290.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 225100
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": 41,
+  "title": "quest.dmzsparking.movies.101.name",
+  "description": "quest.dmzsparking.movies.101.desc",
+  "type": "SAGA",
+  "category": "saga_movies",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "movies_saga",
+        "questId": 40
+      },
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "top_saga",
+        "questId": 35
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 5400
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_mv_paragus",
+      "count": 1,
+      "health": 2800000.0,
+      "meleeDamage": 120000.0,
+      "kiDamage": 110000.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 480000
+    }
+  ]
+}

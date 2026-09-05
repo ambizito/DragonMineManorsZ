@@ -1,0 +1,8 @@
+{
+  "id": "rof_saga",
+  "name": "dmz.saga.rof_saga",
+  "questFolder": "saga_rof",
+  "requirements": {
+    "previousSaga": "beerus_saga"
+  }
+}

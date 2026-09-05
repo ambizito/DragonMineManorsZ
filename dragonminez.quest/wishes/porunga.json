@@ -1,0 +1,152 @@
+[
+  {
+    "items": [
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:senzu",
+        "count": 32
+      }
+    ],
+    "name": "wish.porunga.senzu.name",
+    "description": "wish.porunga.senzu.desc",
+    "type": "item_list_wish"
+  },
+  {
+    "amount": 15000,
+    "name": "wish.porunga.tps.name",
+    "description": "wish.porunga.tps.desc",
+    "type": "tps"
+  },
+  {
+    "items": [
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:brave_sword",
+        "count": 1
+      }
+    ],
+    "name": "wish.porunga.bravesword.name",
+    "description": "wish.porunga.bravesword.desc",
+    "type": "item_list_wish"
+  },
+  {
+    "name": "wish.porunga.racialskillreset.name",
+    "description": "wish.porunga.racialskillreset.desc",
+    "type": "passivereset"
+  },
+  {
+    "name": "wish.porunga.customization.name",
+    "description": "wish.porunga.customization.desc",
+    "type": "recustomize"
+  },
+  {
+    "name": "wish.porunga.relocatestats.name",
+    "description": "wish.porunga.relocatestats.desc",
+    "type": "relocatestats"
+  },
+  {
+    "name": "wish.porunga.changedifficulty.name",
+    "description": "wish.porunga.changedifficulty.desc",
+    "type": "changedifficulty"
+  },
+  {
+    "name": "wish.porunga.resetstory.name",
+    "description": "wish.porunga.resetstory.desc",
+    "type": "resetstory"
+  },
+  {
+    "items": [
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:kikono_shard",
+        "count": 64
+      },
+      {
+        "itemType": "generic_item",
+        "itemId": "minecraft:iron_ingot",
+        "count": 128
+      }
+    ],
+    "name": "wish.porunga.materials.name",
+    "description": "wish.porunga.materials.desc",
+    "type": "item_list_wish"
+  },
+  {
+    "items": [
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:invencible_armor_helmet",
+        "count": 1
+      },
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:invencible_armor_chestplate",
+        "count": 1
+      },
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:invencible_armor_leggings",
+        "count": 1
+      },
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:invencible_armor_boots",
+        "count": 1
+      }
+    ],
+    "name": "wish.porunga.invincible.name",
+    "description": "wish.porunga.invincible.desc",
+    "type": "item_list_wish"
+  },
+  {
+    "items": [
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:invencible_blue_armor_helmet",
+        "count": 1
+      },
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:invencible_blue_armor_chestplate",
+        "count": 1
+      },
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:invencible_blue_armor_leggings",
+        "count": 1
+      },
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:invencible_blue_armor_boots",
+        "count": 1
+      }
+    ],
+    "name": "wish.porunga.invincible_blue.name",
+    "description": "wish.porunga.invincible_blue.desc",
+    "type": "item_list_wish"
+  },
+  {
+    "items": [
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:pothala_pair",
+        "count": 1
+      }
+    ],
+    "name": "wish.porunga.pothala_yellow.name",
+    "description": "wish.porunga.pothala_yellow.desc",
+    "type": "item_list_wish"
+  },
+  {
+    "items": [
+      {
+        "itemType": "generic_item",
+        "itemId": "dragonminez:green_pothala_pair",
+        "count": 1
+      }
+    ],
+    "name": "wish.porunga.pothala_green.name",
+    "description": "wish.porunga.pothala_green.desc",
+    "type": "item_list_wish"
+  }
+]

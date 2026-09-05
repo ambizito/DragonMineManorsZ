@@ -1,0 +1,45 @@
+{
+  "id": "u6_terms_of_the_wager",
+  "title": "sidequest.dmzsparking.u6_terms_of_the_wager.name",
+  "description": "sidequest.dmzsparking.u6_terms_of_the_wager.desc",
+  "type": "SIDEQUEST",
+  "category": "errands",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "kingkai",
+  "turn_in": "kingkai",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "u7vsu6_saga",
+        "questId": 1
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "minecraft:gold_ingot",
+      "count": 24
+    },
+    {
+      "type": "ITEM",
+      "item": "dragonminez:kikono_shard",
+      "count": 10
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "kingkai"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 129500
+    }
+  ]
+}

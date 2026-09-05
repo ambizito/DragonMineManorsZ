@@ -1,0 +1,48 @@
+{
+  "id": 8,
+  "title": "quest.dmzsparking.dball.8.name",
+  "description": "quest.dmzsparking.dball.8.desc",
+  "type": "SAGA",
+  "category": "saga_dball",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "dball_saga",
+        "questId": 7
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2364
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_cl_bacterian",
+      "count": 1,
+      "health": 836000.0,
+      "meleeDamage": 34630.0,
+      "kiDamage": 31470.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 156700
+    }
+  ]
+}

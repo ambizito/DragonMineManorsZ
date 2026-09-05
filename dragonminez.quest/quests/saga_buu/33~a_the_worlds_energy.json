@@ -1,0 +1,42 @@
+{
+  "id": 45,
+  "title": "quest.dmzsparking.buu.112.name",
+  "description": "quest.dmzsparking.buu.112.desc",
+  "type": "SAGA",
+  "category": "saga_buu",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "buu_saga",
+        "questId": 44
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2310
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "kingkai"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 97000
+    }
+  ]
+}

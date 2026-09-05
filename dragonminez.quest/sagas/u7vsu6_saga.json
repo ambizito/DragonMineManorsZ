@@ -1,0 +1,8 @@
+{
+  "id": "u7vsu6_saga",
+  "name": "dmz.saga.u7vsu6_saga",
+  "questFolder": "saga_u6",
+  "requirements": {
+    "previousSaga": "rof_saga"
+  }
+}

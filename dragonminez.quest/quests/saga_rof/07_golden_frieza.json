@@ -1,0 +1,48 @@
+{
+  "id": 7,
+  "title": "quest.dmzsparking.rof.7.name",
+  "description": "quest.dmzsparking.rof.7.desc",
+  "type": "SAGA",
+  "category": "saga_rof",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "rof_saga",
+        "questId": 6
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3610
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_rof_golden_frieza",
+      "count": 1,
+      "health": 1770000.0,
+      "meleeDamage": 74060.0,
+      "kiDamage": 67300.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 278400
+    }
+  ]
+}

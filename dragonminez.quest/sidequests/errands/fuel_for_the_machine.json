@@ -1,0 +1,50 @@
+{
+  "id": "fuel_for_the_machine",
+  "title": "quest.dmzsparking.side.fuel_for_the_machine.name",
+  "description": "quest.dmzsparking.side.fuel_for_the_machine.desc",
+  "type": "SIDEQUEST",
+  "category": "errands",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "bulma",
+  "turn_in": "bulma",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "future_saga",
+        "questId": 9
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "dragonminez:fuel_generator",
+      "count": 1
+    },
+    {
+      "type": "ITEM",
+      "item": "dragonminez:energy_cable",
+      "count": 8
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:redstone_block",
+      "count": 6
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "bulma"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 61000
+    }
+  ]
+}

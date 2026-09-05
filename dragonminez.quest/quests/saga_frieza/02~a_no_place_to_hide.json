@@ -1,0 +1,42 @@
+{
+  "id": 4,
+  "title": "quest.dmzsparking.frieza.102.name",
+  "description": "quest.dmzsparking.frieza.102.desc",
+  "type": "SAGA",
+  "category": "saga_frieza",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "frieza_saga",
+        "questId": 3
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 118
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "krillin"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 6700
+    }
+  ]
+}

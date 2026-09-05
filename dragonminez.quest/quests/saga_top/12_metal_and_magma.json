@@ -1,0 +1,52 @@
+{
+  "id": 12,
+  "title": "quest.dmzsparking.top.12.name",
+  "description": "quest.dmzsparking.top.12.desc",
+  "type": "SAGA",
+  "category": "saga_top",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "top_saga",
+        "questId": 11
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 4600
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:null_realm"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u6_magetta",
+      "count": 1,
+      "health": 1570000.0,
+      "meleeDamage": 65690.0,
+      "kiDamage": 59700.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 269400
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "u6_the_super_dragon_balls",
+  "title": "sidequest.dmzsparking.u6_the_super_dragon_balls.name",
+  "description": "sidequest.dmzsparking.u6_the_super_dragon_balls.desc",
+  "type": "SIDEQUEST",
+  "category": "collection",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "shin",
+  "turn_in": "shin",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "u7vsu6_saga",
+        "questId": 7
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "minecraft:amethyst_shard",
+      "count": 28
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:diamond",
+      "count": 12
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "shin"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 168100
+    }
+  ]
+}

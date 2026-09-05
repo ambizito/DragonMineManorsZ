@@ -1,0 +1,42 @@
+{
+  "id": 11,
+  "title": "quest.dmzsparking.black.11.name",
+  "description": "quest.dmzsparking.black.11.desc",
+  "type": "SAGA",
+  "category": "saga_black",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "black_saga",
+        "questId": 10
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 4320
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "zeno"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 130200
+    }
+  ]
+}

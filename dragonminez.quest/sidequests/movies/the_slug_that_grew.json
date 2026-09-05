@@ -1,0 +1,45 @@
+{
+  "id": "the_slug_that_grew",
+  "title": "quest.dmzsparking.side.the_slug_that_grew.name",
+  "description": "quest.dmzsparking.side.the_slug_that_grew.desc",
+  "type": "SIDEQUEST",
+  "category": "movies",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "guru",
+  "turn_in": "guru",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "movies_saga",
+        "questId": 13
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_slug_giant",
+      "count": 1,
+      "health": 3800.0,
+      "meleeDamage": 210.0,
+      "kiDamage": 210.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "guru"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 12000
+    }
+  ]
+}

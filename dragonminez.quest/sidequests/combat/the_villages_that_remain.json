@@ -1,0 +1,45 @@
+{
+  "id": "the_villages_that_remain",
+  "title": "quest.dmzsparking.side.the_villages_that_remain.name",
+  "description": "quest.dmzsparking.side.the_villages_that_remain.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "guru",
+  "turn_in": "guru",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "frieza_saga",
+        "questId": 5
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_friezasoldier02",
+      "count": 10,
+      "health": 350.0,
+      "meleeDamage": 20.0,
+      "kiDamage": 20.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "guru"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 11000
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "the_strongest_partner",
+  "title": "quest.dmzsparking.side.the_strongest_partner.name",
+  "description": "quest.dmzsparking.side.the_strongest_partner.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "oldkai",
+  "turn_in": "oldkai",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "buu_saga",
+        "questId": 38
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_vegetto_base",
+      "count": 1,
+      "health": 240000.0,
+      "meleeDamage": 10000.0,
+      "kiDamage": 9300.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "oldkai"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 150000
+    }
+  ]
+}

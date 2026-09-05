@@ -1,0 +1,8 @@
+{
+  "id": "beerus_saga",
+  "name": "dmz.saga.beerus_saga",
+  "questFolder": "saga_beerus",
+  "requirements": {
+    "previousSaga": "gt_saga"
+  }
+}

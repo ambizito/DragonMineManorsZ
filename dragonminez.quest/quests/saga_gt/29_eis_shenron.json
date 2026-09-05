@@ -1,0 +1,52 @@
+{
+  "id": 29,
+  "title": "quest.dmzsparking.gt.29.name",
+  "description": "quest.dmzsparking.gt.29.desc",
+  "type": "SAGA",
+  "category": "saga_gt",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 28
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3165
+      },
+      {
+        "type": "BIOME",
+        "biome": "minecraft:snowy_plains"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_gt_dragon3",
+      "count": 1,
+      "health": 1630000.0,
+      "meleeDamage": 68200.0,
+      "kiDamage": 61980.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 252800
+    }
+  ]
+}

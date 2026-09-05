@@ -1,0 +1,32 @@
+{
+  "id": 1,
+  "title": "quest.dmzsparking.u7vsu6.1.name",
+  "description": "quest.dmzsparking.u7vsu6.1.desc",
+  "type": "SAGA",
+  "category": "saga_u6",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3660
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "vegeta"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 88500
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "bandits_in_the_hills",
+  "title": "quest.dmzsparking.side.bandits_in_the_hills.name",
+  "description": "quest.dmzsparking.side.bandits_in_the_hills.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "gohan",
+  "turn_in": "gohan",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "saiyan_saga",
+        "questId": 2
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:bandit",
+      "count": 30
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "gohan"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 2200
+    }
+  ]
+}

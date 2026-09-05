@@ -1,0 +1,55 @@
+{
+  "id": "gt_scrap_from_m2",
+  "title": "sidequest.dmzsparking.gt_scrap_from_m2.name",
+  "description": "sidequest.dmzsparking.gt_scrap_from_m2.desc",
+  "type": "SIDEQUEST",
+  "category": "collection",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "bulma",
+  "turn_in": "bulma",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 6
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "dragonminez:gete_scrap",
+      "count": 16
+    },
+    {
+      "type": "ITEM",
+      "item": "dragonminez:gete_ingot",
+      "count": 8
+    },
+    {
+      "type": "KILL",
+      "entity": "dragonminez:robot3",
+      "count": 6,
+      "health": 719000.0,
+      "meleeDamage": 30090.0,
+      "kiDamage": 27350.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "bulma"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 106000
+    }
+  ]
+}

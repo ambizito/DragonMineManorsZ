@@ -1,0 +1,52 @@
+{
+  "id": 3,
+  "title": "quest.dmzsparking.top.3.name",
+  "description": "quest.dmzsparking.top.3.desc",
+  "type": "SAGA",
+  "category": "saga_top",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "top_saga",
+        "questId": 2
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 4450
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:zeno_expo"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u9_basil",
+      "count": 1,
+      "health": 1490000.0,
+      "meleeDamage": 62340.0,
+      "kiDamage": 56650.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 248900
+    }
+  ]
+}

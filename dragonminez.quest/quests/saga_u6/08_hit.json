@@ -1,0 +1,52 @@
+{
+  "id": 8,
+  "title": "quest.dmzsparking.u7vsu6.8.name",
+  "description": "quest.dmzsparking.u7vsu6.8.desc",
+  "type": "SAGA",
+  "category": "saga_u6",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "u7vsu6_saga",
+        "questId": 7
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3840
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:universal_arena"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_hit",
+      "count": 1,
+      "health": 1880000.0,
+      "meleeDamage": 78660.0,
+      "kiDamage": 71480.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 291300
+    }
+  ]
+}

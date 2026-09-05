@@ -1,0 +1,45 @@
+{
+  "id": "gt_the_bill_from_imecka",
+  "title": "sidequest.dmzsparking.gt_the_bill_from_imecka.name",
+  "description": "sidequest.dmzsparking.gt_the_bill_from_imecka.desc",
+  "type": "SIDEQUEST",
+  "category": "errands",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "trunks",
+  "turn_in": "trunks",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 2
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "minecraft:gold_ingot",
+      "count": 32
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:diamond",
+      "count": 8
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "trunks"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 104200
+    }
+  ]
+}

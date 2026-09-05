@@ -1,0 +1,155 @@
+{
+  "npcs": {
+    "goku": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 61
+      },
+      "hostile_below": 25
+    },
+    "roshi": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "karin": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "guru": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 61
+      },
+      "hostile_below": 25
+    },
+    "dende": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 61
+      },
+      "hostile_below": 25
+    },
+    "popo": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "kingkai": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 61
+      },
+      "hostile_below": 25
+    },
+    "gero": {
+      "default_relation": "NEUTRAL",
+      "interaction": {
+        "max_alignment": 60
+      }
+    },
+    "enma": {
+      "default_relation": "NEUTRAL"
+    },
+    "baba": {
+      "default_relation": "NEUTRAL"
+    },
+    "toribot": {
+      "default_relation": "NEUTRAL"
+    },
+    "bulma": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "krillin": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "yamcha": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "tien": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "chiaotzu": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "gohan": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "trunks": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "chi_chi": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "videl": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "namek_elder": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 61
+      },
+      "hostile_below": 25
+    },
+    "shin": {
+      "default_relation": "FRIENDLY",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 25
+    },
+    "piccolo": {
+      "default_relation": "NEUTRAL",
+      "interaction": {
+        "min_alignment": 41
+      },
+      "hostile_below": 20
+    },
+    "vegeta": {
+      "default_relation": "NEUTRAL"
+    }
+  }
+}

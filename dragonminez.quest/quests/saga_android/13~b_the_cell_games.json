@@ -1,0 +1,42 @@
+{
+  "id": 25,
+  "title": "quest.dmzsparking.android.112.name",
+  "description": "quest.dmzsparking.android.112.desc",
+  "type": "SAGA",
+  "category": "saga_android",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "android_saga",
+        "questId": 24
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 1230
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "trunks"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 34000
+    }
+  ]
+}

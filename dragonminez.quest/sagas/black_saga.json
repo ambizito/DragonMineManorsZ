@@ -1,0 +1,8 @@
+{
+  "id": "black_saga",
+  "name": "dmz.saga.black_saga",
+  "questFolder": "saga_black",
+  "requirements": {
+    "previousSaga": "u7vsu6_saga"
+  }
+}

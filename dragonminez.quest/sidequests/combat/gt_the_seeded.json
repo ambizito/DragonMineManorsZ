@@ -1,0 +1,50 @@
+{
+  "id": "gt_the_seeded",
+  "title": "sidequest.dmzsparking.gt_the_seeded.name",
+  "description": "sidequest.dmzsparking.gt_the_seeded.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "dende",
+  "turn_in": "dende",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 9
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:bandit",
+      "count": 8,
+      "health": 737000.0,
+      "meleeDamage": 30820.0,
+      "kiDamage": 28010.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "ITEM",
+      "item": "dragonminez:kikono_shard",
+      "count": 6
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "dende"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 113300
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "broly_in_the_afterlife",
+  "title": "quest.dmzsparking.side.broly_in_the_afterlife.name",
+  "description": "quest.dmzsparking.side.broly_in_the_afterlife.desc",
+  "type": "SIDEQUEST",
+  "category": "movies",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "kingkai",
+  "turn_in": "kingkai",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "movies_saga",
+        "questId": 35
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_broly_lssj",
+      "count": 1,
+      "health": 470000.0,
+      "meleeDamage": 19000.0,
+      "kiDamage": 18000.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "kingkai"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 250000
+    }
+  ]
+}

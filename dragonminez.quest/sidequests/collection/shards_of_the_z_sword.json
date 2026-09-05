@@ -1,0 +1,45 @@
+{
+  "id": "shards_of_the_z_sword",
+  "title": "quest.dmzsparking.side.shards_of_the_z_sword.name",
+  "description": "quest.dmzsparking.side.shards_of_the_z_sword.desc",
+  "type": "SIDEQUEST",
+  "category": "collection",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "oldkai",
+  "turn_in": "oldkai",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "buu_saga",
+        "questId": 31
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "minecraft:netherite_ingot",
+      "count": 2
+    },
+    {
+      "type": "ITEM",
+      "item": "dragonminez:gete_ingot",
+      "count": 8
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "oldkai"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 110000
+    }
+  ]
+}

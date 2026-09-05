@@ -1,0 +1,36 @@
+{
+  "id": 1,
+  "title": "quest.dmzsparking.top.1.name",
+  "description": "quest.dmzsparking.top.1.desc",
+  "type": "SAGA",
+  "category": "saga_top",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 4400
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:beerus_planet"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "whis"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 101200
+    }
+  ]
+}

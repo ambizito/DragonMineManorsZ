@@ -1,0 +1,45 @@
+{
+  "id": "nappa_alone",
+  "title": "quest.dmzsparking.side.nappa_alone.name",
+  "description": "quest.dmzsparking.side.nappa_alone.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "goku",
+  "turn_in": "goku",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "saiyan_saga",
+        "questId": 4
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_nappa",
+      "count": 1,
+      "health": 570.0,
+      "meleeDamage": 30.0,
+      "kiDamage": 50.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "goku"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 3600
+    }
+  ]
+}

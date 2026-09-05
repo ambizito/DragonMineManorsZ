@@ -1,0 +1,42 @@
+{
+  "id": 10,
+  "title": "quest.dmzsparking.android.105.name",
+  "description": "quest.dmzsparking.android.105.desc",
+  "type": "SAGA",
+  "category": "saga_android",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "android_saga",
+        "questId": 9
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 632
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "krillin"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 23000
+    }
+  ]
+}

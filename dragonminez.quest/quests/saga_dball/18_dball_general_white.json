@@ -1,0 +1,52 @@
+{
+  "id": 18,
+  "title": "quest.dmzsparking.dball.18.name",
+  "description": "quest.dmzsparking.dball.18.desc",
+  "type": "SAGA",
+  "category": "saga_dball",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "dball_saga",
+        "questId": 17
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2431
+      },
+      {
+        "type": "BIOME",
+        "biome": "minecraft:snowy_plains"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_cl_general_white",
+      "count": 1,
+      "health": 877000.0,
+      "meleeDamage": 36330.0,
+      "kiDamage": 33010.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 168900
+    }
+  ]
+}

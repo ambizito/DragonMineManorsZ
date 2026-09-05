@@ -1,0 +1,45 @@
+{
+  "id": "sparring_with_piccolo",
+  "title": "quest.dmzsparking.side.sparring_with_piccolo.name",
+  "description": "quest.dmzsparking.side.sparring_with_piccolo.desc",
+  "type": "SIDEQUEST",
+  "category": "training",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "piccolo",
+  "turn_in": "piccolo",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "android_saga",
+        "questId": 6
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_piccolo",
+      "count": 1,
+      "health": 3700.0,
+      "meleeDamage": 190.0,
+      "kiDamage": 190.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "piccolo"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 35000
+    }
+  ]
+}

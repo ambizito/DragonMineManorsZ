@@ -1,0 +1,52 @@
+{
+  "id": 14,
+  "title": "quest.dmzsparking.gt.14.name",
+  "description": "quest.dmzsparking.gt.14.desc",
+  "type": "SAGA",
+  "category": "saga_gt",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 13
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2934
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dragonminez:otherworld"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_frieza_fp",
+      "count": 1,
+      "health": 1350000.0,
+      "meleeDamage": 56490.0,
+      "kiDamage": 51330.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 206200
+    }
+  ]
+}

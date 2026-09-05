@@ -1,0 +1,45 @@
+{
+  "id": "power_for_the_workshop",
+  "title": "quest.dmzsparking.side.power_for_the_workshop.name",
+  "description": "quest.dmzsparking.side.power_for_the_workshop.desc",
+  "type": "SIDEQUEST",
+  "category": "collection",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "bulma",
+  "turn_in": "bulma",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "saiyan_saga",
+        "questId": 1
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "dragonminez:fuel_generator",
+      "count": 1
+    },
+    {
+      "type": "ITEM",
+      "item": "dragonminez:energy_cable",
+      "count": 4
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "bulma"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 1400
+    }
+  ]
+}

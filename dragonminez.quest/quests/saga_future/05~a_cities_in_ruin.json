@@ -1,0 +1,48 @@
+{
+  "id": 10,
+  "title": "quest.dmzsparking.future.105.name",
+  "description": "quest.dmzsparking.future.105.desc",
+  "type": "SAGA",
+  "category": "saga_future",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "future_saga",
+        "questId": 9
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 1530
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_a18",
+      "count": 1,
+      "health": 250000.0,
+      "meleeDamage": 10000.0,
+      "kiDamage": 9400.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 110000
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": 1,
+  "title": "quest.dmzsparking.beerus.1.name",
+  "description": "quest.dmzsparking.beerus.1.desc",
+  "type": "SAGA",
+  "category": "saga_beerus",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3250
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "kingkai"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 81100
+    }
+  ]
+}

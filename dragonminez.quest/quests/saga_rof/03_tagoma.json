@@ -1,0 +1,48 @@
+{
+  "id": 3,
+  "title": "quest.dmzsparking.rof.3.name",
+  "description": "quest.dmzsparking.rof.3.desc",
+  "type": "SAGA",
+  "category": "saga_rof",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "rof_saga",
+        "questId": 2
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3495
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_rof_tagoma",
+      "count": 1,
+      "health": 1060000.0,
+      "meleeDamage": 44350.0,
+      "kiDamage": 40300.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 220300
+    }
+  ]
+}

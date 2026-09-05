@@ -1,0 +1,57 @@
+{
+  "id": 33,
+  "title": "quest.dmzsparking.top.33.name",
+  "description": "quest.dmzsparking.top.33.desc",
+  "type": "SAGA",
+  "category": "saga_top",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "top_saga",
+        "questId": 32
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 5170
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:null_realm"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_tk_toppo",
+      "count": 1,
+      "health": 2450000.0,
+      "meleeDamage": 102510.0,
+      "kiDamage": 93160.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY",
+      "canTransform": true,
+      "TransformTriggerPercent": 0.35,
+      "TransformHealth": 2520000.0,
+      "TransformMeleeDamage": 105440.0,
+      "TransformKiDamage": 95820.0
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 724200
+    }
+  ]
+}

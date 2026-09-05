@@ -1,0 +1,65 @@
+{
+  "id": "the_three_machines",
+  "title": "quest.dmzsparking.side.the_three_machines.name",
+  "description": "quest.dmzsparking.side.the_three_machines.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "roshi",
+  "turn_in": "roshi",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "android_saga",
+        "questId": 11
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:robot1",
+      "count": 2,
+      "health": 11000.0,
+      "meleeDamage": 460.0,
+      "kiDamage": 410.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "KILL",
+      "entity": "dragonminez:robot2",
+      "count": 2,
+      "health": 11000.0,
+      "meleeDamage": 460.0,
+      "kiDamage": 410.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "KILL",
+      "entity": "dragonminez:robot3",
+      "count": 2,
+      "health": 11000.0,
+      "meleeDamage": 460.0,
+      "kiDamage": 410.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "roshi"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 38000
+    }
+  ]
+}

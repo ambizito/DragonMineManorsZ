@@ -1,0 +1,8 @@
+{
+  "id": "top_saga",
+  "name": "dmz.saga.top_saga",
+  "questFolder": "saga_top",
+  "requirements": {
+    "previousSaga": "black_saga"
+  }
+}

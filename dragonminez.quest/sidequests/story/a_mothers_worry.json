@@ -1,0 +1,45 @@
+{
+  "id": "a_mothers_worry",
+  "title": "quest.dmzsparking.side.a_mothers_worry.name",
+  "description": "quest.dmzsparking.side.a_mothers_worry.desc",
+  "type": "SIDEQUEST",
+  "category": "story",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "chi_chi",
+  "turn_in": "chi_chi",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "android_saga",
+        "questId": 6
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "minecraft:iron_sword",
+      "count": 1
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:cooked_beef",
+      "count": 16
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "chi_chi"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 35000
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "rof_four_months",
+  "title": "sidequest.dmzsparking.rof_four_months.name",
+  "description": "sidequest.dmzsparking.rof_four_months.desc",
+  "type": "SIDEQUEST",
+  "category": "errands",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "vegeta",
+  "turn_in": "vegeta",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "rof_saga",
+        "questId": 7
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "minecraft:cooked_beef",
+      "count": 40
+    },
+    {
+      "type": "KILL",
+      "entity": "dragonminez:robot1",
+      "count": 6,
+      "health": 1030000.0,
+      "meleeDamage": 42950.0,
+      "kiDamage": 39030.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "vegeta"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 167000
+    }
+  ]
+}

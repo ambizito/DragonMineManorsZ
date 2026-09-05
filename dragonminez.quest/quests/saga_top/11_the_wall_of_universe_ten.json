@@ -1,0 +1,62 @@
+{
+  "id": 11,
+  "title": "quest.dmzsparking.top.11.name",
+  "description": "quest.dmzsparking.top.11.desc",
+  "type": "SAGA",
+  "category": "saga_top",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "top_saga",
+        "questId": 10
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 4585
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:null_realm"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u10_napapa",
+      "count": 1,
+      "health": 820000.0,
+      "meleeDamage": 34290.0,
+      "kiDamage": 31160.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u10_murichim",
+      "count": 1,
+      "health": 820000.0,
+      "meleeDamage": 34290.0,
+      "kiDamage": 31160.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 268700
+    }
+  ]
+}

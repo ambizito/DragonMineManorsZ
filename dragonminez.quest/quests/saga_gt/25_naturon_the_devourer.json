@@ -1,0 +1,52 @@
+{
+  "id": 25,
+  "title": "quest.dmzsparking.gt.25.name",
+  "description": "quest.dmzsparking.gt.25.desc",
+  "type": "SAGA",
+  "category": "saga_gt",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 24
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3113
+      },
+      {
+        "type": "BIOME",
+        "biome": "minecraft:desert"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_gt_dragon7pan",
+      "count": 1,
+      "health": 1550000.0,
+      "meleeDamage": 64850.0,
+      "kiDamage": 58940.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 249800
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "videl_city_defense",
+  "title": "dmz.sidequest.videl_defense.name",
+  "description": "dmz.sidequest.videl_defense.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "gohan",
+  "turn_in": "gohan",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "android_saga",
+        "questId": 28
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_cell_jr",
+      "count": 10,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY",
+      "health": 677000,
+      "meleeDamage": 26800,
+      "kiDamage": 29500,
+      "Armor": 92,
+      "ArmorToughness": 0,
+      "Protection": 0,
+      "movementSpeed": 0.523
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "gohan"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 80000
+    }
+  ],
+  "defaultsVersion": "2.1.2"
+}

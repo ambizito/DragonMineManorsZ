@@ -1,0 +1,52 @@
+{
+  "id": 31,
+  "title": "quest.dmzsparking.dball.31.name",
+  "description": "quest.dmzsparking.dball.31.desc",
+  "type": "SAGA",
+  "category": "saga_dball",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "dball_saga",
+        "questId": 30
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2532
+      },
+      {
+        "type": "BIOME",
+        "biome": "minecraft:desert"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_cl_vampire",
+      "count": 1,
+      "health": 926000.0,
+      "meleeDamage": 38360.0,
+      "kiDamage": 34860.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 185100
+    }
+  ]
+}

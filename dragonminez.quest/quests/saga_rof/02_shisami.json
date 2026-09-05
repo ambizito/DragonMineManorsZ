@@ -1,0 +1,48 @@
+{
+  "id": 2,
+  "title": "quest.dmzsparking.rof.2.name",
+  "description": "quest.dmzsparking.rof.2.desc",
+  "type": "SAGA",
+  "category": "saga_rof",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "rof_saga",
+        "questId": 1
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3470
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_rof_shisami",
+      "count": 1,
+      "health": 890000.0,
+      "meleeDamage": 37240.0,
+      "kiDamage": 33840.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 207500
+    }
+  ]
+}

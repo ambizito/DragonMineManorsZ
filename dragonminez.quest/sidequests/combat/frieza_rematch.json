@@ -1,0 +1,45 @@
+{
+  "id": "frieza_rematch",
+  "title": "quest.dmzsparking.side.frieza_rematch.name",
+  "description": "quest.dmzsparking.side.frieza_rematch.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "goku",
+  "turn_in": "goku",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "frieza_saga",
+        "questId": 25
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_frieza_fp",
+      "count": 1,
+      "health": 22000.0,
+      "meleeDamage": 1000.0,
+      "kiDamage": 870.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "goku"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 30000
+    }
+  ]
+}

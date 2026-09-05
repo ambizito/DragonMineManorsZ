@@ -1,0 +1,52 @@
+{
+  "id": 7,
+  "title": "quest.dmzsparking.beerus.7.name",
+  "description": "quest.dmzsparking.beerus.7.desc",
+  "type": "SAGA",
+  "category": "saga_beerus",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "beerus_saga",
+        "questId": 6
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3430
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:beerus_planet"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_whis",
+      "count": 1,
+      "health": 1790000.0,
+      "meleeDamage": 74900.0,
+      "kiDamage": 68060.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 268200
+    }
+  ]
+}

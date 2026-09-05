@@ -1,0 +1,52 @@
+{
+  "id": 20,
+  "title": "quest.dmzsparking.android.110.name",
+  "description": "quest.dmzsparking.android.110.desc",
+  "type": "SAGA",
+  "category": "saga_android",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "android_saga",
+        "questId": 19
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 1000
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dragonminez:time_chamber"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:shadow_dummy",
+      "count": 24,
+      "health": 35000.0,
+      "meleeDamage": 2000.0,
+      "kiDamage": 1800.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 78000
+    }
+  ]
+}

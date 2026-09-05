@@ -1,0 +1,45 @@
+{
+  "id": "gt_one_last_favour",
+  "title": "sidequest.dmzsparking.gt_one_last_favour.name",
+  "description": "sidequest.dmzsparking.gt_one_last_favour.desc",
+  "type": "SIDEQUEST",
+  "category": "errands",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "goku",
+  "turn_in": "goku",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 31
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "minecraft:cooked_beef",
+      "count": 32
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:golden_carrot",
+      "count": 8
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "goku"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 153300
+    }
+  ]
+}

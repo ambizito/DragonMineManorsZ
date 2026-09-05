@@ -1,0 +1,72 @@
+{
+  "id": 25,
+  "title": "quest.dmzsparking.top.25.name",
+  "description": "quest.dmzsparking.top.25.desc",
+  "type": "SAGA",
+  "category": "saga_top",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "top_saga",
+        "questId": 24
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 4940
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:null_realm"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u3_koitsukai",
+      "count": 1,
+      "health": 680000.0,
+      "meleeDamage": 28460.0,
+      "kiDamage": 25860.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u3_panchia",
+      "count": 1,
+      "health": 680000.0,
+      "meleeDamage": 28460.0,
+      "kiDamage": 25860.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u3_borareta",
+      "count": 1,
+      "health": 680000.0,
+      "meleeDamage": 28460.0,
+      "kiDamage": 25860.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 338200
+    }
+  ]
+}

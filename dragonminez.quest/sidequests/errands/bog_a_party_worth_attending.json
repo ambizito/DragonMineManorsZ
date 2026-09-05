@@ -1,0 +1,50 @@
+{
+  "id": "bog_a_party_worth_attending",
+  "title": "sidequest.dmzsparking.bog_a_party_worth_attending.name",
+  "description": "sidequest.dmzsparking.bog_a_party_worth_attending.desc",
+  "type": "SIDEQUEST",
+  "category": "errands",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "bulma",
+  "turn_in": "bulma",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "beerus_saga",
+        "questId": 1
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "minecraft:cake",
+      "count": 4
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:sugar",
+      "count": 32
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:cooked_beef",
+      "count": 24
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "bulma"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 118700
+    }
+  ]
+}

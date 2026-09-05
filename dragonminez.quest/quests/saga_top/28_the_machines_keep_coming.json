@@ -1,0 +1,62 @@
+{
+  "id": 28,
+  "title": "quest.dmzsparking.top.28.name",
+  "description": "quest.dmzsparking.top.28.desc",
+  "type": "SAGA",
+  "category": "saga_top",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "top_saga",
+        "questId": 27
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 5010
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:null_realm"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u3_narirama",
+      "count": 1,
+      "health": 959000.0,
+      "meleeDamage": 40130.0,
+      "kiDamage": 36470.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u3_biarra",
+      "count": 1,
+      "health": 959000.0,
+      "meleeDamage": 40130.0,
+      "kiDamage": 36470.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 341700
+    }
+  ]
+}

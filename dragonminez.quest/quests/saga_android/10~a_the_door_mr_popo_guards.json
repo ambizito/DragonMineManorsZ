@@ -1,0 +1,42 @@
+{
+  "id": 19,
+  "title": "quest.dmzsparking.android.109.name",
+  "description": "quest.dmzsparking.android.109.desc",
+  "type": "SAGA",
+  "category": "saga_android",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "android_saga",
+        "questId": 18
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 985
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "popo"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 29000
+    }
+  ]
+}

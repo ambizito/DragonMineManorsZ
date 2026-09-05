@@ -1,0 +1,52 @@
+{
+  "id": 2,
+  "title": "quest.dmzsparking.u7vsu6.2.name",
+  "description": "quest.dmzsparking.u7vsu6.2.desc",
+  "type": "SAGA",
+  "category": "saga_u6",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "u7vsu6_saga",
+        "questId": 1
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3685
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:universal_arena"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u6_botamo",
+      "count": 1,
+      "health": 1660000.0,
+      "meleeDamage": 69460.0,
+      "kiDamage": 63120.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 216800
+    }
+  ]
+}

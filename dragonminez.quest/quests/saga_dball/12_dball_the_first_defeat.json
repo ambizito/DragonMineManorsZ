@@ -1,0 +1,42 @@
+{
+  "id": 12,
+  "title": "quest.dmzsparking.dball.12.name",
+  "description": "quest.dmzsparking.dball.12.desc",
+  "type": "SAGA",
+  "category": "saga_dball",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "dball_saga",
+        "questId": 11
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2397
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "roshi"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 68600
+    }
+  ]
+}

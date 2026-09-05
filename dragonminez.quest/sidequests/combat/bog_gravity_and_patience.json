@@ -1,0 +1,50 @@
+{
+  "id": "bog_gravity_and_patience",
+  "title": "sidequest.dmzsparking.bog_gravity_and_patience.name",
+  "description": "sidequest.dmzsparking.bog_gravity_and_patience.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "vegeta",
+  "turn_in": "vegeta",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "beerus_saga",
+        "questId": 6
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:robot2",
+      "count": 8,
+      "health": 1040000.0,
+      "meleeDamage": 43440.0,
+      "kiDamage": 39480.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "ITEM",
+      "item": "dragonminez:gete_ingot",
+      "count": 12
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "vegeta"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 159900
+    }
+  ]
+}

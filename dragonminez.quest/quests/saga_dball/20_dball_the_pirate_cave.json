@@ -1,0 +1,52 @@
+{
+  "id": 20,
+  "title": "quest.dmzsparking.dball.20.name",
+  "description": "quest.dmzsparking.dball.20.desc",
+  "type": "SAGA",
+  "category": "saga_dball",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "dball_saga",
+        "questId": 19
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2448
+      },
+      {
+        "type": "BIOME",
+        "biome": "minecraft:beach"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:red_ribbon_soldier",
+      "count": 3,
+      "health": 869000.0,
+      "meleeDamage": 36000.0,
+      "kiDamage": 32710.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 169800
+    }
+  ]
+}

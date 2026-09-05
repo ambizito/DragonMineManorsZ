@@ -1,0 +1,50 @@
+{
+  "id": "rof_holding_the_landing_zone",
+  "title": "sidequest.dmzsparking.rof_holding_the_landing_zone.name",
+  "description": "sidequest.dmzsparking.rof_holding_the_landing_zone.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "krillin",
+  "turn_in": "krillin",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "rof_saga",
+        "questId": 5
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_friezasoldier01",
+      "count": 10,
+      "health": 518000.0,
+      "meleeDamage": 21670.0,
+      "kiDamage": 19690.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "ITEM",
+      "item": "dragonminez:gete_scrap",
+      "count": 10
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "krillin"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 142100
+    }
+  ]
+}

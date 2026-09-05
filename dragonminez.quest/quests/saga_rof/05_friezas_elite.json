@@ -1,0 +1,48 @@
+{
+  "id": 5,
+  "title": "quest.dmzsparking.rof.5.name",
+  "description": "quest.dmzsparking.rof.5.desc",
+  "type": "SAGA",
+  "category": "saga_rof",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "rof_saga",
+        "questId": 4
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3545
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_friezasoldier03",
+      "count": 1,
+      "health": 893000.0,
+      "meleeDamage": 37360.0,
+      "kiDamage": 33950.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 236800
+    }
+  ]
+}

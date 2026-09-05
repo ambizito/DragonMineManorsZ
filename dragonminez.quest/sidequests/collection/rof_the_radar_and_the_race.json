@@ -1,0 +1,45 @@
+{
+  "id": "rof_the_radar_and_the_race",
+  "title": "sidequest.dmzsparking.rof_the_radar_and_the_race.name",
+  "description": "sidequest.dmzsparking.rof_the_radar_and_the_race.desc",
+  "type": "SIDEQUEST",
+  "category": "collection",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "bulma",
+  "turn_in": "bulma",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "rof_saga",
+        "questId": 1
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "ITEM",
+      "item": "dragonminez:kikono_shard",
+      "count": 14
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:redstone",
+      "count": 24
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "bulma"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 124000
+    }
+  ]
+}

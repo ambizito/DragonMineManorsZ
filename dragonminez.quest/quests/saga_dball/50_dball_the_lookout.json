@@ -1,0 +1,42 @@
+{
+  "id": 50,
+  "title": "quest.dmzsparking.dball.50.name",
+  "description": "quest.dmzsparking.dball.50.desc",
+  "type": "SAGA",
+  "category": "saga_dball",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "dball_saga",
+        "questId": 49
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2658
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "popo"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 91200
+    }
+  ]
+}

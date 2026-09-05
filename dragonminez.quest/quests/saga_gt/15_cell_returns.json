@@ -1,0 +1,52 @@
+{
+  "id": 15,
+  "title": "quest.dmzsparking.gt.15.name",
+  "description": "quest.dmzsparking.gt.15.desc",
+  "type": "SAGA",
+  "category": "saga_gt",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 14
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2949
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dragonminez:otherworld"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_cell_superperfect",
+      "count": 1,
+      "health": 1370000.0,
+      "meleeDamage": 57320.0,
+      "kiDamage": 52090.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 207000
+    }
+  ]
+}

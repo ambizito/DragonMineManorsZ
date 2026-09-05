@@ -1,0 +1,50 @@
+{
+  "id": "u6_the_needle",
+  "title": "sidequest.dmzsparking.u6_the_needle.name",
+  "description": "sidequest.dmzsparking.u6_the_needle.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "bulma",
+  "turn_in": "bulma",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "u7vsu6_saga",
+        "questId": 4
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_friezasoldier02",
+      "count": 8,
+      "health": 1040000.0,
+      "meleeDamage": 43440.0,
+      "kiDamage": 39480.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:redstone",
+      "count": 20
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "bulma"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 138900
+    }
+  ]
+}

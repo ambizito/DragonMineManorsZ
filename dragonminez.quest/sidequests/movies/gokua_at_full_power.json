@@ -1,0 +1,45 @@
+{
+  "id": "gokua_at_full_power",
+  "title": "quest.dmzsparking.side.gokua_at_full_power.name",
+  "description": "quest.dmzsparking.side.gokua_at_full_power.desc",
+  "type": "SIDEQUEST",
+  "category": "movies",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "gohan",
+  "turn_in": "gohan",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "movies_saga",
+        "questId": 29
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_gokua",
+      "count": 1,
+      "health": 330000.0,
+      "meleeDamage": 14000.0,
+      "kiDamage": 12000.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "gohan"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 95000
+    }
+  ]
+}

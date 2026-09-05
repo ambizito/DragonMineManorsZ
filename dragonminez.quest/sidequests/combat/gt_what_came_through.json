@@ -1,0 +1,50 @@
+{
+  "id": "gt_what_came_through",
+  "title": "sidequest.dmzsparking.gt_what_came_through.name",
+  "description": "sidequest.dmzsparking.gt_what_came_through.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "gohan",
+  "turn_in": "gohan",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 13
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_cell_jr",
+      "count": 6,
+      "health": 783000.0,
+      "meleeDamage": 32760.0,
+      "kiDamage": 29770.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "ITEM",
+      "item": "minecraft:obsidian",
+      "count": 12
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "gohan"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 123300
+    }
+  ]
+}

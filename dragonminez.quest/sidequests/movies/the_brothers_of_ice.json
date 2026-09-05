@@ -1,0 +1,55 @@
+{
+  "id": "the_brothers_of_ice",
+  "title": "quest.dmzsparking.side.the_brothers_of_ice.name",
+  "description": "quest.dmzsparking.side.the_brothers_of_ice.desc",
+  "type": "SIDEQUEST",
+  "category": "movies",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "goku",
+  "turn_in": "goku",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "movies_saga",
+        "questId": 16
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_frieza_fp",
+      "count": 1,
+      "health": 44000.0,
+      "meleeDamage": 2100.0,
+      "kiDamage": 1700.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_cooler_5ta",
+      "count": 1,
+      "health": 44000.0,
+      "meleeDamage": 2100.0,
+      "kiDamage": 1700.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "goku"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 39000
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": 49,
+  "title": "quest.dmzsparking.movies.109.name",
+  "description": "quest.dmzsparking.movies.109.desc",
+  "type": "SAGA",
+  "category": "saga_movies",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "movies_saga",
+        "questId": 48
+      },
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "top_saga",
+        "questId": 35
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 5790
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "piccolo"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 180000
+    }
+  ]
+}

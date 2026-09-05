@@ -1,0 +1,52 @@
+{
+  "id": 7,
+  "title": "quest.dmzsparking.u7vsu6.7.name",
+  "description": "quest.dmzsparking.u7vsu6.7.desc",
+  "type": "SAGA",
+  "category": "saga_u6",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "u7vsu6_saga",
+        "questId": 6
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 3820
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dmzsparking:universal_arena"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dmzsparking:saga_u6_cabba_ssj",
+      "count": 1,
+      "health": 1710000.0,
+      "meleeDamage": 71550.0,
+      "kiDamage": 65020.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 280200
+    }
+  ]
+}

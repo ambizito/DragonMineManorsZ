@@ -1,0 +1,78 @@
+{
+  "id": "cooler_squadron_mopup",
+  "title": "dmz.sidequest.cooler_squadron_mopup.name",
+  "description": "dmz.sidequest.cooler_squadron_mopup.desc",
+  "type": "SIDEQUEST",
+  "category": "combat",
+  "parallel_objectives": true,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "quest_giver": "krillin",
+  "turn_in": "krillin",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "movies_saga",
+        "questId": 16
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_salza",
+      "count": 4,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY",
+      "health": 13000,
+      "meleeDamage": 762,
+      "kiDamage": 886,
+      "Armor": 50,
+      "ArmorToughness": 0,
+      "Protection": 0,
+      "movementSpeed": 0.325
+    },
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_dore",
+      "count": 4,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY",
+      "health": 9740,
+      "meleeDamage": 547,
+      "kiDamage": 675,
+      "Armor": 47,
+      "ArmorToughness": 0,
+      "Protection": 0,
+      "movementSpeed": 0.318
+    },
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_neiz",
+      "count": 4,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY",
+      "health": 10800,
+      "meleeDamage": 622,
+      "kiDamage": 727,
+      "Armor": 48,
+      "ArmorToughness": 0,
+      "Protection": 0,
+      "movementSpeed": 0.315
+    },
+    {
+      "type": "TALK_TO",
+      "npcId": "krillin"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 60000
+    }
+  ],
+  "defaultsVersion": "2.1.2"
+}

@@ -1,0 +1,42 @@
+{
+  "id": 7,
+  "title": "quest.dmzsparking.gt.7.name",
+  "description": "quest.dmzsparking.gt.7.desc",
+  "type": "SAGA",
+  "category": "saga_gt",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "gt_saga",
+        "questId": 6
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2801
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "TALK_TO",
+      "npcId": "trunks"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 76800
+    }
+  ]
+}
