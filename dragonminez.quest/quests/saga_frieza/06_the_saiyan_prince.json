@@ -40,8 +40,8 @@
       "type": "KILL",
       "entity": "dragonminez:saga_vegeta_namek",
       "count": 1,
-      "health": 3978.0,
-      "meleeDamage": 221.0,
+      "health": 22000.0,
+      "meleeDamage": 135.0,
       "kiDamage": 274.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"

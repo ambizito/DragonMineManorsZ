@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_mecha_frieza",
       "count": 1,
-      "health": 59500.0,
-      "meleeDamage": 2400.0,
-      "kiDamage": 2210.0,
+      "health": 595000.0,
+      "meleeDamage": 295.0,
+      "kiDamage": 1510.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

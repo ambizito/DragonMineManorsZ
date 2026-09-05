@@ -41,7 +41,7 @@
       "entity": "dragonminez:saga_cell_semiperfect",
       "count": 1,
       "health": 147000.0,
-      "meleeDamage": 5700.0,
+      "meleeDamage": 450.0,
       "kiDamage": 5270.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"

@@ -40,8 +40,8 @@
       "type": "KILL",
       "entity": "dragonminez:saga_drgero",
       "count": 1,
-      "health": 64750.0,
-      "meleeDamage": 2640.0,
+      "health": 647500.0,
+      "meleeDamage": 240.0,
       "kiDamage": 2380.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"

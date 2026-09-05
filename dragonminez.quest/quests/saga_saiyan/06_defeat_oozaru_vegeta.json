@@ -41,8 +41,8 @@
       "entity": "dragonminez:saga_ozaruvegeta",
       "count": 1,
       "health": 3250.0,
-      "meleeDamage": 182.0,
-      "kiDamage": 182.0,
+      "meleeDamage": 120.0,
+      "kiDamage": 152.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

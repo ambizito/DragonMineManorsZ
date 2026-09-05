@@ -36,8 +36,8 @@
       "type": "KILL",
       "entity": "dragonminez:saga_zarbont1",
       "count": 1,
-      "health": 4300.0,
-      "meleeDamage": 232.0,
+      "health": 18300.0,
+      "meleeDamage": 132.0,
       "kiDamage": 278.4,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"

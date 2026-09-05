@@ -40,7 +40,7 @@
       "type": "KILL",
       "entity": "dragonminez:saga_guldo",
       "count": 1,
-      "health": 1989.0,
+      "health": 23000.0,
       "meleeDamage": 122.0,
       "kiDamage": 119.0,
       "spawn": "QUEST",

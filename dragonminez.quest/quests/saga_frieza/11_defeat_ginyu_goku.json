@@ -40,8 +40,8 @@
       "type": "KILL",
       "entity": "dragonminez:saga_ginyu_goku",
       "count": 1,
-      "health": 3978.0,
-      "meleeDamage": 211.0,
+      "health": 30978.0,
+      "meleeDamage": 150.0,
       "kiDamage": 185.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
