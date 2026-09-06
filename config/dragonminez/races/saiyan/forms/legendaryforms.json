@@ -5,7 +5,7 @@
   "forms": {
     "ikari": {
       "name": "ikari",
-      "unlockOnSkillLevel": 1,
+      "unlockOnSkillLevel": 4,
       "formCombo": "",
       "customModel": "buffed",
       "keepBaseFormHeadBones": false,
@@ -79,7 +79,7 @@
     },
     "ssjhybrid": {
       "name": "ssjhybrid",
-      "unlockOnSkillLevel": 2,
+      "unlockOnSkillLevel": 5,
       "formCombo": "",
       "customModel": "buffed",
       "keepBaseFormHeadBones": false,
@@ -153,7 +153,7 @@
     },
     "ssjfullpower": {
       "name": "ssjfullpower",
-      "unlockOnSkillLevel": 3,
+      "unlockOnSkillLevel": 6,
       "formCombo": "",
       "customModel": "buffed",
       "keepBaseFormHeadBones": false,
@@ -227,7 +227,7 @@
     },
     "ssjlegendary3": {
       "name": "ssjlegendary3",
-      "unlockOnSkillLevel": 4,
+      "unlockOnSkillLevel": 7,
       "formCombo": "",
       "customModel": "buffed",
       "keepBaseFormHeadBones": false,
@@ -301,7 +301,7 @@
     },
     "ssjlegendary4": {
       "name": "ssjlegendary4",
-      "unlockOnSkillLevel": 5,
+      "unlockOnSkillLevel": 8,
       "formCombo": "",
       "customModel": "ssj4gt",
       "keepBaseFormHeadBones": false,

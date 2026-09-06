@@ -1,0 +1,62 @@
+{
+  "id": 15,
+  "title": "dmz.quest.android8.name",
+  "description": "dmz.quest.android8.desc",
+  "type": "SAGA",
+  "category": "saga_android",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "android_saga",
+        "questId": 14
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 740
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "minecraft:overworld"
+      },
+      {
+        "type": "BIOME",
+        "biome": "#minecraft:is_mountain"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_a18",
+      "count": 1,
+      "health": 210000.0,
+      "meleeDamage": 2520.0,
+      "kiDamage": 2244.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 66080
+    },
+    {
+      "type": "SKILL",
+      "skill": "superforms",
+      "level": 4
+    }
+  ],
+  "defaultsVersion": "2.1.2"
+}

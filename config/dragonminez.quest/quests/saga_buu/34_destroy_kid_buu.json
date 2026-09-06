@@ -1,0 +1,58 @@
+{
+  "id": 46,
+  "title": "dmz.quest.buu34.name",
+  "description": "dmz.quest.buu34.desc",
+  "type": "SAGA",
+  "category": "saga_buu",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "buu_saga",
+        "questId": 45
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 2320
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "dragonminez:sacredkaiplanet"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_kidbuu",
+      "count": 1,
+      "health": 1540000.0,
+      "meleeDamage": 19440.0,
+      "kiDamage": 17544.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 324000
+    },
+    {
+      "type": "SKILL",
+      "skill": "legendaryforms",
+      "level": 2
+    }
+  ],
+  "defaultsVersion": "2.1.2"
+}

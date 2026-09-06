@@ -5,7 +5,7 @@
   "forms": {
     "supersaiyan": {
       "name": "supersaiyan",
-      "unlockOnSkillLevel": 1,
+      "unlockOnSkillLevel": 3,
       "formCombo": "",
       "customModel": "",
       "keepBaseFormHeadBones": false,
@@ -79,7 +79,7 @@
     },
     "supersaiyangrade2": {
       "name": "supersaiyangrade2",
-      "unlockOnSkillLevel": 2,
+      "unlockOnSkillLevel": 3,
       "formCombo": "",
       "customModel": "buffed",
       "keepBaseFormHeadBones": false,

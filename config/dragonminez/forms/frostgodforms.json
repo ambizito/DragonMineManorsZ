@@ -5,7 +5,7 @@
   "forms": {
     "golden": {
       "name": "golden",
-      "unlockOnSkillLevel": 1,
+      "unlockOnSkillLevel": 2,
       "formCombo": "",
       "customModel": "",
       "keepBaseFormHeadBones": true,
@@ -82,7 +82,7 @@
     },
     "black": {
       "name": "black",
-      "unlockOnSkillLevel": 2,
+      "unlockOnSkillLevel": 11,
       "formCombo": "",
       "customModel": "",
       "keepBaseFormHeadBones": true,

@@ -8,7 +8,7 @@
       "xpGainMultiplier": 1.0,
       "xpGainPerHit": 1,
       "xpGainPerKill": 3,
-      "kiCostMultiplier": 1.0,
+      "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
       "castTimeTicks": 40
@@ -20,7 +20,7 @@
       "xpGainMultiplier": 1.0,
       "xpGainPerHit": 1,
       "xpGainPerKill": 3,
-      "kiCostMultiplier": 1.0,
+      "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
       "castTimeTicks": 60
@@ -32,7 +32,7 @@
       "xpGainMultiplier": 1.0,
       "xpGainPerHit": 1,
       "xpGainPerKill": 3,
-      "kiCostMultiplier": 1.0,
+      "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
       "castTimeTicks": 50
@@ -44,7 +44,7 @@
       "xpGainMultiplier": 1.0,
       "xpGainPerHit": 1,
       "xpGainPerKill": 3,
-      "kiCostMultiplier": 1.0,
+      "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
       "castTimeTicks": 60
@@ -68,7 +68,7 @@
       "xpGainMultiplier": 1.0,
       "xpGainPerHit": 1,
       "xpGainPerKill": 3,
-      "kiCostMultiplier": 1.0,
+      "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
       "castTimeTicks": 30
@@ -92,7 +92,7 @@
       "xpGainMultiplier": 1.0,
       "xpGainPerHit": 1,
       "xpGainPerKill": 3,
-      "kiCostMultiplier": 1.0,
+      "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
       "castTimeTicks": 40
@@ -104,7 +104,7 @@
       "xpGainMultiplier": 1.0,
       "xpGainPerHit": 1,
       "xpGainPerKill": 3,
-      "kiCostMultiplier": 1.0,
+      "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
       "castTimeTicks": 30
@@ -116,7 +116,7 @@
       "xpGainMultiplier": 1.0,
       "xpGainPerHit": 1,
       "xpGainPerKill": 3,
-      "kiCostMultiplier": 1.0,
+      "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
       "castTimeTicks": 50
@@ -128,7 +128,7 @@
       "xpGainMultiplier": 1.0,
       "xpGainPerHit": 1,
       "xpGainPerKill": 3,
-      "kiCostMultiplier": 1.0,
+      "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
       "castTimeTicks": 0

@@ -1,0 +1,67 @@
+{
+  "id": 18,
+  "title": "dmz.quest.buu14.name",
+  "description": "dmz.quest.buu14.desc",
+  "type": "SAGA",
+  "category": "saga_buu",
+  "parallel_objectives": false,
+  "party_scaling": true,
+  "secret": false,
+  "claim_mode": "TREE_OR_NPC",
+  "prerequisites": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "SAGA_QUEST",
+        "sagaId": "buu_saga",
+        "questId": 17
+      }
+    ]
+  },
+  "requirements": {
+    "operator": "AND",
+    "conditions": [
+      {
+        "type": "LEVEL",
+        "minLevel": 1820
+      },
+      {
+        "type": "DIMENSION",
+        "dimension": "minecraft:overworld"
+      },
+      {
+        "type": "BIOME",
+        "biome": "dragonminez:rocky"
+      }
+    ]
+  },
+  "objectives": [
+    {
+      "type": "KILL",
+      "entity": "dragonminez:saga_buufat",
+      "count": 1,
+      "health": 686000.0,
+      "meleeDamage": 8640.0,
+      "kiDamage": 7752.0,
+      "spawn": "QUEST",
+      "count_mode": "QUEST_SPAWNED_ONLY"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "TPS",
+      "amount": 151200
+    },
+    {
+      "type": "SKILL",
+      "skill": "superforms",
+      "level": 6
+    },
+    {
+      "type": "SKILL",
+      "skill": "legendaryforms",
+      "level": 1
+    }
+  ],
+  "defaultsVersion": "2.1.2"
+}
