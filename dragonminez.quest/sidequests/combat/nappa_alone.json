@@ -25,9 +25,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_nappa",
       "count": 1,
-      "health": 570.0,
-      "meleeDamage": 30.0,
-      "kiDamage": 50.0,
+      "health": 1140.0,
+      "meleeDamage": 18.0,
+      "kiDamage": 30.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },

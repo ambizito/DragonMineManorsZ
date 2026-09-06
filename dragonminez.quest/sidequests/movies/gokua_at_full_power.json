@@ -25,9 +25,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_gokua",
       "count": 1,
-      "health": 330000.0,
-      "meleeDamage": 14000.0,
-      "kiDamage": 12000.0,
+      "health": 660000.0,
+      "meleeDamage": 8400.0,
+      "kiDamage": 7200.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },

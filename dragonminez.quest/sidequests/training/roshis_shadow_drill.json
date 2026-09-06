@@ -25,9 +25,9 @@
       "type": "KILL",
       "entity": "dragonminez:shadow_dummy",
       "count": 5,
-      "health": 80.0,
-      "meleeDamage": 10.0,
-      "kiDamage": 10.0,
+      "health": 160.0,
+      "meleeDamage": 6.0,
+      "kiDamage": 6.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },

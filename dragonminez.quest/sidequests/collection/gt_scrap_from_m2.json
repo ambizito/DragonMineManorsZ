@@ -35,9 +35,9 @@
       "type": "KILL",
       "entity": "dragonminez:robot3",
       "count": 6,
-      "health": 719000.0,
-      "meleeDamage": 30090.0,
-      "kiDamage": 27350.0,
+      "health": 1438000.0,
+      "meleeDamage": 18054.0,
+      "kiDamage": 16410.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
