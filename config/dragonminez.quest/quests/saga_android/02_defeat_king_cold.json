@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_king_cold",
       "count": 1,
-      "health": 63000.0,
-      "meleeDamage": 774.0,
-      "kiDamage": 714.0,
+      "health": 65000.0,
+      "meleeDamage": 370.0,
+      "kiDamage": 370.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

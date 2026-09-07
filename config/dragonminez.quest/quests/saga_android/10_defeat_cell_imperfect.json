@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_cell_imperfect",
       "count": 1,
-      "health": 217000.0,
-      "meleeDamage": 2610.0,
-      "kiDamage": 2346.0,
+      "health": 200000,
+      "meleeDamage": 1200,
+      "kiDamage": 1200,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }
