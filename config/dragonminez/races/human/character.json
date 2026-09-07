@@ -45,17 +45,17 @@
     "superforms": {
       "buyFromMaster": false,
       "prices": [
-        21000,
-        42000,
-        65000,
-        104000
+        -1,
+        -1,
+        -1,
+        -1
       ]
     },
     "androidforms": {
       "buyFromMaster": false,
       "prices": [
-        42000,
-        104000
+        -1,
+        -1
       ]
     }
   }
