@@ -35,8 +35,8 @@
       },
       {
         "type": "SAGA_QUEST",
-        "sagaId": "android_saga",
-        "questId": 15
+        "sagaId": "gt_saga",
+        "questId": 31
       }
     ]
   },

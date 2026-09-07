@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_tk_rylibeu",
       "count": 1,
-      "health": 2460000.0,
-      "meleeDamage": 30876.0,
-      "kiDamage": 28062.0,
+      "health": 6200000.0,
+      "meleeDamage": 39000.0,
+      "kiDamage": 39000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

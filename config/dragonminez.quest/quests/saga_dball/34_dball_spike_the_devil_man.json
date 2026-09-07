@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_devil",
       "count": 1,
-      "health": 1888000.0,
-      "meleeDamage": 23460.0,
-      "kiDamage": 21318.0,
+      "health": 2650000.0,
+      "meleeDamage": 16800.0,
+      "kiDamage": 16800.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

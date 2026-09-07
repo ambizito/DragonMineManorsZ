@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_giant_piccolo",
       "count": 1,
-      "health": 2300000.0,
-      "meleeDamage": 28584.0,
-      "kiDamage": 25974.0,
+      "health": 3350000.0,
+      "meleeDamage": 21000.0,
+      "kiDamage": 21000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

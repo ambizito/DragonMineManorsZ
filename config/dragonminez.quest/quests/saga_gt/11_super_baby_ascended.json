@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_gt_baby_ssj2",
       "count": 1,
-      "health": 2620000.0,
-      "meleeDamage": 32886.0,
-      "kiDamage": 29886.0,
+      "health": 2600000.0,
+      "meleeDamage": 16400.0,
+      "kiDamage": 16400.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

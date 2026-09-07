@@ -37,8 +37,8 @@
       "entity": "dmzsparking:saga_gt_dragon7pan",
       "count": 1,
       "health": 3100000.0,
-      "meleeDamage": 38910.0,
-      "kiDamage": 35364.0,
+      "meleeDamage": 19400.0,
+      "kiDamage": 19400.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

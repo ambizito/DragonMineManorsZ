@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_saiyan1",
       "count": 1,
-      "health": 2100000.0,
-      "meleeDamage": 26172.0,
-      "kiDamage": 23784.0,
+      "health": 3000000.0,
+      "meleeDamage": 19000.0,
+      "kiDamage": 19000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

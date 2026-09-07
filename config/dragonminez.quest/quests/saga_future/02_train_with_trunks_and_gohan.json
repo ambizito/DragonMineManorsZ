@@ -40,9 +40,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_ftrunks_base",
       "count": 1,
-      "health": 364000.0,
-      "meleeDamage": 4500.0,
-      "kiDamage": 4080.0,
+      "health": 950000.0,
+      "meleeDamage": 5600.0,
+      "kiDamage": 5600.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
@@ -50,9 +50,9 @@
       "type": "KILL",
       "entity": "dragonminez:saga_fgohan_base",
       "count": 1,
-      "health": 392000.0,
-      "meleeDamage": 4860.0,
-      "kiDamage": 4386.0,
+      "health": 950000.0,
+      "meleeDamage": 5600.0,
+      "kiDamage": 5600.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

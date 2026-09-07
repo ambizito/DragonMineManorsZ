@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_tk_kefla_ssj",
       "count": 1,
-      "health": 4600000.0,
-      "meleeDamage": 57738.0,
-      "kiDamage": 52470.0,
+      "health": 6800000.0,
+      "meleeDamage": 42600.0,
+      "kiDamage": 42600.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

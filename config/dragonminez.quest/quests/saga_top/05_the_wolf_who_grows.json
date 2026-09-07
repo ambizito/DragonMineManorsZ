@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u9_bergamo",
       "count": 1,
-      "health": 3360000.0,
-      "meleeDamage": 42174.0,
-      "kiDamage": 38328.0,
+      "health": 6450000.0,
+      "meleeDamage": 40400.0,
+      "kiDamage": 40400.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_beerus",
       "count": 1,
-      "health": 3520000.0,
-      "meleeDamage": 44184.0,
-      "kiDamage": 40152.0,
+      "health": 3750000.0,
+      "meleeDamage": 23600.0,
+      "kiDamage": 23600.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

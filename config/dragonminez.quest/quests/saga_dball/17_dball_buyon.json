@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_buyon",
       "count": 1,
-      "health": 1744000.0,
-      "meleeDamage": 21672.0,
-      "kiDamage": 19692.0,
+      "health": 2450000.0,
+      "meleeDamage": 15200.0,
+      "kiDamage": 15200.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

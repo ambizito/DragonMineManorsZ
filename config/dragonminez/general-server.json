@@ -237,7 +237,7 @@
     "practiceCurveEnabled": true,
     "practiceXpMultiplier": 2.0,
     "strPracticeMultiplier": 1.0,
-    "skpPracticeMultiplier": 1.0,
+    "skpPracticeMultiplier": 0.1,
     "resPracticeMultiplier": 1.5,
     "vitPracticeMultiplier": 0.5,
     "pwrPracticeMultiplier": 1.0,

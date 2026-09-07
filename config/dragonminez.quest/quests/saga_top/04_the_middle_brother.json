@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u9_lavender",
       "count": 1,
-      "health": 3000000.0,
-      "meleeDamage": 37656.0,
-      "kiDamage": 34218.0,
+      "health": 6350000.0,
+      "meleeDamage": 39800.0,
+      "kiDamage": 39800.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

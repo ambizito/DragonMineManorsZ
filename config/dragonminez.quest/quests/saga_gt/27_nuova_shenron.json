@@ -37,8 +37,8 @@
       "entity": "dmzsparking:saga_gt_dragon4",
       "count": 1,
       "health": 3200000.0,
-      "meleeDamage": 40170.0,
-      "kiDamage": 36504.0,
+      "meleeDamage": 20200.0,
+      "kiDamage": 20200.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

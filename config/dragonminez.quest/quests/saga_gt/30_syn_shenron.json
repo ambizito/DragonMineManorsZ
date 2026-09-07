@@ -33,8 +33,8 @@
       "entity": "dmzsparking:saga_gt_syn",
       "count": 1,
       "health": 3300000.0,
-      "meleeDamage": 41424.0,
-      "kiDamage": 37644.0,
+      "meleeDamage": 20800.0,
+      "kiDamage": 20800.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

@@ -37,8 +37,8 @@
       "entity": "dmzsparking:saga_gt_luud_fp",
       "count": 1,
       "health": 2400000.0,
-      "meleeDamage": 30126.0,
-      "kiDamage": 27378.0,
+      "meleeDamage": 15000.0,
+      "kiDamage": 15000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

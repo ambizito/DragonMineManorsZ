@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_giran",
       "count": 1,
-      "health": 1680000.0,
-      "meleeDamage": 20874.0,
-      "kiDamage": 18972.0,
+      "health": 2350000.0,
+      "meleeDamage": 14600.0,
+      "kiDamage": 14600.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

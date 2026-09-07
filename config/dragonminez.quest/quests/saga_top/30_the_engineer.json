@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u3_paparoni",
       "count": 1,
-      "health": 3740000.0,
-      "meleeDamage": 46944.0,
-      "kiDamage": 42660.0,
+      "health": 6550000.0,
+      "meleeDamage": 41200.0,
+      "kiDamage": 41200.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

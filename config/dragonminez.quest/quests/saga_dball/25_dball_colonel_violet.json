@@ -32,9 +32,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_colonel_violet",
       "count": 1,
-      "health": 1778000.0,
-      "meleeDamage": 22092.0,
-      "kiDamage": 20076.0,
+      "health": 2500000.0,
+      "meleeDamage": 15600.0,
+      "kiDamage": 15600.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

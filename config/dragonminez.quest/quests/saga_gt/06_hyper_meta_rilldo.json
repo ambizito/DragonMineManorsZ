@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_gt_rilldo_meta",
       "count": 1,
-      "health": 2480000.0,
-      "meleeDamage": 31128.0,
-      "kiDamage": 28290.0,
+      "health": 2500000.0,
+      "meleeDamage": 15600.0,
+      "kiDamage": 15600.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_gt_luud",
       "count": 1,
-      "health": 2340000.0,
-      "meleeDamage": 29370.0,
-      "kiDamage": 26694.0,
+      "health": 2350000.0,
+      "meleeDamage": 14600.0,
+      "kiDamage": 14600.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

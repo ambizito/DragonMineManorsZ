@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_king_piccolo",
       "count": 1,
-      "health": 2080000.0,
-      "meleeDamage": 25800.0,
-      "kiDamage": 23442.0,
+      "health": 3000000.0,
+      "meleeDamage": 18600.0,
+      "kiDamage": 18600.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

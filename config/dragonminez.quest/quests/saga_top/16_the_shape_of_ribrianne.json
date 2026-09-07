@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u2_ribrianne",
       "count": 1,
-      "health": 3680000.0,
-      "meleeDamage": 46194.0,
-      "kiDamage": 41976.0,
+      "health": 6550000.0,
+      "meleeDamage": 41000.0,
+      "kiDamage": 41000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

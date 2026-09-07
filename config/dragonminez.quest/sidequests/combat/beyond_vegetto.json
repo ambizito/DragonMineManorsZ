@@ -26,8 +26,8 @@
       "entity": "dragonminez:saga_vegetto_ssj",
       "count": 1,
       "health": 900000.0,
-      "meleeDamage": 11400.0,
-      "kiDamage": 10200.0,
+      "meleeDamage": 8400.0,
+      "kiDamage": 8400.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },

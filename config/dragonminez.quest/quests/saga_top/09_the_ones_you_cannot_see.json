@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u4_shosa",
       "count": 1,
-      "health": 1614000.0,
-      "meleeDamage": 20268.0,
-      "kiDamage": 18420.0,
+      "health": 5950000.0,
+      "meleeDamage": 37400.0,
+      "kiDamage": 37400.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
@@ -46,9 +46,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u4_majora",
       "count": 1,
-      "health": 1614000.0,
-      "meleeDamage": 20268.0,
-      "kiDamage": 18420.0,
+      "health": 5950000.0,
+      "meleeDamage": 37400.0,
+      "kiDamage": 37400.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

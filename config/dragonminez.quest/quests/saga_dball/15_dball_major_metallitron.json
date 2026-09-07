@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_cl_major_metallitron",
       "count": 1,
-      "health": 1726000.0,
-      "meleeDamage": 21450.0,
-      "kiDamage": 19494.0,
+      "health": 2400000.0,
+      "meleeDamage": 15000.0,
+      "kiDamage": 15000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

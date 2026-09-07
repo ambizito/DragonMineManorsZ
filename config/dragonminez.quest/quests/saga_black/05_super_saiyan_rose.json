@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_goku_black_rose",
       "count": 1,
-      "health": 3600000.0,
-      "meleeDamage": 45186.0,
-      "kiDamage": 41064.0,
+      "health": 5250000.0,
+      "meleeDamage": 32800.0,
+      "kiDamage": 32800.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }

@@ -36,9 +36,9 @@
       "type": "KILL",
       "entity": "dmzsparking:saga_u6_cabba",
       "count": 1,
-      "health": 3240000.0,
-      "meleeDamage": 40668.0,
-      "kiDamage": 36960.0,
+      "health": 4500000.0,
+      "meleeDamage": 28000.0,
+      "kiDamage": 28000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     }
