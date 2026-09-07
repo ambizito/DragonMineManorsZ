@@ -11,7 +11,7 @@
       "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
-      "castTimeTicks": 40
+      "castTimeTicks": 14
     },
     "giant_ball": {
       "minXPCost": 100,
@@ -23,7 +23,7 @@
       "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
-      "castTimeTicks": 60
+      "castTimeTicks": 20
     },
     "beam": {
       "minXPCost": 100,
@@ -35,7 +35,7 @@
       "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
-      "castTimeTicks": 50
+      "castTimeTicks": 17
     },
     "explosion": {
       "minXPCost": 100,
@@ -47,7 +47,7 @@
       "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
-      "castTimeTicks": 60
+      "castTimeTicks": 20
     },
     "shield": {
       "minXPCost": 100,
@@ -59,7 +59,7 @@
       "kiCostMultiplier": 1.0,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
-      "castTimeTicks": 40
+      "castTimeTicks": 20
     },
     "disk": {
       "minXPCost": 100,
@@ -71,7 +71,7 @@
       "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
-      "castTimeTicks": 30
+      "castTimeTicks": 8
     },
     "laser": {
       "minXPCost": 100,
@@ -95,7 +95,7 @@
       "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
-      "castTimeTicks": 40
+      "castTimeTicks": 14
     },
     "medium_ball": {
       "minXPCost": 100,
@@ -107,7 +107,7 @@
       "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
-      "castTimeTicks": 30
+      "castTimeTicks": 10
     },
     "wave": {
       "minXPCost": 100,
@@ -119,7 +119,7 @@
       "kiCostMultiplier": 0.2,
       "damageMultiplier": 1.0,
       "destructionMultiplier": 1.0,
-      "castTimeTicks": 50
+      "castTimeTicks": 18
     },
     "small_ball": {
       "minXPCost": 100,
@@ -152,8 +152,8 @@
       "maxXPCost": -1,
       "xpCostMultiplier": 1.0,
       "xpGainMultiplier": 1.0,
-      "xpGainPerHit": 1,
-      "xpGainPerKill": 3,
+      "xpGainPerHit": 10,
+      "xpGainPerKill": 30,
       "kiCostMultiplier": 1.0,
       "damageMultiplier": 1.0,
       "castTimeTicks": 0,
@@ -164,8 +164,8 @@
       "maxXPCost": -1,
       "xpCostMultiplier": 1.0,
       "xpGainMultiplier": 1.0,
-      "xpGainPerHit": 1,
-      "xpGainPerKill": 3,
+      "xpGainPerHit": 10,
+      "xpGainPerKill": 30,
       "kiCostMultiplier": 1.0,
       "damageMultiplier": 1.0,
       "castTimeTicks": 0,
@@ -176,8 +176,8 @@
       "maxXPCost": -1,
       "xpCostMultiplier": 1.0,
       "xpGainMultiplier": 1.0,
-      "xpGainPerHit": 1,
-      "xpGainPerKill": 3,
+      "xpGainPerHit": 10,
+      "xpGainPerKill": 30,
       "kiCostMultiplier": 1.0,
       "damageMultiplier": 1.0,
       "castTimeTicks": 0,
@@ -188,8 +188,8 @@
       "maxXPCost": -1,
       "xpCostMultiplier": 1.0,
       "xpGainMultiplier": 1.0,
-      "xpGainPerHit": 1,
-      "xpGainPerKill": 3,
+      "xpGainPerHit": 10,
+      "xpGainPerKill": 30,
       "kiCostMultiplier": 1.0,
       "damageMultiplier": 1.0,
       "castTimeTicks": 0,
@@ -200,8 +200,8 @@
       "maxXPCost": -1,
       "xpCostMultiplier": 1.0,
       "xpGainMultiplier": 1.0,
-      "xpGainPerHit": 1,
-      "xpGainPerKill": 3,
+      "xpGainPerHit": 10,
+      "xpGainPerKill": 30,
       "kiCostMultiplier": 1.0,
       "damageMultiplier": 1.0,
       "castTimeTicks": 0,
@@ -212,8 +212,8 @@
       "maxXPCost": -1,
       "xpCostMultiplier": 1.0,
       "xpGainMultiplier": 1.0,
-      "xpGainPerHit": 1,
-      "xpGainPerKill": 3,
+      "xpGainPerHit": 10,
+      "xpGainPerKill": 30,
       "kiCostMultiplier": 1.0,
       "damageMultiplier": 1.0,
       "castTimeTicks": 0,
@@ -224,8 +224,8 @@
       "maxXPCost": -1,
       "xpCostMultiplier": 1.0,
       "xpGainMultiplier": 1.0,
-      "xpGainPerHit": 1,
-      "xpGainPerKill": 3,
+      "xpGainPerHit": 10,
+      "xpGainPerKill": 30,
       "kiCostMultiplier": 1.0,
       "damageMultiplier": 1.0,
       "castTimeTicks": 0,
