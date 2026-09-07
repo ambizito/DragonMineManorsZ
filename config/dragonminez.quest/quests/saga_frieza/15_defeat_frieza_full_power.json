@@ -51,6 +51,11 @@
     {
       "type": "TPS",
       "amount": 50400
+    },
+    {
+      "type": "SKILL",
+      "skill": "superforms",
+      "level": 3
     }
   ],
   "defaultsVersion": "2.1.2"

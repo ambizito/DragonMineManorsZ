@@ -82,7 +82,7 @@
     },
     "black": {
       "name": "black",
-      "unlockOnSkillLevel": 11,
+      "unlockOnSkillLevel": 5,
       "formCombo": "",
       "customModel": "",
       "keepBaseFormHeadBones": true,

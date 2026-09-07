@@ -51,6 +51,11 @@
     {
       "type": "TPS",
       "amount": 32640
+    },
+    {
+      "type": "SKILL",
+      "skill": "kaioken",
+      "level": 5
     }
   ],
   "defaultsVersion": "2.1.2"
