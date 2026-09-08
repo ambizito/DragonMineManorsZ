@@ -3,6 +3,7 @@
 
 {
 	disable_protection: false
+    claim_dimension_blacklist: ["dragonminez:quest_arena"]
 	max_claimed_chunks: 100
 	max_force_loaded_chunks: 10
 	hard_team_claim_limit: 500
