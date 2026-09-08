@@ -29,6 +29,8 @@ transformações foram ajustados para um grupo pequeno de amigos.
 - `DragonMineManorsZ-server-1.20.1-forge-47.4.10.zip`: o mesmo pacote já
   compactado, com as pastas posicionadas diretamente na raiz do arquivo.
 - `docs/`: especificação dos campos, justificativas e comparação com o original.
+  Inclui também o [Roadmap de Gameplay Futuro](docs/roadmap-gameplay-futuro.md),
+  usado para registrar ideias maiores antes de virarem patch.
 
 Todos os arquivos modificados do DragonMineZ estão representados integralmente
 nesses quatro patches. Eles incluem `Character.java`, `SaiyanGlobalMastery.java`,
