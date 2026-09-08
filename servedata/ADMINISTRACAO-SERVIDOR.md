@@ -168,6 +168,10 @@ e faça backup antes de alterar esses arquivos.
 
 ## Whitelist
 
+Este pacote aceita clientes sem autenticação oficial. Como ainda não há sistema
+de login, é recomendado usar a whitelist para impedir a entrada de nomes não
+cadastrados.
+
 Para permitir somente jogadores cadastrados:
 
 ```text

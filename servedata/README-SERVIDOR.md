@@ -62,6 +62,18 @@ Os jogadores precisam usar a mesma versão do modpack e o mesmo
 `excluded-client-mods.txt` continuam somente no cliente e não devem ser
 adicionados ao servidor.
 
+O servidor está configurado com `online-mode=false` e
+`enforce-secure-profile=false`, permitindo a entrada de clientes sem
+autenticação oficial. Como não há sistema de login, qualquer pessoa que alcançar
+o servidor pode usar o nome de outro jogador. Para jogar somente entre amigos,
+ative a whitelist e cadastre os nomes permitidos seguindo o guia de
+administração.
+
+Ao trocar um servidor existente do modo oficial para o modo sem autenticação, o
+Minecraft gera identificadores diferentes para os jogadores. Inventário,
+posição e progresso antigos podem não aparecer automaticamente para quem já
+jogava nesse mundo.
+
 `server-manifest.json` registra tamanho e SHA-256 de cada JAR para conferir se o
 upload terminou sem corrupção.
 
