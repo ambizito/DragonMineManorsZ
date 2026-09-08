@@ -25,9 +25,9 @@
       "type": "KILL",
       "entity": "dragonminez:bandit",
       "count": 8,
-      "health": 1474000.0,
-      "meleeDamage": 18492.0,
-      "kiDamage": 16806.0,
+      "health": 650000.0,
+      "meleeDamage": 8000.0,
+      "kiDamage": 8000.0,
       "spawn": "QUEST",
       "count_mode": "QUEST_SPAWNED_ONLY"
     },
