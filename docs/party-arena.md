@@ -70,6 +70,8 @@ O código modificado integral fica em `source/dragonminez/`, como uma sobreposi�
 do código oficial no commit `3c58ae869788a37fb42d0ed47a5494724a07735a`.
 `scripts/build-party-arena.ps1` recria o projeto e compila o JAR.
 O patch de party/arena também fica em `patches/`, depois dos quatro anteriores.
+`client-profile/minecraftinstance.json` registra a alteração de gerenciamento
+de conteúdo no perfil usado, e não deve ser instalado sobre outros perfis.
 
 O FTB Chunks recebe `claim_dimension_blacklist: ["dragonminez:quest_arena"]`
 para impedir que as arenas virem terrenos protegidos. Essa opção existe na

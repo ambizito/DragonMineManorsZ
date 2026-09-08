@@ -1,0 +1,1367 @@
+diff --git a/build.gradle.kts b/build.gradle.kts
+index 715f08e..2647ce1 100644
+--- a/build.gradle.kts
++++ b/build.gradle.kts
+@@ -245,6 +245,9 @@ dependencies {
+ 
+ sourceSets.main {
+     resources.srcDir("src/generated/resources/")
++    if (providers.gradleProperty("partyGameTests").orNull == "true") {
++        java.srcDir("src/partyTest/java")
++    }
+ }
+ 
+ val generatedResourcesDir = layout.projectDirectory.dir("src/generated/resources")
+diff --git a/gradle.properties b/gradle.properties
+index 9e08ca6..608afd9 100644
+--- a/gradle.properties
++++ b/gradle.properties
+@@ -27,7 +27,7 @@ mod_license=GNU General Public License v3.0
+ #########################
+ ### mod_version follows the format: version.major.minor[.patch]-[tags]
+ ### - Normally the version prefix '-beta' or '-alpha' is used for pre-release versions.
+-mod_version=2.1.3
++mod_version=2.1.3-manorsz.0.3.26.9.8
+ #########################
+ mod_group_id=com.dragonminez.mod
+ mod_authors=Yuseix300 & ezShokkoh
+diff --git a/party-preview.init.gradle b/party-preview.init.gradle
+new file mode 100644
+index 0000000..02b268b
+--- /dev/null
++++ b/party-preview.init.gradle
+@@ -0,0 +1,6 @@
++allprojects {
++    afterEvaluate {
++        minecraft.runs.client.property 'dmz.partyHudPreview', 'true'
++        minecraft.runs.client.args '--quickPlaySingleplayer', 'PartyHUDTest', '--width', '1280', '--height', '720'
++    }
++}
+diff --git a/src/main/java/com/dragonminez/client/events/ModClientEvents.java b/src/main/java/com/dragonminez/client/events/ModClientEvents.java
+index 82da80c..1c7e8f9 100644
+--- a/src/main/java/com/dragonminez/client/events/ModClientEvents.java
++++ b/src/main/java/com/dragonminez/client/events/ModClientEvents.java
+@@ -76,6 +76,7 @@ import java.util.List;
+ public class ModClientEvents {
+ 	@SubscribeEvent
+ 	public static void registerGuiOverlays(RegisterGuiOverlaysEvent e) {
++        e.registerAboveAll("party_hud", com.dragonminez.client.gui.hud.PartyHUD.HUD);
+ 		e.registerAbove(VanillaGuiOverlay.PLAYER_HEALTH.id(), "xenoversehud", XenoverseHUD.HUD_XENOVERSE);
+ 		e.registerAbove(VanillaGuiOverlay.PLAYER_HEALTH.id(), "alternativehud", AlternativeHUD.HUD_ALTERNATIVE);
+ 		e.registerAbove(VanillaGuiOverlay.PLAYER_HEALTH.id(), "technique_charge_hud", TechniqueChargeOverlay.HUD_TECHNIQUE_CHARGE);
+diff --git a/src/main/java/com/dragonminez/client/gui/hud/PartyHUD.java b/src/main/java/com/dragonminez/client/gui/hud/PartyHUD.java
+new file mode 100644
+index 0000000..af7c771
+--- /dev/null
++++ b/src/main/java/com/dragonminez/client/gui/hud/PartyHUD.java
+@@ -0,0 +1,67 @@
++package com.dragonminez.client.gui.hud;
++
++import com.dragonminez.Reference;
++import com.dragonminez.common.network.S2C.PartyHudS2C.Member;
++import com.dragonminez.client.util.KeyBinds;
++import net.minecraft.client.Minecraft;
++import net.minecraft.client.gui.GuiGraphics;
++import net.minecraft.client.gui.screens.ChatScreen;
++import net.minecraft.network.chat.Component;
++import net.minecraft.util.Mth;
++import net.minecraftforge.api.distmarker.Dist;
++import net.minecraftforge.client.event.ClientPlayerNetworkEvent;
++import net.minecraftforge.client.gui.overlay.IGuiOverlay;
++import net.minecraftforge.eventbus.api.SubscribeEvent;
++import net.minecraftforge.fml.common.Mod;
++import java.util.*;
++
++@Mod.EventBusSubscriber(modid = Reference.MOD_ID, value = Dist.CLIENT)
++public final class PartyHUD {
++    private static List<Member> members = List.of();
++    private static long updated;
++    public static void update(List<Member> snapshot) { members = List.copyOf(snapshot); updated = System.currentTimeMillis(); }
++    @SubscribeEvent public static void logout(ClientPlayerNetworkEvent.LoggingOut event) { members = List.of(); }
++    public static final IGuiOverlay HUD = (gui, graphics, partialTick, width, height) -> {
++        Minecraft mc = Minecraft.getInstance();
++        if (mc.player == null || mc.options.hideGui || mc.options.renderDebug || mc.screen instanceof ChatScreen
++                || members.isEmpty() || System.currentTimeMillis() - updated > 5000) return;
++        // Compact bottom-left cards; reserve the bottom strip for the hotbar/techniques.
++        float scale = Math.min(0.85f, width / 600f);
++        int available = Math.max(1, (int) ((height - 135) / (36 * scale)));
++        int count = Math.min(members.size(), available);
++        int panelHeight = 21 + count * 36;
++        int x = 10, y = (int) ((height - 58) / scale) - panelHeight;
++        graphics.pose().pushPose();
++        graphics.pose().scale(scale, scale, 1);
++        graphics.fill(x, y, x + 184, y + panelHeight, 0xD9101725);
++        graphics.fill(x, y, x + 184, y + 2, 0xFFFFB744);
++        graphics.drawString(mc.font, Component.translatable("gui.dragonminez.party.hud.title", members.size()), x + 7, y + 7, 0xFFFFC96A, false);
++        String key = KeyBinds.STATS_TAB_PARTY.getTranslatedKeyMessage().getString();
++        graphics.drawString(mc.font, key, x + 177 - mc.font.width(key), y + 7, 0xFFADBED4, false);
++        int first = members.size() <= count ? 0 : (int) ((mc.player.tickCount / 100L) % ((members.size() + count - 1) / count)) * count;
++        for (int i = 0; i < count && first + i < members.size(); i++) draw(graphics, members.get(first + i), x, y + 21 + i * 36);
++        graphics.pose().popPose();
++    };
++    private static void draw(GuiGraphics g, Member member, int x, int y) {
++        var mc = Minecraft.getInstance();
++        int accent = !member.online() ? 0xFF66758A : member.health() <= 0 ? 0xFFE66666 : 0xFF58DAB1;
++        g.fill(x + 5, y, x + 179, y + 32, 0xCC243247);
++        g.fill(x + 5, y, x + 7, y + 32, accent);
++        String name = (member.leader() ? "★ " : "") + member.name();
++        g.drawString(mc.font, mc.font.plainSubstrByWidth(name, 160), x + 12, y + 3, 0xFFF2F6FC, false);
++        float fraction = member.online() ? Mth.clamp(member.health() / Math.max(1, member.maxHealth()), 0, 1) : 0;
++        g.fill(x + 12, y + 15, x + 172, y + 19, 0xFF121A29);
++        g.fill(x + 12, y + 15, x + 12 + (int) (160 * fraction), y + 19, fraction < 0.25f ? 0xFFEE7373 : accent);
++        String health = member.online() ? compact(member.health()) + " / " + compact(member.maxHealth()) : "--";
++        String state = !member.online() ? "offline" : member.health() <= 0 ? "down" : member.arena() ? "arena"
++                : !member.sameDimension() ? "dimension" : "near";
++        String label = state.equals("near") ? member.distance() + "m" : Component.translatable("gui.dragonminez.party.hud." + state).getString();
++        g.drawString(mc.font, health, x + 12, y + 22, 0xFFCAD8EA, false);
++        g.drawString(mc.font, label, x + 172 - mc.font.width(label), y + 22, 0xFFADBED4, false);
++    }
++    private static String compact(float value) {
++        if (value >= 1_000_000) return String.format(Locale.ROOT, "%.1fM", value / 1_000_000);
++        if (value >= 10_000) return String.format(Locale.ROOT, "%.1fk", value / 1000);
++        return Long.toString(Math.round(value));
++    }
++}
+diff --git a/src/main/java/com/dragonminez/client/util/KeyBinds.java b/src/main/java/com/dragonminez/client/util/KeyBinds.java
+index e2f8518..3775d15 100644
+--- a/src/main/java/com/dragonminez/client/util/KeyBinds.java
++++ b/src/main/java/com/dragonminez/client/util/KeyBinds.java
+@@ -18,7 +18,7 @@ public class KeyBinds {
+ 	private static final String MINIGAMES_CATEGORY = "key.categories.minigames." + Reference.MOD_ID;
+ 
+ 	public static final KeyMapping STATS_MENU = registerKey("stats_menu", GLFW.GLFW_KEY_V);
+-	public static final KeyMapping STATS_TAB_PARTY = registerKeyUnbound("stats_tab_party");
++	public static final KeyMapping STATS_TAB_PARTY = registerKeyAlt("stats_tab_party", GLFW.GLFW_KEY_P);
+ 	public static final KeyMapping STATS_TAB_SKILLS = registerKeyUnbound("stats_tab_skills");
+ 	public static final KeyMapping STATS_TAB_QUESTS = registerKeyUnbound("stats_tab_quests");
+ 	public static final KeyMapping STATS_TAB_MINIGAMES = registerKeyUnbound("stats_tab_minigames");
+diff --git a/src/main/java/com/dragonminez/common/network/NetworkHandler.java b/src/main/java/com/dragonminez/common/network/NetworkHandler.java
+index deeefe0..0130e46 100644
+--- a/src/main/java/com/dragonminez/common/network/NetworkHandler.java
++++ b/src/main/java/com/dragonminez/common/network/NetworkHandler.java
+@@ -23,12 +23,13 @@ public class NetworkHandler {
+ 	public static void register() {
+ 		SimpleChannel net = NetworkRegistry.ChannelBuilder
+ 				.named(ResourceLocation.fromNamespaceAndPath(Reference.MOD_ID, "network"))
+-				.networkProtocolVersion(() -> "1.0")
+-				.clientAcceptedVersions(s -> true)
+-				.serverAcceptedVersions(s -> true)
++				.networkProtocolVersion(() -> "manorsz-party-arena-1")
++				.clientAcceptedVersions("manorsz-party-arena-1"::equals)
++				.serverAcceptedVersions("manorsz-party-arena-1"::equals)
+ 				.simpleChannel();
+ 
+ 		INSTANCE = net;
++        net.messageBuilder(PartyHudS2C.class, id(), NetworkDirection.PLAY_TO_CLIENT).decoder(PartyHudS2C::new).encoder(PartyHudS2C::encode).consumerMainThread(PartyHudS2C::handle).add();
+ 
+ 		/*
+ 		  CLIENT -> SERVER
+diff --git a/src/main/java/com/dragonminez/common/network/S2C/PartyHudS2C.java b/src/main/java/com/dragonminez/common/network/S2C/PartyHudS2C.java
+new file mode 100644
+index 0000000..dbdb5bd
+--- /dev/null
++++ b/src/main/java/com/dragonminez/common/network/S2C/PartyHudS2C.java
+@@ -0,0 +1,30 @@
++package com.dragonminez.common.network.S2C;
++
++import com.dragonminez.client.gui.hud.PartyHUD;
++import net.minecraft.network.FriendlyByteBuf;
++import net.minecraftforge.api.distmarker.Dist;
++import net.minecraftforge.fml.DistExecutor;
++import net.minecraftforge.network.NetworkEvent;
++import java.util.*;
++import java.util.function.Supplier;
++
++public record PartyHudS2C(List<Member> members) {
++    public record Member(UUID id, String name, float health, float maxHealth, boolean online,
++                         boolean leader, boolean arena, boolean sameDimension, int distance) {}
++    public PartyHudS2C(FriendlyByteBuf buf) {
++        this(buf.readList(b -> new Member(b.readUUID(), b.readUtf(64), b.readFloat(), b.readFloat(),
++                b.readBoolean(), b.readBoolean(), b.readBoolean(), b.readBoolean(), b.readVarInt())));
++    }
++    public void encode(FriendlyByteBuf buf) {
++        buf.writeCollection(members, (b, m) -> {
++            b.writeUUID(m.id()); b.writeUtf(m.name(), 64); b.writeFloat(m.health()); b.writeFloat(m.maxHealth());
++            b.writeBoolean(m.online()); b.writeBoolean(m.leader()); b.writeBoolean(m.arena());
++            b.writeBoolean(m.sameDimension()); b.writeVarInt(m.distance());
++        });
++    }
++    public void handle(Supplier<NetworkEvent.Context> supplier) {
++        var context = supplier.get();
++        context.enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> PartyHUD.update(members)));
++        context.setPacketHandled(true);
++    }
++}
+diff --git a/src/main/java/com/dragonminez/common/quest/PartyManager.java b/src/main/java/com/dragonminez/common/quest/PartyManager.java
+index b48804e..97bf9ea 100644
+--- a/src/main/java/com/dragonminez/common/quest/PartyManager.java
++++ b/src/main/java/com/dragonminez/common/quest/PartyManager.java
+@@ -302,6 +302,7 @@ public final class PartyManager {
+         PartySavedData.PartyInstance party = data.getPartyOf(player.getUUID());
+         if (party == null) return;
+ 
++        com.dragonminez.server.events.ArenaManager.abort(player);
+         boolean isLeader = party.getLeaderId().equals(player.getUUID());
+         UUID partyId = party.getPartyId();
+ 
+@@ -332,15 +333,13 @@ public final class PartyManager {
+         if (leader == null) return;
+ 
+         for (ServerPlayer member : getAllPartyMembers(leader)) {
+-            if (!member.getUUID().equals(leader.getUUID())) syncQuestProgress(leader, member);
++            // Progress is shared explicitly per quest, never by copying the leader.
+             syncSelf(member);
+         }
+     }
+ 
+     public static ServerPlayer resolveQuestController(ServerPlayer player) {
+-        if (!isInParty(player) || isPartyLeader(player)) return player;
+-        ServerPlayer leader = getPartyLeader(player);
+-        return leader != null ? leader : player;
++        return player;
+     }
+ 
+     public static void beginFusionParty(ServerPlayer leader, ServerPlayer partner) {
+@@ -434,6 +433,7 @@ public final class PartyManager {
+ 
+         addToMinecraftTeam(player.getServer(), party.getPartyId(), player);
+         updateTeamFriendlyFire(player.getServer(), party.getPartyId(), party.isPvpEnabled());
++        syncPartyToOnlineMembers(player.getServer(), party);
+     }
+ 
+     @SubscribeEvent
+@@ -514,7 +514,8 @@ public final class PartyManager {
+         StatsData toData = getStatsData(toPlayer);
+         if (fromData == null || toData == null) return;
+ 
+-        toData.getPlayerQuestData().mergeQuestStateFrom(fromData.getPlayerQuestData());
++        // Membership changes must never copy personal quest history.
++        toData.getPlayerQuestData().setDifficulty(fromData.getPlayerQuestData().getDifficulty());
+     }
+ 
+     private static void syncSelf(ServerPlayer player) {
+diff --git a/src/main/java/com/dragonminez/common/quest/PartyQuestProgress.java b/src/main/java/com/dragonminez/common/quest/PartyQuestProgress.java
+new file mode 100644
+index 0000000..129d2db
+--- /dev/null
++++ b/src/main/java/com/dragonminez/common/quest/PartyQuestProgress.java
+@@ -0,0 +1,72 @@
++package com.dragonminez.common.quest;
++
++import com.dragonminez.common.events.DMZEvent;
++import com.dragonminez.common.network.NetworkHandler;
++import com.dragonminez.common.network.S2C.ProgressionSyncS2C;
++import com.dragonminez.common.network.S2C.StoryToastS2C;
++import com.dragonminez.common.stats.*;
++import com.dragonminez.server.events.ArenaManager;
++import net.minecraft.server.level.ServerPlayer;
++import net.minecraftforge.common.MinecraftForge;
++import java.util.*;
++
++/** Shares only the current quest. History, unlocks and reward receipts remain personal. */
++public final class PartyQuestProgress {
++    private PartyQuestProgress() {}
++
++    public static PlayerQuestData data(ServerPlayer player) {
++        return StatsProvider.get(StatsCapability.INSTANCE, player).resolve()
++                .map(StatsData::getPlayerQuestData).orElse(null);
++    }
++
++    public static boolean eligible(ServerPlayer player, QuestService.ResolvedQuest resolved) {
++        StatsData stats = StatsProvider.get(StatsCapability.INSTANCE, player).resolve().orElse(null);
++        if (stats == null || !player.isAlive() || player.isSpectator()) return false;
++        PlayerQuestData own = stats.getPlayerQuestData();
++        if (own.isQuestCompleted(resolved.questKey())) return false;
++        if (own.isQuestAccepted(resolved.questKey())) return true;
++        Quest quest = resolved.quest();
++        if (resolved.saga() != null && !QuestAvailabilityChecker.isSagaQuestAvailable(
++                quest, resolved.saga(), resolved.saga().getQuests().indexOf(quest), stats)) return false;
++        return QuestAvailabilityChecker.describeNonPositionalStartBlocker(
++                quest, resolved.questKey(), player, stats) == null;
++    }
++
++    public static List<ServerPlayer> accept(List<ServerPlayer> members, QuestService.ResolvedQuest resolved,
++                                           Difficulty difficulty) {
++        // Snapshot eligibility before any progress changes.
++        List<ServerPlayer> eligible = members.stream().filter(p -> eligible(p, resolved)).toList();
++        for (ServerPlayer member : eligible) {
++            PlayerQuestData own = data(member);
++            own.acceptQuest(resolved.questKey());
++            resolved.quest().initializeObjectiveRequirements(own, resolved.questKey(), members.size());
++            own.setQuestDifficulty(resolved.questKey(), difficulty);
++            own.setTrackedQuestId(resolved.questKey());
++        }
++        return eligible;
++    }
++
++    public static void complete(ServerPlayer source, String questKey) {
++        QuestService.ResolvedQuest resolved = QuestService.resolveQuest(questKey);
++        PlayerQuestData progress = data(source);
++        if (resolved == null || progress == null || !progress.isQuestAccepted(questKey)) return;
++        List<ServerPlayer> members = ArenaManager.questMembers(source);
++        for (ServerPlayer member : members) {
++            PlayerQuestData own = data(member);
++            if (own == null || !own.isQuestAccepted(questKey)
++                    || !ArenaManager.canProgress(member, questKey)) continue;
++            if (MinecraftForge.EVENT_BUS.post(new DMZEvent.QuestCompletedEvent(member, questKey,
++                    resolved.saga(), resolved.quest(), members))) continue;
++            for (int i = 0; i < resolved.quest().getObjectives().size(); i++) {
++                own.setObjectiveProgress(questKey, i, resolved.quest().getObjectiveRequired(own, questKey, i));
++            }
++            own.completeQuest(questKey);
++            if (questKey.equals(own.getTrackedQuestId())) own.setTrackedQuestId(null);
++            NetworkHandler.sendToPlayer(StoryToastS2C.questComplete(questKey), member);
++            // Existing reward service retains NPC-only rules and individual, persisted receipts.
++            if (resolved.quest().getClaimMode() != Quest.ClaimMode.NPC_ONLY) QuestService.claimRewards(member, questKey);
++            NetworkHandler.sendToPlayer(new ProgressionSyncS2C(member), member);
++        }
++        ArenaManager.onQuestFinished(source, questKey);
++    }
++}
+diff --git a/src/main/java/com/dragonminez/common/quest/QuestService.java b/src/main/java/com/dragonminez/common/quest/QuestService.java
+index 4aeb2ee..d2754a1 100644
+--- a/src/main/java/com/dragonminez/common/quest/QuestService.java
++++ b/src/main/java/com/dragonminez/common/quest/QuestService.java
+@@ -1,6 +1,7 @@
+ package com.dragonminez.common.quest;
+ 
+ import com.dragonminez.Env;
++import com.dragonminez.server.events.ArenaManager;
+ import com.dragonminez.LogUtil;
+ import com.dragonminez.common.events.DMZEvent;
+ import com.dragonminez.common.network.NetworkHandler;
+@@ -136,13 +137,21 @@ public final class QuestService {
+ 		}
+ 		resummonAntiSpam.put(requester.getUUID(), now);
+ 
+-		int partySize = PartyManager.getAllPartyMembers(controller).size();
+-		try {
+-			spawnKillObjectives(requester, resolved, pqd, partySize, pqd.getQuestDifficulty(questKey));
+-		} catch (Exception exception) {
+-			LogUtil.error(Env.SERVER, "Failed to re-summon kill objectives for quest '" + questKey
+-					+ "' requested by " + requester.getGameProfile().getName(), exception);
+-		}
++        List<ServerPlayer> members = PartyManager.getAllPartyMembers(controller);
++        Component blocker = ArenaManager.checkEntry(members, resolved.quest());
++        if (blocker != null) return blocker;
++        blocker = QuestAvailabilityChecker.describeStartRequirementFailure(resolved.quest(), questKey, requester, data);
++        if (blocker != null) return blocker;
++        List<ServerPlayer> eligible = PartyQuestProgress.accept(members, resolved, pqd.getQuestDifficulty(questKey));
++        try {
++            ArenaManager.enter(requester, resolved, members, eligible);
++            spawnKillObjectives(requester, resolved, pqd, members.size(), pqd.getQuestDifficulty(questKey));
++        } catch (Exception exception) {
++            for (ServerPlayer member : members) ArenaManager.abort(member);
++            LogUtil.error(Env.SERVER, "Failed to resume quest arena " + questKey, exception);
++            return Component.translatable("message.dragonminez.arena.unavailable");
++        }
++        syncQuestState(controller);
+ 		return null;
+ 	}
+ 
+@@ -328,10 +337,8 @@ public final class QuestService {
+ 			);
+ 		}
+ 
+-		Component partyBlocker = getPartyRequirementFailure(requester, controller, quest, questKey, restartingFailed);
+-		if (partyBlocker != null) {
+-			return partyBlocker;
+-		}
++        Component arenaBlocker = ArenaManager.checkEntry(partyMembers, quest);
++        if (arenaBlocker != null) return arenaBlocker;
+ 
+ 		DMZEvent.QuestStartEvent startEvent = new DMZEvent.QuestStartEvent(
+ 				controller,
+@@ -345,31 +352,25 @@ public final class QuestService {
+ 			return Component.translatable("message.dragonminez.quest.start.unavailable");
+ 		}
+ 
+-		int partySize = partyMembers.size();
+-		pqd.acceptQuest(questKey);
+-		quest.initializeObjectiveRequirements(pqd, questKey, partySize);
+-		pqd.setQuestDifficulty(questKey, startEvent.getDifficulty());
+-		pqd.setTrackedQuestId(questKey);
+-
+-		try {
+-			spawnKillObjectives(requester, resolved, pqd, partySize, startEvent.getDifficulty());
+-		} catch (Exception exception) {
+-			LogUtil.error(Env.SERVER, "Failed to spawn kill objectives for quest '" + questKey
+-					+ "' started by " + requester.getGameProfile().getName(), exception);
+-		}
+-
+-		NetworkHandler.sendToPlayer(StoryToastS2C.questStarted(questKey), controller);
+-		if (PartyManager.isInParty(controller)) {
+-			PartyManager.syncPartyQuestState(controller);
+-			for (ServerPlayer member : partyMembers) {
+-				if (!member.getUUID().equals(controller.getUUID())) {
+-					NetworkHandler.sendToPlayer(StoryToastS2C.questStarted(questKey), member);
+-				}
+-			}
+-		} else {
+-			NetworkHandler.sendToTrackingEntityAndSelf(new ProgressionSyncS2C(controller), controller);
+-		}
+-
++        List<ServerPlayer> eligible = PartyQuestProgress.accept(partyMembers, resolved, startEvent.getDifficulty());
++        int partySize = partyMembers.size();
++        try {
++            ArenaManager.enter(requester, resolved, partyMembers, eligible);
++            spawnKillObjectives(requester, resolved, pqd, partySize, startEvent.getDifficulty());
++        } catch (Exception exception) {
++            LogUtil.error(Env.SERVER, "Failed to prepare quest arena " + questKey, exception);
++            for (ServerPlayer member : partyMembers) ArenaManager.abort(member);
++            for (ServerPlayer member : eligible) {
++                PlayerQuestData own = PartyQuestProgress.data(member);
++                if (own.isQuestAccepted(questKey)) own.failQuest(questKey);
++            }
++            syncQuestState(controller);
++            return Component.translatable("message.dragonminez.arena.unavailable");
++        }
++        for (ServerPlayer member : eligible) {
++            NetworkHandler.sendToPlayer(StoryToastS2C.questStarted(questKey), member);
++        }
++        syncQuestState(controller);
+ 		return null;
+ 	}
+ 
+@@ -426,39 +427,11 @@ public final class QuestService {
+ 			}
+ 		}
+ 
+-		DMZEvent.QuestCompletedEvent completeEvent = new DMZEvent.QuestCompletedEvent(
+-				controller,
+-				questKey,
+-				resolved.saga(),
+-				quest,
+-				partyMembers
+-		);
+-		if (MinecraftForge.EVENT_BUS.post(completeEvent)) {
+-			if (objectiveProgressChanged) {
+-				syncQuestState(controller);
+-			}
+-			return Component.translatable("message.dragonminez.quest.start.unavailable");
+-		}
+-
+-		pqd.completeQuest(questKey);
+-		if (questKey.equals(pqd.getTrackedQuestId())) {
+-			pqd.setTrackedQuestId(null);
+-		}
+-
+-		requester.displayClientMessage(
+-				Component.translatable("command.dragonminez.story.sidequest.turned_in", questKey), false);
+-		NetworkHandler.sendToPlayer(StoryToastS2C.questComplete(questKey), controller);
+-
+-		if (PartyManager.isInParty(controller)) {
+-			for (ServerPlayer member : partyMembers) {
+-				if (!member.getUUID().equals(controller.getUUID())) {
+-					NetworkHandler.sendToPlayer(StoryToastS2C.questComplete(questKey), member);
+-				}
+-			}
+-		}
+-		syncQuestState(controller);
+-		claimRewardsForRequester(requester, quest, questKey);
+-
++        PartyQuestProgress.complete(controller, questKey);
++        for (ServerPlayer member : ArenaManager.questMembers(controller)) {
++            claimRewardsForRequester(member, quest, questKey);
++        }
++        syncQuestState(controller);
+ 		return null;
+ 	}
+ 
+@@ -514,7 +487,7 @@ public final class QuestService {
+ 	private static boolean hasUnclaimedRewards(PlayerQuestData pqd, String questKey, Quest quest) {
+ 		List<QuestReward> rewards = quest.getRewards();
+ 		for (int i = 0; i < rewards.size(); i++) {
+-			if (!rewards.get(i).isUnlockedFor(pqd.getDifficulty())) {
++			if (!rewards.get(i).isUnlockedFor(pqd.getQuestDifficulty(questKey))) {
+ 				continue;
+ 			}
+ 			if (!pqd.isRewardClaimed(questKey, i)) {
+@@ -546,12 +519,12 @@ public final class QuestService {
+ 		ResolvedQuest resolved = resolveQuest(questKey);
+ 		Saga saga = resolved != null ? resolved.saga() : null;
+ 		List<ServerPlayer> partyMembers = PartyManager.getAllPartyMembers(rewardTarget);
+-		double rewardMultiplier = pqd.getDifficulty().questRewardMultiplier();
++		double rewardMultiplier = pqd.getQuestDifficulty(questKey).questRewardMultiplier();
+ 		for (int i = 0; i < rewards.size(); i++) {
+ 			if (pqd.isRewardClaimed(questKey, i)) {
+ 				continue;
+ 			}
+-			if (!rewards.get(i).isUnlockedFor(pqd.getDifficulty())) {
++			if (!rewards.get(i).isUnlockedFor(pqd.getQuestDifficulty(questKey))) {
+ 				continue;
+ 			}
+ 			DMZEvent.QuestRewardClaimEvent rewardEvent = new DMZEvent.QuestRewardClaimEvent(
+@@ -628,12 +601,12 @@ public final class QuestService {
+ 			for (int j = 0; j < remaining; j++) {
+ 				EntityType<?> entityType = killObjective.resolveEntityType();
+ 				if (entityType == null) {
+-					continue;
++					throw new IllegalStateException("Missing enemy type for " + questKey);
+ 				}
+ 
+ 				Entity entity = entityType.create(requester.level());
+ 				if (entity == null) {
+-					continue;
++					throw new IllegalStateException("Cannot create enemy for " + questKey);
+ 				}
+ 
+ 				positionQuestEntity(requester, entity);
+@@ -696,7 +669,7 @@ public final class QuestService {
+ 					mob.setTarget(requester);
+ 				}
+ 
+-				requester.serverLevel().addFreshEntity(entity);
++				if (!requester.serverLevel().addFreshEntity(entity)) throw new IllegalStateException("Cannot spawn quest enemy " + questKey);
+ 			}
+ 		}
+ 	}
+diff --git a/src/main/java/com/dragonminez/server/events/ArenaManager.java b/src/main/java/com/dragonminez/server/events/ArenaManager.java
+new file mode 100644
+index 0000000..8a556e8
+--- /dev/null
++++ b/src/main/java/com/dragonminez/server/events/ArenaManager.java
+@@ -0,0 +1,251 @@
++package com.dragonminez.server.events;
++
++import com.dragonminez.Reference;
++import com.dragonminez.common.quest.*;
++import com.dragonminez.common.quest.objectives.KillObjective;
++import com.dragonminez.common.network.NetworkHandler;
++import com.dragonminez.common.network.S2C.ProgressionSyncS2C;
++import com.dragonminez.server.world.data.ArenaSavedData;
++import net.minecraft.commands.Commands;
++import net.minecraft.core.BlockPos;
++import net.minecraft.core.registries.Registries;
++import net.minecraft.nbt.CompoundTag;
++import net.minecraft.network.chat.Component;
++import net.minecraft.resources.ResourceKey;
++import net.minecraft.resources.ResourceLocation;
++import net.minecraft.server.MinecraftServer;
++import net.minecraft.server.level.ServerLevel;
++import net.minecraft.server.level.ServerPlayer;
++import net.minecraft.world.entity.Entity;
++import net.minecraft.world.level.Level;
++import net.minecraft.world.level.levelgen.Heightmap;
++import net.minecraft.world.level.levelgen.structure.templatesystem.*;
++import net.minecraft.world.phys.AABB;
++import net.minecraftforge.event.RegisterCommandsEvent;
++import net.minecraftforge.event.TickEvent;
++import net.minecraftforge.event.entity.player.PlayerEvent;
++import net.minecraftforge.event.server.ServerStoppedEvent;
++import net.minecraftforge.eventbus.api.SubscribeEvent;
++import net.minecraftforge.fml.common.Mod;
++import java.util.*;
++
++@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
++public final class ArenaManager {
++    public static final ResourceKey<Level> DIMENSION = ResourceKey.create(Registries.DIMENSION,
++            ResourceLocation.fromNamespaceAndPath(Reference.MOD_ID, "quest_arena"));
++    private static final Map<UUID, Session> sessions = new HashMap<>();
++    private static final int RADIUS = 192;
++    private static final long TIMEOUT = 20L * 60 * 30;
++    private ArenaManager() {}
++
++    private static final class Session {
++        final String quest;
++        final List<UUID> members;
++        final Set<UUID> eligible;
++        final BlockPos center;
++        final long started;
++        boolean finished;
++        Session(String quest, List<ServerPlayer> members, List<ServerPlayer> eligible, BlockPos center, long started) {
++            this.quest = quest;
++            this.members = members.stream().map(Entity::getUUID).toList();
++            this.eligible = new HashSet<>(eligible.stream().map(Entity::getUUID).toList());
++            this.center = center;
++            this.started = started;
++        }
++    }
++
++    public static boolean needsArena(Quest quest) {
++        return quest.getObjectives().stream().anyMatch(o -> o instanceof KillObjective k
++                && k.getSpawnMode() == KillObjective.SpawnMode.QUEST);
++    }
++
++    public static Component checkEntry(List<ServerPlayer> members, Quest quest) {
++        if (!needsArena(quest)) return null;
++        if (members.get(0).getServer().getLevel(DIMENSION) == null)
++            return Component.translatable("message.dragonminez.arena.unavailable");
++        for (ServerPlayer member : members) {
++            if (sessions.containsKey(member.getUUID()) || ArenaSavedData.get(member.getServer()).returns.containsKey(member.getUUID()))
++                return Component.translatable("message.dragonminez.arena.busy", member.getGameProfile().getName());
++            if (!member.isAlive() || member.isSpectator())
++                return Component.translatable("message.dragonminez.arena.not_ready", member.getGameProfile().getName());
++        }
++        return null;
++    }
++
++    public static void enter(ServerPlayer source, QuestService.ResolvedQuest resolved,
++                             List<ServerPlayer> members, List<ServerPlayer> eligible) {
++        if (!needsArena(resolved.quest())) return;
++        MinecraftServer server = source.getServer();
++        ServerLevel arena = Objects.requireNonNull(server.getLevel(DIMENSION));
++        ArenaSavedData saved = ArenaSavedData.get(server);
++        int slot = saved.allocateSlot();
++        BlockPos center = new BlockPos((slot % 1000) * 1024, 64, (slot / 1000) * 1024);
++        // Use the original Cell structure, without the NPCs/structure markers from world generation.
++        Optional<StructureTemplate> cell = arena.getStructureManager().get(
++                ResourceLocation.fromNamespaceAndPath(Reference.MOD_ID, "cell_arena"));
++        cell.ifPresent(template -> {
++            BlockPos origin = center.offset(-template.getSize().getX() / 2, 0, -template.getSize().getZ() / 2);
++            template.placeInWorld(arena, origin, origin, new StructurePlaceSettings().setIgnoreEntities(true)
++                    .addProcessor(BlockIgnoreProcessor.STRUCTURE_BLOCK), arena.random, 2);
++        });
++        Session session = new Session(resolved.questKey(), members, eligible, center, server.overworld().getGameTime());
++        for (ServerPlayer member : members) {
++            CompoundTag ticket = new CompoundTag();
++            ticket.putUUID("Player", member.getUUID());
++            ticket.putString("Dimension", member.level().dimension().location().toString());
++            ticket.putDouble("X", member.getX()); ticket.putDouble("Y", member.getY()); ticket.putDouble("Z", member.getZ());
++            ticket.putFloat("Yaw", member.getYRot()); ticket.putFloat("Pitch", member.getXRot());
++            ticket.putString("Quest", resolved.questKey());
++            ticket.putBoolean("Eligible", session.eligible.contains(member.getUUID()));
++            saved.returns.put(member.getUUID(), ticket);
++            sessions.put(member.getUUID(), session);
++        }
++        saved.setDirty();
++        server.overworld().getDataStorage().save(); // Write return tickets before moving anyone.
++        int index = 0;
++        for (ServerPlayer member : members) {
++            int x = center.getX() + (index++ % 8) * 2 - 6;
++            int z = center.getZ() + 6 + (index / 8) * 2;
++            int y = arena.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x, z);
++            member.stopRiding();
++            member.teleportTo(arena, x + 0.5, y + 1, z + 0.5, 180, 0);
++            member.fallDistance = 0;
++            member.sendSystemMessage(Component.translatable(session.eligible.contains(member.getUUID())
++                    ? "message.dragonminez.arena.enter" : "message.dragonminez.arena.support"));
++        }
++    }
++
++    public static List<ServerPlayer> questMembers(ServerPlayer source) {
++        Session session = sessions.get(source.getUUID());
++        if (session == null) return PartyManager.getAllPartyMembers(source).stream()
++                .filter(p -> !sessions.containsKey(p.getUUID()) && p.isAlive() && !p.isSpectator()).toList();
++        return session.members.stream().map(id -> source.getServer().getPlayerList().getPlayer(id))
++                .filter(Objects::nonNull).filter(p -> present(p, session)).toList();
++    }
++
++    private static boolean present(ServerPlayer player, Session session) {
++        return sessions.get(player.getUUID()) == session && player.isAlive() && !player.isSpectator()
++                && player.level().dimension().equals(DIMENSION)
++                && Math.abs(player.getX() - session.center.getX()) <= RADIUS
++                && Math.abs(player.getZ() - session.center.getZ()) <= RADIUS;
++    }
++
++    public static boolean canProgress(ServerPlayer player, String quest) {
++        Session session = sessions.get(player.getUUID());
++        return session == null ? !player.level().dimension().equals(DIMENSION)
++                : session.quest.equals(quest) && session.eligible.contains(player.getUUID()) && present(player, session);
++    }
++
++    public static boolean inArena(ServerPlayer player) { return sessions.containsKey(player.getUUID()); }
++
++    public static boolean ownsQuestEnemy(List<ServerPlayer> members, String owner, String quest) {
++        for (ServerPlayer member : members) {
++            Session session = sessions.get(member.getUUID());
++            if (session != null && session.quest.equals(quest)
++                    && session.members.stream().anyMatch(id -> id.toString().equals(owner))) return true;
++        }
++        return false;
++    }
++
++    public static void onQuestFinished(ServerPlayer player, String quest) {
++        Session session = sessions.get(player.getUUID());
++        if (session != null && session.quest.equals(quest)) session.finished = true;
++    }
++
++    public static void abort(ServerPlayer player) {
++        Session session = sessions.remove(player.getUUID());
++        CompoundTag ticket = ArenaSavedData.get(player.getServer()).returns.get(player.getUUID());
++        if (ticket != null && ticket.getBoolean("Eligible")) {
++            PlayerQuestData own = PartyQuestProgress.data(player);
++            if (own != null && own.isQuestAccepted(ticket.getString("Quest"))) own.failQuest(ticket.getString("Quest"));
++        }
++        if (player.isAlive()) returnPlayer(player);
++        if (session != null && session.members.stream().noneMatch(id -> sessions.get(id) == session)) cleanup(player.getServer(), session);
++    }
++
++    private static void returnPlayer(ServerPlayer player) {
++        ArenaSavedData saved = ArenaSavedData.get(player.getServer());
++        CompoundTag ticket = saved.returns.get(player.getUUID());
++        if (ticket == null || !player.isAlive()) return;
++        ServerLevel target = player.getServer().getLevel(ResourceKey.create(Registries.DIMENSION,
++                ResourceLocation.parse(ticket.getString("Dimension"))));
++        double x = ticket.getDouble("X"), y = ticket.getDouble("Y"), z = ticket.getDouble("Z");
++        if (target == null || target.dimension().equals(DIMENSION)) {
++            target = player.getServer().overworld();
++            BlockPos spawn = target.getSharedSpawnPos();
++            x = spawn.getX() + 0.5; y = spawn.getY() + 1; z = spawn.getZ() + 0.5;
++        }
++        player.stopRiding();
++        player.teleportTo(target, x, y, z, ticket.getFloat("Yaw"), ticket.getFloat("Pitch"));
++        player.fallDistance = 0;
++        saved.returns.remove(player.getUUID()); saved.setDirty();
++        NetworkHandler.sendToPlayer(new ProgressionSyncS2C(player), player);
++        player.sendSystemMessage(Component.translatable("message.dragonminez.arena.return"));
++    }
++
++    private static void cleanup(MinecraftServer server, Session session) {
++        ServerLevel arena = server.getLevel(DIMENSION);
++        if (arena == null) return;
++        AABB bounds = new AABB(session.center).inflate(RADIUS, 256, RADIUS);
++        for (Entity entity : arena.getEntities((Entity) null, bounds,
++                e -> !(e instanceof ServerPlayer) && e.getPersistentData().contains(QuestService.QUEST_KEY_TAG))) entity.discard();
++    }
++
++    @SubscribeEvent public static void tick(TickEvent.ServerTickEvent event) {
++        if (event.phase != TickEvent.Phase.END) return;
++        MinecraftServer server = event.getServer();
++        for (Session session : new HashSet<>(sessions.values())) {
++            List<ServerPlayer> active = session.members.stream().map(id -> server.getPlayerList().getPlayer(id))
++                    .filter(Objects::nonNull).filter(p -> sessions.get(p.getUUID()) == session).toList();
++            // Return after the battle even when an NPC turn-in or another world objective remains.
++            boolean battleDone = active.stream().filter(p -> session.eligible.contains(p.getUUID())).anyMatch(p -> {
++                Quest quest = QuestRegistry.getQuest(session.quest);
++                PlayerQuestData own = PartyQuestProgress.data(p);
++                if (quest == null || own == null) return false;
++                if (own.isQuestCompleted(session.quest)) return true;
++                for (int i = 0; i < quest.getObjectives().size(); i++) {
++                    if (quest.getObjectives().get(i) instanceof KillObjective k && k.getSpawnMode() == KillObjective.SpawnMode.QUEST
++                            && own.getObjectiveProgress(session.quest, i) < quest.getObjectiveRequired(own, session.quest, i)) return false;
++                }
++                return true;
++            });
++            boolean timedOut = server.overworld().getGameTime() - session.started >= TIMEOUT
++                    || active.stream().noneMatch(p -> session.eligible.contains(p.getUUID()) && present(p, session));
++            for (ServerPlayer player : active) {
++                if (!present(player, session) || timedOut) abort(player);
++                else if (session.finished || battleDone) {
++                    sessions.remove(player.getUUID());
++                    returnPlayer(player);
++                }
++            }
++            if (session.members.stream().noneMatch(id -> sessions.get(id) == session)) cleanup(server, session);
++        }
++        if (server.getTickCount() % 20 == 0) {
++            for (ServerPlayer player : server.getPlayerList().getPlayers()) {
++                if (player.level().dimension().equals(DIMENSION) && !sessions.containsKey(player.getUUID()) && player.isAlive()) {
++                    if (ArenaSavedData.get(server).returns.containsKey(player.getUUID())) returnPlayer(player);
++                    else {
++                        BlockPos spawn = server.overworld().getSharedSpawnPos();
++                        player.teleportTo(server.overworld(), spawn.getX() + 0.5, spawn.getY() + 1, spawn.getZ() + 0.5, 0, 0);
++                    }
++                }
++            }
++        }
++    }
++
++    @SubscribeEvent public static void logout(PlayerEvent.PlayerLoggedOutEvent event) {
++        if (event.getEntity() instanceof ServerPlayer player) abort(player);
++    }
++    @SubscribeEvent public static void login(PlayerEvent.PlayerLoggedInEvent event) {
++        if (event.getEntity() instanceof ServerPlayer player && ArenaSavedData.get(player.getServer()).returns.containsKey(player.getUUID())) abort(player);
++    }
++    @SubscribeEvent public static void respawn(PlayerEvent.PlayerRespawnEvent event) {
++        if (event.getEntity() instanceof ServerPlayer player) abort(player);
++    }
++    @SubscribeEvent public static void stopped(ServerStoppedEvent event) { sessions.clear(); }
++    @SubscribeEvent public static void commands(RegisterCommandsEvent event) {
++        event.getDispatcher().register(Commands.literal("dmzarena").then(Commands.literal("sair").executes(ctx -> {
++            abort(ctx.getSource().getPlayerOrException()); return 1;
++        })));
++    }
++}
+diff --git a/src/main/java/com/dragonminez/server/events/PartyHudEvents.java b/src/main/java/com/dragonminez/server/events/PartyHudEvents.java
+new file mode 100644
+index 0000000..b87bc12
+--- /dev/null
++++ b/src/main/java/com/dragonminez/server/events/PartyHudEvents.java
+@@ -0,0 +1,34 @@
++package com.dragonminez.server.events;
++
++import com.dragonminez.Reference;
++import com.dragonminez.common.network.NetworkHandler;
++import com.dragonminez.common.network.S2C.PartyHudS2C;
++import com.dragonminez.server.world.data.PartySavedData;
++import net.minecraftforge.event.TickEvent;
++import net.minecraftforge.eventbus.api.SubscribeEvent;
++import net.minecraftforge.fml.common.Mod;
++import java.util.*;
++
++@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
++public final class PartyHudEvents {
++    @SubscribeEvent public static void tick(TickEvent.ServerTickEvent event) {
++        if (event.phase != TickEvent.Phase.END || event.getServer().getTickCount() % 10 != 0) return;
++        var server = event.getServer();
++        for (var viewer : server.getPlayerList().getPlayers()) {
++            var party = PartySavedData.get(server).getPartyOf(viewer.getUUID());
++            List<PartyHudS2C.Member> members = new ArrayList<>();
++            if (party != null) for (UUID id : party.getMembers()) {
++                var player = server.getPlayerList().getPlayer(id);
++                String name = player != null ? player.getGameProfile().getName()
++                        : server.getProfileCache().get(id).map(p -> p.getName()).orElse(id.toString().substring(0, 8));
++                boolean same = player != null && player.level() == viewer.level();
++                members.add(new PartyHudS2C.Member(id, name, player == null ? 0 : player.getHealth(),
++                        player == null ? 1 : player.getMaxHealth(), player != null, id.equals(party.getLeaderId()),
++                        player != null && ArenaManager.inArena(player), same,
++                        same ? (int) viewer.distanceTo(player) : 0));
++            }
++            members.sort(Comparator.comparing(PartyHudS2C.Member::leader).reversed().thenComparing(PartyHudS2C.Member::name));
++            NetworkHandler.sendToPlayer(new PartyHudS2C(members), viewer);
++        }
++    }
++}
+diff --git a/src/main/java/com/dragonminez/server/events/QuestEvents.java b/src/main/java/com/dragonminez/server/events/QuestEvents.java
+index 2d4a2e9..910f2d6 100644
+--- a/src/main/java/com/dragonminez/server/events/QuestEvents.java
++++ b/src/main/java/com/dragonminez/server/events/QuestEvents.java
+@@ -1,6 +1,7 @@
+ package com.dragonminez.server.events;
+ 
+ import com.dragonminez.Reference;
++import com.dragonminez.common.quest.PartyQuestProgress;
+ import com.dragonminez.common.config.ConfigManager;
+ import com.dragonminez.common.events.DMZEvent;
+ import com.dragonminez.common.init.entities.MastersEntity;
+@@ -68,7 +69,7 @@ public class QuestEvents {
+ 		});
+ 	}
+ 
+-	@SubscribeEvent
++	@SubscribeEvent(priority = net.minecraftforge.eventbus.api.EventPriority.LOWEST)
+ 	public static void onEntityKill(LivingDeathEvent event) {
+ 		if (event.getEntity() instanceof ServerPlayer deadPlayer) {
+ 			handlePlayerQuestFailure(deadPlayer);
+@@ -82,7 +83,9 @@ public class QuestEvents {
+ 	}
+ 
+ 	public static void creditQuestKill(ServerPlayer killer, LivingEntity killedEntity) {
+-		List<ServerPlayer> partyMembers = PartyManager.getAllPartyMembers(killer);
++        if (killedEntity.getPersistentData().getBoolean("dmz_party_kill_credited")) return;
++        killedEntity.getPersistentData().putBoolean("dmz_party_kill_credited", true);
++		List<ServerPlayer> partyMembers = ArenaManager.questMembers(killer);
+ 		for (ServerPlayer member : partyMembers) {
+ 			StatsProvider.get(StatsCapability.INSTANCE, member).ifPresent(data ->
+ 					processAcceptedQuests(member, data, (questKey, quest, pqd) ->
+@@ -91,6 +94,7 @@ public class QuestEvents {
+ 	}
+ 
+ 	private static void handlePlayerQuestFailure(ServerPlayer deadPlayer) {
++        if (ArenaManager.inArena(deadPlayer)) { ArenaManager.abort(deadPlayer); return; }
+ 		ServerPlayer controller = PartyManager.resolveQuestController(deadPlayer);
+ 		if (controller == null) {
+ 			return;
+@@ -108,7 +112,7 @@ public class QuestEvents {
+ 			}
+ 
+ 			Set<String> failedQuestIds = new LinkedHashSet<>();
+-			List<ServerPlayer> partyMembers = PartyManager.getAllPartyMembers(controller);
++			List<ServerPlayer> partyMembers = ArenaManager.questMembers(controller);
+ 			for (String questKey : acceptedQuestIds) {
+ 				Quest quest = QuestRegistry.getQuest(questKey);
+ 				if (quest == null || pqd.isQuestCompleted(questKey) || !hasKillObjectives(quest)) {
+@@ -148,7 +152,7 @@ public class QuestEvents {
+ 	 * otherwise read as alive. A solo player has no other members, so this is always {@code true}.
+ 	 */
+ 	private static boolean isPartyWiped(ServerPlayer controller, ServerPlayer deadPlayer) {
+-		for (ServerPlayer member : PartyManager.getAllPartyMembers(controller)) {
++		for (ServerPlayer member : ArenaManager.questMembers(controller)) {
+ 			if (member.getUUID().equals(deadPlayer.getUUID())) {
+ 				continue;
+ 			}
+@@ -176,7 +180,7 @@ public class QuestEvents {
+ 		}
+ 
+ 		String finalNpcId = interactedNpcId;
+-		List<ServerPlayer> partyMembers = PartyManager.getAllPartyMembers(interactor);
++		List<ServerPlayer> partyMembers = ArenaManager.questMembers(interactor);
+ 		for (ServerPlayer member : partyMembers) {
+ 			StatsProvider.get(StatsCapability.INSTANCE, member).ifPresent(data ->
+ 					processAcceptedQuests(member, data, (questKey, quest, pqd) ->
+@@ -190,7 +194,7 @@ public class QuestEvents {
+ 			return;
+ 		}
+ 
+-		List<ServerPlayer> partyMembers = PartyManager.getAllPartyMembers(summoner);
++		List<ServerPlayer> partyMembers = ArenaManager.questMembers(summoner);
+ 		for (ServerPlayer member : partyMembers) {
+ 			StatsProvider.get(StatsCapability.INSTANCE, member).ifPresent(data ->
+ 					processAcceptedQuests(member, data, (questKey, quest, pqd) ->
+@@ -233,7 +237,7 @@ public class QuestEvents {
+ 				}
+ 
+ 				if (QuestLocationHelper.isLocationObjective(objective)) {
+-					List<ServerPlayer> partyMembers = PartyManager.getAllPartyMembers(player);
++					List<ServerPlayer> partyMembers = ArenaManager.questMembers(player);
+ 					boolean anyMemberInZone = false;
+ 					for (ServerPlayer member : partyMembers) {
+ 						if (QuestLocationHelper.isLocationConditionMet(member, objective)) {
+@@ -244,7 +248,7 @@ public class QuestEvents {
+ 					int targetProgress = anyMemberInZone ? 1 : 0;
+ 					updatePartyProgress(partyMembers, questKey, quest, i, targetProgress);
+ 				} else if (objective instanceof ItemObjective itemObjective) {
+-					int itemCount = countItems(player, itemObjective.getItemId());
++					int itemCount = ArenaManager.questMembers(player).stream().mapToInt(p -> countItems(p, itemObjective.getItemId())).sum();
+ 					if (itemCount != currentProgress) {
+ 						int progressToSet = Math.min(itemCount, quest.getObjectiveRequired(pqd, questKey, i));
+ 						updateProgress(player, pqd, questKey, quest, i, progressToSet);
+@@ -345,7 +349,7 @@ public class QuestEvents {
+ 		Set<String> acceptedIds = pqd.getAcceptedQuestIds();
+ 		for (String questKey : acceptedIds) {
+ 			Quest quest = QuestRegistry.getQuest(questKey);
+-			if (quest == null || pqd.isQuestCompleted(questKey) || !isQuestTypeEnabled(quest)) {
++			if (quest == null || pqd.isQuestCompleted(questKey) || !isQuestTypeEnabled(quest) || !ArenaManager.canProgress(player, questKey)) {
+ 				continue;
+ 			}
+ 			processor.process(questKey, quest, pqd);
+@@ -390,7 +394,7 @@ public class QuestEvents {
+ 	}
+ 
+ 	private static void notifyQuestFailure(ServerPlayer controller, Set<String> failedQuestIds) {
+-		List<ServerPlayer> partyMembers = PartyManager.getAllPartyMembers(controller);
++		List<ServerPlayer> partyMembers = ArenaManager.questMembers(controller);
+ 		for (String questKey : failedQuestIds) {
+ 			for (ServerPlayer member : partyMembers) {
+ 				NetworkHandler.sendToPlayer(StoryToastS2C.questFailed(questKey), member);
+@@ -460,7 +464,7 @@ public class QuestEvents {
+ 				return true;
+ 			}
+ 		}
+-		return false;
++		return ArenaManager.ownsQuestEnemy(partyMembers, ownerUuid, questKey);
+ 	}
+ 
+ 	static boolean isKillObjectiveUnlocked(PlayerQuestData pqd, String questKey, Quest quest, int objectiveIndex) {
+@@ -495,7 +499,7 @@ public class QuestEvents {
+ 		for (ServerPlayer member : members) {
+ 			StatsProvider.get(StatsCapability.INSTANCE, member).ifPresent(data -> {
+ 				PlayerQuestData pqd = data.getPlayerQuestData();
+-				if (!pqd.isQuestAccepted(questKey) || pqd.isQuestCompleted(questKey)) {
++				if (!pqd.isQuestAccepted(questKey) || pqd.isQuestCompleted(questKey) || !ArenaManager.canProgress(member, questKey)) {
+ 					return;
+ 				}
+ 				if (!quest.isParallelObjectives() && !isFirstUncompleted(pqd, questKey, quest, objectiveIndex)) {
+@@ -523,7 +527,7 @@ public class QuestEvents {
+ 				questKey,
+ 				resolved != null ? resolved.saga() : null,
+ 				quest,
+-				PartyManager.getAllPartyMembers(player),
++				ArenaManager.questMembers(player),
+ 				objectiveIndex,
+ 				current,
+ 				newProgress,
+@@ -564,24 +568,7 @@ public class QuestEvents {
+ 			}
+ 		}
+ 
+-		QuestService.ResolvedQuest resolved = QuestService.resolveQuest(questKey);
+-		DMZEvent.QuestCompletedEvent completeEvent = new DMZEvent.QuestCompletedEvent(
+-				player,
+-				questKey,
+-				resolved != null ? resolved.saga() : null,
+-				quest,
+-				PartyManager.getAllPartyMembers(player)
+-		);
+-		if (MinecraftForge.EVENT_BUS.post(completeEvent)) {
+-			return;
+-		}
+-
+-		pqd.completeQuest(questKey);
+-		if (questKey.equals(pqd.getTrackedQuestId())) {
+-			pqd.setTrackedQuestId(null);
+-		}
+-		NetworkHandler.sendToPlayer(StoryToastS2C.questComplete(questKey), player);
+-		NetworkHandler.sendToTrackingEntityAndSelf(new ProgressionSyncS2C(player), player);
++        PartyQuestProgress.complete(player, questKey);
+ 	}
+ 
+ 
+diff --git a/src/main/java/com/dragonminez/server/world/data/ArenaSavedData.java b/src/main/java/com/dragonminez/server/world/data/ArenaSavedData.java
+new file mode 100644
+index 0000000..1db7193
+--- /dev/null
++++ b/src/main/java/com/dragonminez/server/world/data/ArenaSavedData.java
+@@ -0,0 +1,40 @@
++package com.dragonminez.server.world.data;
++
++import net.minecraft.nbt.CompoundTag;
++import net.minecraft.nbt.ListTag;
++import net.minecraft.nbt.Tag;
++import net.minecraft.server.MinecraftServer;
++import net.minecraft.world.level.saveddata.SavedData;
++import java.util.*;
++
++/** Durable return tickets survive death, logout and server restarts. Slots are never reused. */
++public final class ArenaSavedData extends SavedData {
++    public final Map<UUID, CompoundTag> returns = new HashMap<>();
++    private int nextSlot;
++    public static ArenaSavedData get(MinecraftServer server) {
++        return server.overworld().getDataStorage().computeIfAbsent(ArenaSavedData::load,
++                ArenaSavedData::new, "dragonminez_arena_returns");
++    }
++    public int allocateSlot() {
++        if (nextSlot >= 1_000_000) throw new IllegalStateException("Arena capacity exhausted");
++        setDirty();
++        return nextSlot++;
++    }
++    public static ArenaSavedData load(CompoundTag tag) {
++        ArenaSavedData data = new ArenaSavedData();
++        data.nextSlot = tag.getInt("NextSlot");
++        ListTag list = tag.getList("Returns", Tag.TAG_COMPOUND);
++        for (int i = 0; i < list.size(); i++) {
++            CompoundTag entry = list.getCompound(i);
++            data.returns.put(entry.getUUID("Player"), entry);
++        }
++        return data;
++    }
++    @Override public CompoundTag save(CompoundTag tag) {
++        tag.putInt("NextSlot", nextSlot);
++        ListTag list = new ListTag();
++        returns.values().forEach(entry -> list.add(entry.copy()));
++        tag.put("Returns", list);
++        return tag;
++    }
++}
+diff --git a/src/main/resources/assets/dragonminez/lang/en_us.json b/src/main/resources/assets/dragonminez/lang/en_us.json
+index dca95af..9d97b3c 100644
+--- a/src/main/resources/assets/dragonminez/lang/en_us.json
++++ b/src/main/resources/assets/dragonminez/lang/en_us.json
+@@ -3125,5 +3125,17 @@
+   "death.attack.strike_attack.kaioken_attack": "%1$s was crushed by %2$s's Kaioken Assault",
+   "death.attack.strike_attack.wolf_fang": "%1$s was shredded by %2$s's Wolf Fang Fist",
+   "death.attack.strike_attack.oozaru_fist": "%1$s was smashed by %2$s's Oozaru Fist",
+-  "death.attack.strike_attack.super_god_fist": "%1$s was obliterated by %2$s's Super God Fist"
++  "death.attack.strike_attack.super_god_fist": "%1$s was obliterated by %2$s's Super God Fist",
++
++  "message.dragonminez.arena.not_ready": "%s must be alive and outside spectator mode to enter the arena.",
++  "gui.dragonminez.party.hud.down": "Defeated",
++  "gui.dragonminez.party.hud.dimension": "Other dimension",
++  "gui.dragonminez.party.hud.arena": "Arena",
++  "message.dragonminez.arena.unavailable": "Could not prepare the arena. The quest did not start; try again.",
++  "message.dragonminez.arena.enter": "Group battle started! Progress and rewards are shared with eligible participants. Use /dmzarena sair to abandon.",
++  "gui.dragonminez.party.hud.offline": "Offline",
++  "message.dragonminez.arena.support": "You joined as support: this quest is locked or already completed for you. You can help fight but receive no progress or reward.",
++  "gui.dragonminez.party.hud.title": "PARTY · %s",
++  "message.dragonminez.arena.return": "You returned to your starting point.",
++  "message.dragonminez.arena.busy": "%s is already in an arena. Finish the battle or use /dmzarena sair."
+ }
+diff --git a/src/main/resources/assets/dragonminez/lang/pt_br.json b/src/main/resources/assets/dragonminez/lang/pt_br.json
+index 5db7b8f..af640b9 100644
+--- a/src/main/resources/assets/dragonminez/lang/pt_br.json
++++ b/src/main/resources/assets/dragonminez/lang/pt_br.json
+@@ -1,3 +1,15 @@
+ {
+-  "message.dragonminez.form.mastery_requisite": "§cVocê precisa terminar de dominar §e%1$s§c antes de avançar."
++  "message.dragonminez.form.mastery_requisite": "§cVocê precisa terminar de dominar §e%1$s§c antes de avançar.",
++
++  "message.dragonminez.arena.not_ready": "%s precisa estar vivo e fora do modo espectador para entrar na arena.",
++  "gui.dragonminez.party.hud.down": "Derrotado",
++  "gui.dragonminez.party.hud.dimension": "Outra dimensão",
++  "gui.dragonminez.party.hud.arena": "Arena",
++  "message.dragonminez.arena.unavailable": "Não foi possível preparar a arena. A missão não foi iniciada; tente novamente.",
++  "message.dragonminez.arena.enter": "Batalha em grupo iniciada! Progresso e recompensas compartilhados com os participantes elegíveis. /dmzarena sair para abandonar.",
++  "gui.dragonminez.party.hud.offline": "Offline",
++  "message.dragonminez.arena.support": "Você entrou como apoio: esta quest ainda não está disponível ou já foi concluída. Pode ajudar na luta, mas não recebe progresso nem recompensa.",
++  "gui.dragonminez.party.hud.title": "PARTY · %s",
++  "message.dragonminez.arena.return": "Você voltou ao ponto de partida.",
++  "message.dragonminez.arena.busy": "%s já está em uma arena. Termine a batalha ou use /dmzarena sair."
+ }
+diff --git a/src/main/resources/data/dragonminez/dimension/quest_arena.json b/src/main/resources/data/dragonminez/dimension/quest_arena.json
+new file mode 100644
+index 0000000..4798b08
+--- /dev/null
++++ b/src/main/resources/data/dragonminez/dimension/quest_arena.json
+@@ -0,0 +1,18 @@
++{
++  "type": "dragonminez:quest_arena",
++  "generator": {
++    "type": "minecraft:flat",
++    "settings": {
++      "biome": "minecraft:plains",
++      "lakes": false,
++      "features": false,
++      "structure_overrides": [],
++      "layers": [
++        {"height": 1, "block": "minecraft:bedrock"},
++        {"height": 60, "block": "minecraft:stone"},
++        {"height": 2, "block": "minecraft:dirt"},
++        {"height": 1, "block": "minecraft:grass_block"}
++      ]
++    }
++  }
++}
+diff --git a/src/main/resources/data/dragonminez/dimension_type/quest_arena.json b/src/main/resources/data/dragonminez/dimension_type/quest_arena.json
+new file mode 100644
+index 0000000..a7c68d3
+--- /dev/null
++++ b/src/main/resources/data/dragonminez/dimension_type/quest_arena.json
+@@ -0,0 +1,20 @@
++{
++  "ultrawarm": false,
++  "natural": false,
++  "coordinate_scale": 1.0,
++  "has_skylight": true,
++  "has_ceiling": false,
++  "ambient_light": 0.0,
++  "fixed_time": 6000,
++  "piglin_safe": false,
++  "bed_works": false,
++  "respawn_anchor_works": false,
++  "has_raids": false,
++  "logical_height": 256,
++  "min_y": 0,
++  "height": 256,
++  "infiniburn": "#minecraft:infiniburn_overworld",
++  "effects": "minecraft:overworld",
++  "monster_spawn_block_light_limit": 0,
++  "monster_spawn_light_level": 0
++}
+diff --git a/src/partyTest/java/com/dragonminez/partytest/PartyArenaGameTests.java b/src/partyTest/java/com/dragonminez/partytest/PartyArenaGameTests.java
+new file mode 100644
+index 0000000..343bf36
+--- /dev/null
++++ b/src/partyTest/java/com/dragonminez/partytest/PartyArenaGameTests.java
+@@ -0,0 +1,198 @@
++package com.dragonminez.partytest;
++
++import com.dragonminez.common.quest.*;
++import com.dragonminez.common.network.S2C.PartyHudS2C;
++import com.dragonminez.server.events.ArenaManager;
++import com.dragonminez.server.events.QuestEvents;
++import com.dragonminez.server.world.data.ArenaSavedData;
++import com.google.gson.JsonParser;
++import com.mojang.authlib.GameProfile;
++import net.minecraft.core.BlockPos;
++import net.minecraft.gametest.framework.GameTest;
++import net.minecraft.gametest.framework.GameTestHelper;
++import net.minecraft.nbt.CompoundTag;
++import net.minecraft.network.FriendlyByteBuf;
++import net.minecraft.server.level.ServerPlayer;
++import net.minecraft.server.players.PlayerList;
++import net.minecraft.world.entity.Entity;
++import net.minecraft.world.entity.LivingEntity;
++import net.minecraft.world.item.Items;
++import net.minecraft.world.level.Level;
++import net.minecraftforge.common.util.FakePlayer;
++import net.minecraftforge.gametest.GameTestHolder;
++import net.minecraftforge.gametest.PrefixGameTestTemplate;
++import io.netty.buffer.Unpooled;
++import java.lang.reflect.Field;
++import java.util.*;
++
++/** Runs only with -PpartyGameTests=true, never shipped in the production JAR. */
++@GameTestHolder("dragonminez")
++@PrefixGameTestTemplate(false)
++public final class PartyArenaGameTests {
++    @SuppressWarnings("unchecked")
++    private static Map<UUID, ServerPlayer> online(GameTestHelper helper) {
++        try {
++            Field field = PlayerList.class.getDeclaredField("playersByUUID");
++            field.setAccessible(true);
++            return (Map<UUID, ServerPlayer>) field.get(helper.getLevel().getServer().getPlayerList());
++        } catch (Exception e) { throw new RuntimeException(e); }
++    }
++    private static ServerPlayer player(GameTestHelper helper, String name) {
++        var player = new FakePlayer(helper.getLevel(), new GameProfile(UUID.randomUUID(), name));
++        player.setPos(helper.absolutePos(new BlockPos(1, 2, 1)).getCenter());
++        online(helper).put(player.getUUID(), player);
++        PartyQuestProgress.data(player).setDifficultyChosen(true);
++        return player;
++    }
++    @SuppressWarnings("unchecked")
++    private static QuestService.ResolvedQuest quest(String key) {
++        String json = """
++            {"id":"%s","title":"Test battle","type":"SIDEQUEST","party_scaling":false,
++            "prerequisites":{"operator":"AND","conditions":[{"type":"QUEST","questId":"test_gate"}]},
++            "requirements":{"operator":"AND","conditions":[{"type":"DIMENSION","dimension":"minecraft:overworld"}]},
++            "objectives":[{"type":"KILL","entity":"minecraft:zombie","count":2,"health":20}],
++            "rewards":[{"type":"ITEM","item":"minecraft:apple","count":1}]}
++            """.formatted(key);
++        Quest quest = Objects.requireNonNull(QuestParser.parseQuest(JsonParser.parseString(json).getAsJsonObject()));
++        try {
++            Field field = QuestRegistry.class.getDeclaredField("LOADED_QUESTS");
++            field.setAccessible(true);
++            ((Map<String, Quest>) field.get(null)).put(key, quest);
++        } catch (Exception e) { throw new RuntimeException(e); }
++        return new QuestService.ResolvedQuest(key, quest, null);
++    }
++    private static void join(GameTestHelper helper, ServerPlayer leader, ServerPlayer member) {
++        PartyManager.sendInvite(leader, member);
++        helper.assertTrue(PartyManager.acceptInvite(member, true) == PartyManager.InviteAcceptResult.SUCCESS, "Party invitation failed");
++    }
++    private static List<LivingEntity> enemies(ServerPlayer player, String key) {
++        return player.serverLevel().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(80),
++                e -> key.equals(e.getPersistentData().getString(QuestService.QUEST_KEY_TAG)));
++    }
++
++    @GameTest(template = "cell_arena", timeoutTicks = 300)
++    public static void sharedBattleRewardsAndReturn(GameTestHelper helper) {
++        ServerPlayer a = player(helper, "ArenaLeader"), b = player(helper, "ArenaMember"), c = player(helper, "ArenaSupport");
++        var qa = PartyQuestProgress.data(a); var qb = PartyQuestProgress.data(b); var qc = PartyQuestProgress.data(c);
++        qa.completeQuest("test_gate"); qb.completeQuest("test_gate"); qa.completeQuest("leader_history");
++        join(helper, a, b); join(helper, a, c);
++        helper.assertFalse(qb.isQuestCompleted("leader_history"), "Joining copied leader history");
++        helper.assertFalse(qc.isQuestCompleted("test_gate"), "Joining unlocked a locked quest");
++        String key = "party_test_shared"; var resolved = quest(key);
++        helper.assertTrue(PartyQuestProgress.eligible(b, resolved), "Eligible member rejected");
++        helper.assertFalse(PartyQuestProgress.eligible(c, resolved), "Locked helper eligible for rewards");
++        var originA = a.position(); var originB = b.position(); var originC = c.position();
++        var failure = QuestService.startQuest(b, key); // A non-leader starts the battle.
++        helper.assertTrue(failure == null, "Start failed: " + (failure == null ? "" : failure.getString()));
++        helper.assertTrue(a.level().dimension().equals(ArenaManager.DIMENSION) && c.level() == a.level(), "Entire party was not transported");
++        helper.assertTrue(qa.isQuestAccepted(key) && qb.isQuestAccepted(key) && !qc.isQuestAccepted(key), "Wrong reward eligibility snapshot");
++        helper.assertTrue(QuestService.resummonQuest(a, key) != null, "Duplicate wave allowed");
++        List<LivingEntity> enemies = enemies(a, key);
++        helper.assertTrue(enemies.size() == 2, "Expected exactly two enemies, got " + enemies.size());
++        QuestEvents.creditQuestKill(c, enemies.get(0));
++        QuestEvents.creditQuestKill(c, enemies.get(0));
++        helper.assertTrue(qa.getObjectiveProgress(key, 0) == 1 && qb.getObjectiveProgress(key, 0) == 1, "Helper progress not shared or duplicate kill counted");
++        QuestEvents.creditQuestKill(c, enemies.get(1));
++        helper.assertTrue(qa.isQuestCompleted(key) && qb.isQuestCompleted(key), "Party completion missing");
++        helper.assertFalse(qc.isQuestCompleted(key), "Locked helper received completion");
++        helper.assertTrue(a.getInventory().countItem(Items.APPLE) == 1 && b.getInventory().countItem(Items.APPLE) == 1
++                && c.getInventory().countItem(Items.APPLE) == 0, "Wrong reward distribution");
++        QuestService.claimRewards(a, key); QuestService.claimAllRewards(b);
++        helper.assertTrue(a.getInventory().countItem(Items.APPLE) == 1 && b.getInventory().countItem(Items.APPLE) == 1, "Duplicate reward issued");
++        PlayerQuestData restored = new PlayerQuestData(); restored.deserializeNBT(qa.serializeNBT());
++        helper.assertTrue(restored.isRewardClaimed(key, 0), "Reward receipt did not survive NBT roundtrip");
++        helper.runAfterDelay(3, () -> {
++            helper.assertTrue(a.level().dimension().equals(Level.OVERWORLD) && b.level() == a.level() && c.level() == a.level(), "Party not returned");
++            helper.assertTrue(a.position().distanceTo(originA) < 0.1 && b.position().distanceTo(originB) < 0.1 && c.position().distanceTo(originC) < 0.1, "Wrong return coordinates");
++            helper.assertFalse(ArenaSavedData.get(a.getServer()).returns.containsKey(a.getUUID()), "Return ticket not consumed");
++            for (var p : List.of(a,b,c)) { PartyManager.leaveParty(p); online(helper).remove(p.getUUID()); p.discard(); }
++            helper.succeed();
++        });
++    }
++
++    @GameTest(template = "cell_arena", timeoutTicks = 300)
++    public static void departureDoesNotStrandRemainingMembers(GameTestHelper helper) {
++        ServerPlayer a = player(helper, "DepartingOwner"), b = player(helper, "RemainingMember");
++        PartyQuestProgress.data(a).completeQuest("test_gate"); PartyQuestProgress.data(b).completeQuest("test_gate");
++        join(helper,a,b);
++        String key = "party_test_departure"; quest(key);
++        helper.assertTrue(QuestService.startQuest(a,key) == null,"Arena start failed");
++        List<LivingEntity> enemies = enemies(a,key);
++        var saved = ArenaSavedData.get(a.getServer());
++        ArenaSavedData reloaded = ArenaSavedData.load(saved.save(new CompoundTag()));
++        helper.assertTrue(reloaded.returns.get(a.getUUID()).getString("Quest").equals(key),"Restart ticket missing");
++        PartyManager.leaveParty(a);
++        helper.assertTrue(PartyQuestProgress.data(a).getQuestStatus(key) == PlayerQuestData.QuestStatus.FAILED,"Leaving did not fail own quest");
++        for (LivingEntity enemy : enemies) QuestEvents.creditQuestKill(b,enemy);
++        helper.assertTrue(PartyQuestProgress.data(b).isQuestCompleted(key),"Owner departure blocked kill credit");
++        helper.assertTrue(a.getInventory().countItem(Items.APPLE) == 0 && b.getInventory().countItem(Items.APPLE) == 1,"Departed owner rewarded");
++        helper.runAfterDelay(3, () -> {
++            helper.assertTrue(b.level().dimension().equals(Level.OVERWORLD),"Remaining member stranded");
++            for (var p : List.of(a,b)) { PartyManager.leaveParty(p); online(helper).remove(p.getUUID()); p.discard(); }
++            helper.succeed();
++        });
++    }
++
++    @GameTest(template = "cell_arena")
++    public static void hudPacketAndArenaPersistence(GameTestHelper helper) {
++        var member = new PartyHudS2C.Member(UUID.randomUUID(), "Vegeta", 2500, 9000, true, true, true, false, 0);
++        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
++        try {
++            new PartyHudS2C(List.of(member)).encode(buf);
++            helper.assertTrue(new PartyHudS2C(buf).members().equals(List.of(member)),"HUD packet roundtrip lost state");
++        } finally { buf.release(); }
++        ArenaSavedData data = new ArenaSavedData();
++        int first = data.allocateSlot();
++        ArenaSavedData loaded = ArenaSavedData.load(data.save(new CompoundTag()));
++        helper.assertTrue(loaded.allocateSlot() > first,"Restart reused an old destroyed arena");
++        var arena = helper.getLevel().getServer().getLevel(ArenaManager.DIMENSION);
++        helper.assertTrue(arena != null,"Arena dimension JSON not loaded");
++        helper.assertTrue(arena.getStructureManager().get(net.minecraft.resources.ResourceLocation.parse("dragonminez:cell_arena")).isPresent(),"Cell template missing");
++        helper.succeed();
++    }
++
++    @GameTest(template = "cell_arena", batch = "recovery", timeoutTicks = 300)
++    public static void requirementsDeathAndLogout(GameTestHelper helper) {
++        ServerPlayer player = player(helper,"RecoveryPlayer");
++        var own = PartyQuestProgress.data(player); own.completeQuest("test_gate");
++        String key = "party_test_recovery"; quest(key);
++        var origin = player.position();
++        player.teleportTo(player.getServer().getLevel(Level.NETHER),0,90,0,0,0);
++        helper.assertTrue(QuestService.startQuest(player,key) != null,"Original dimension requirement bypassed");
++        helper.assertFalse(own.isQuestAccepted(key),"Rejected quest was accepted");
++        helper.assertFalse(ArenaSavedData.get(player.getServer()).returns.containsKey(player.getUUID()),"Rejected start created a ticket");
++        player.teleportTo(helper.getLevel(),origin.x,origin.y,origin.z,0,0);
++        helper.assertTrue(QuestService.startQuest(player,key) == null,"Valid solo quest failed");
++        player.setHealth(0);
++        ArenaManager.abort(player);
++        helper.assertTrue(own.getQuestStatus(key) == PlayerQuestData.QuestStatus.FAILED,"Death did not fail quest");
++        helper.assertTrue(ArenaSavedData.get(player.getServer()).returns.containsKey(player.getUUID()),"Death lost return ticket");
++        player.setHealth(20);
++        ArenaManager.respawn(new net.minecraftforge.event.entity.player.PlayerEvent.PlayerRespawnEvent(player,false));
++        helper.assertTrue(player.level().dimension().equals(Level.OVERWORLD),"Respawn stranded player");
++        helper.assertTrue(QuestService.startQuest(player,key) == null,"Failed quest could not restart");
++        ArenaManager.logout(new net.minecraftforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent(player));
++        helper.assertTrue(player.level().dimension().equals(Level.OVERWORLD) && own.getQuestStatus(key) == PlayerQuestData.QuestStatus.FAILED,"Logout did not return and fail player");
++        helper.assertTrue(player.getInventory().countItem(Items.APPLE) == 0,"Failed run rewarded player");
++        online(helper).remove(player.getUUID()); player.discard(); helper.succeed();
++    }
++
++    @GameTest(template = "cell_arena", batch = "collection")
++    public static void combinedInventoryCompletesForBoth(GameTestHelper helper) {
++        ServerPlayer a = player(helper,"GatherLeader"), b = player(helper,"GatherMember");
++        PartyQuestProgress.data(a).completeQuest("test_gate"); PartyQuestProgress.data(b).completeQuest("test_gate");
++        join(helper,a,b);
++        String key = "party_test_items"; var resolved = quest(key);
++        resolved.quest().getObjectives().clear();
++        resolved.quest().getObjectives().add(new com.dragonminez.common.quest.objectives.ItemObjective(Items.APPLE,2));
++        helper.assertTrue(QuestService.startQuest(b,key) == null,"Collection quest failed");
++        helper.assertTrue(a.level().dimension().equals(Level.OVERWORLD),"Collection quest was incorrectly sent to arena");
++        a.getInventory().add(new net.minecraft.world.item.ItemStack(Items.APPLE));
++        b.getInventory().add(new net.minecraft.world.item.ItemStack(Items.APPLE));
++        b.tickCount = 20;
++        QuestEvents.onPlayerTick(new net.minecraftforge.event.TickEvent.PlayerTickEvent(net.minecraftforge.event.TickEvent.Phase.END,b));
++        helper.assertTrue(PartyQuestProgress.data(a).isQuestCompleted(key) && PartyQuestProgress.data(b).isQuestCompleted(key),"Combined inventory did not complete for both");
++        for (var p : List.of(a,b)) { PartyManager.leaveParty(p); online(helper).remove(p.getUUID()); p.discard(); }
++        helper.succeed();
++    }
++}
+diff --git a/src/partyTest/java/com/dragonminez/partytest/PartyHudVisualCheck.java b/src/partyTest/java/com/dragonminez/partytest/PartyHudVisualCheck.java
+new file mode 100644
+index 0000000..31ef621
+--- /dev/null
++++ b/src/partyTest/java/com/dragonminez/partytest/PartyHudVisualCheck.java
+@@ -0,0 +1,37 @@
++package com.dragonminez.partytest;
++
++import com.dragonminez.client.gui.hud.PartyHUD;
++import com.dragonminez.common.network.S2C.PartyHudS2C.Member;
++import net.minecraft.client.Minecraft;
++import net.minecraft.client.Screenshot;
++import net.minecraftforge.api.distmarker.Dist;
++import net.minecraftforge.event.TickEvent;
++import net.minecraftforge.eventbus.api.SubscribeEvent;
++import net.minecraftforge.fml.common.Mod;
++import java.util.List;
++import java.util.UUID;
++
++/** Opt-in render check in an isolated development world, using fixture HUD data. */
++@Mod.EventBusSubscriber(modid = "dragonminez", value = Dist.CLIENT)
++public final class PartyHudVisualCheck {
++    private static int ticks;
++    private static boolean saved;
++    @SubscribeEvent public static void tick(TickEvent.ClientTickEvent event) {
++        if (!Boolean.getBoolean("dmz.partyHudPreview") || event.phase != TickEvent.Phase.END) return;
++        Minecraft mc = Minecraft.getInstance();
++        if (mc.player == null || mc.level == null) return;
++        ticks++;
++        mc.setScreen(null);
++        mc.options.hideGui = false;
++        PartyHUD.update(List.of(
++                new Member(mc.player.getUUID(), "Goku", 12400, 15000, true, true, true, true, 0),
++                new Member(UUID.fromString("00000000-0000-0000-0000-000000000002"), "Vegeta", 1850, 12000, true, false, true, true, 12),
++                new Member(UUID.fromString("00000000-0000-0000-0000-000000000003"), "Piccolo", 7000, 9000, true, false, false, false, 0),
++                new Member(UUID.fromString("00000000-0000-0000-0000-000000000004"), "Gohan", 0, 9000, false, false, false, false, 0)));
++        if (ticks >= 100 && !saved) {
++            saved = true;
++            Screenshot.grab(mc.gameDirectory, "party-hud-verification.png", mc.getMainRenderTarget(), message -> {});
++        }
++        if (ticks > 140) mc.stop();
++    }
++}

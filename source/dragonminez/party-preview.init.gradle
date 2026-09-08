@@ -1,0 +1,6 @@
+allprojects {
+    afterEvaluate {
+        minecraft.runs.client.property 'dmz.partyHudPreview', 'true'
+        minecraft.runs.client.args '--quickPlaySingleplayer', 'PartyHUDTest', '--width', '1280', '--height', '720'
+    }
+}

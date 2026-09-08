@@ -1,6 +1,6 @@
 # DragonMineManorsZ — pacote de servidor
 
-Versão do modpack: **0.2.26.9.3**.
+Versão do modpack: **0.3.26.9.8**.
 
 Pacote para **Minecraft 1.20.1**, **Forge 47.4.10** e **Java 17**.
 
@@ -58,7 +58,7 @@ o campo `port` do arquivo para a porta fornecida.
 ## Compatibilidade dos clientes
 
 Os jogadores precisam usar a mesma versão do modpack e o mesmo
-`dragonminez-2.1.3.jar` modificado presente em `mods`. Os mods listados em
+`dragonminez-2.1.3-manorsz.0.3.26.9.8.jar` modificado presente em `mods`. Os mods listados em
 `excluded-client-mods.txt` continuam somente no cliente e não devem ser
 adicionados ao servidor.
 

@@ -1,0 +1,15 @@
+{
+  "message.dragonminez.form.mastery_requisite": "§cVocê precisa terminar de dominar §e%1$s§c antes de avançar.",
+
+  "message.dragonminez.arena.not_ready": "%s precisa estar vivo e fora do modo espectador para entrar na arena.",
+  "gui.dragonminez.party.hud.down": "Derrotado",
+  "gui.dragonminez.party.hud.dimension": "Outra dimensão",
+  "gui.dragonminez.party.hud.arena": "Arena",
+  "message.dragonminez.arena.unavailable": "Não foi possível preparar a arena. A missão não foi iniciada; tente novamente.",
+  "message.dragonminez.arena.enter": "Batalha em grupo iniciada! Progresso e recompensas compartilhados com os participantes elegíveis. /dmzarena sair para abandonar.",
+  "gui.dragonminez.party.hud.offline": "Offline",
+  "message.dragonminez.arena.support": "Você entrou como apoio: esta quest ainda não está disponível ou já foi concluída. Pode ajudar na luta, mas não recebe progresso nem recompensa.",
+  "gui.dragonminez.party.hud.title": "PARTY · %s",
+  "message.dragonminez.arena.return": "Você voltou ao ponto de partida.",
+  "message.dragonminez.arena.busy": "%s já está em uma arena. Termine a batalha ou use /dmzarena sair."
+}

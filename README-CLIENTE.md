@@ -1,11 +1,9 @@
 # DragonMineManorsZ — atualização do cliente
 
-Versão **0.2.26.9.3**, para Minecraft 1.20.1, Forge 47.4.10 e Java 17.
+Versão **0.3.26.9.8**, para Minecraft 1.20.1, Forge 47.4.10 e Java 17.
 
-O pacote de cliente inclui o JAR modificado do DragonMineZ, as configurações de
-balanceamento, as definições das Esferas do Dragão e os modelos de configuração
-usados em mundos de um jogador. Ele não substitui mundos salvos, screenshots,
-keybinds nem opções gráficas pessoais.
+Esta versão adiciona HUD de party, progresso compartilhado e batalhas na
+dimensão de arenas. Consulte [como jogar](docs/party-arena.md).
 
 ## Instalação pelo CurseForge
 
@@ -13,30 +11,31 @@ keybinds nem opções gráficas pessoais.
 2. No CurseForge, abra **Opções do perfil** e ative **Permitir gerenciamento de
    conteúdo para este perfil**.
 3. Abra a pasta da instância do modpack.
-4. Extraia o conteúdo de `DragonMineManorsZ-client-0.2.26.9.3.zip` diretamente
-   nessa pasta. `mods`, `config`, `dragonballs` e `defaultconfigs` devem ficar na
-   raiz da instância.
-5. Confirme a substituição dos arquivos existentes.
-6. Verifique que existe somente um `dragonminez-2.1.3.jar` na pasta `mods`.
+4. Execute o instalador abaixo a partir deste repositório, ou retire o JAR antigo
+   de `mods` e copie `dragonminez-2.1.3-manorsz.0.3.26.9.8.jar` para essa pasta.
+5. O instalador salva o JAR e as configurações anteriores em `mod-backups`.
+6. Verifique que existe somente um JAR do DragonMineZ na pasta `mods`.
 7. Inicie o modpack pelo CurseForge.
 
 Na instalação usada para desenvolver este pacote, a raiz é:
 
-```text
-D:\CurseForge\Instances\Dragon Mine Z
+```powershell
+.\scripts\install-party-arena.ps1 -Instance 'D:\CurseForge\Instances\Dragon Mine Z'
 ```
+
+O instalador define **Alt + P** para abrir a party se o atalho estava sem tecla.
+Ele também habilita o gerenciamento de conteúdo do perfil CurseForge, com backup
+do arquivo de metadados anterior.
+Nos mundos já existentes, acrescente `dragonminez:quest_arena` à lista
+`claim_dimension_blacklist` de `<mundo>/serverconfig/ftbchunks-world.snbt`.
+O pacote `servedata` já contém essa configuração para o servidor.
 
 ## Multiplayer
 
 Todos os jogadores e o servidor devem usar o mesmo
-`dragonminez-2.1.3.jar`. As configurações administrativas específicas do
-servidor estão no pacote `DragonMineManorsZ-server-0.2.26.9.3.zip`.
+`dragonminez-2.1.3-manorsz.0.3.26.9.8.jar`. As configurações administrativas específicas do
+servidor estão na pasta `servedata` deste repositório.
 
-SHA-256 do JAR desta versão:
-
-```text
-3402661235C516DB1404326F0D992EDFFA743E246D8DEAE48DEB3D786E3CB0A7
-```
-
-O hash do pacote ZIP fica no arquivo `SHA256SUMS-0.2.26.9.3.txt` publicado na
-mesma release.
+O hash do JAR fica em `SHA256SUMS-0.3.26.9.8.txt`.
+Para reverter, feche o jogo e restaure o JAR e as configurações do backup
+em cliente e servidor. Não apague os mundos.

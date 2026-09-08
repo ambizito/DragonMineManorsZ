@@ -1,7 +1,9 @@
 # Roadmap de Gameplay Futuro
 
 Este documento registra ideias grandes para uma futura reestruturação do
-DragonMineManorsZ. Nada aqui representa implementação atual; a intenção é
+DragonMineManorsZ. Party e arenas receberam a primeira implementação na
+versão **0.3.26.9.8**, descrita em [Party e arenas](party-arena.md). As demais
+seções continuam como propostas; a intenção é
 guardar direção de design, critérios de balanceamento e sistemas que precisam
 ser estudados antes de virar patch.
 

@@ -1,0 +1,18 @@
+{
+  "type": "dragonminez:quest_arena",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "minecraft:plains",
+      "lakes": false,
+      "features": false,
+      "structure_overrides": [],
+      "layers": [
+        {"height": 1, "block": "minecraft:bedrock"},
+        {"height": 60, "block": "minecraft:stone"},
+        {"height": 2, "block": "minecraft:dirt"},
+        {"height": 1, "block": "minecraft:grass_block"}
+      ]
+    }
+  }
+}
